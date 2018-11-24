@@ -92,6 +92,9 @@ button:hover {
 .guild-section [style*="color: rgb(29, 166, 87);"] {
     color: ` + elite + ` !important;
 }
+.guild-section [style*="color: #1da657;"] {
+   color: ` + elite + ` !important;
+}
 .item-rarity-runic {
   color: ` + elite + ` !important;
   text-shadow: 0 0 1px blue !important;
