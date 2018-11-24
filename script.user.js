@@ -31,7 +31,7 @@ var profileguildname = "rgb(0, 123, 235)";
 //Add Style Element
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("afterend", `
-<link rel="icon" href="https://xer0-puls3.github.io/assets/images/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"/>
 <style>
 
 /* CHAT CSS BELOW */
@@ -44,6 +44,11 @@ head.insertAdjacentHTML("afterend", `
 
 body {
   background-image: url(https://zerthox.github.io/ClearVision/images/sapphire.jpg) !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .green {
   background-color: ` + elite + ` !important;
