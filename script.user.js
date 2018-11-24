@@ -1,40 +1,16 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.4.1
+// @version 1.4.2
 // @author Puls3
 // @include http*://*pendoria.net* 
+// @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @grant none
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
 
-//Version 1.1 - Removed dungeon text.
-//Version 1.2
-// - Added Favicon.
-// - Fixed match & switched to include.
-// - Turned inventory '!' to blue.
-// - Fixed namespace.
-//Version 1.2.1 - Fixed inventory exclamation point not changing.
-//Version 1.2.2 - Added background image.
-//Version 1.2.3 - Turned scraptown bar and notification to blue.
-//Version 1.3
-// - Fixed scraptown notfication not changing.
-// - Turned activity log names to blue.
-// - Turned Rhodium Ingots & Runics to Blue.
-// - Turned dungeons to blue.
-// - Turned guild building cost green to blue.
-// - Turned scraptown cost green to blue.
-// - Turned selection color to blue. 
-// - Turned profile guild link to blue.
-// - Turned chat commands list to blue.
-//Version 1.4
-// - Changed each line to use easily edited variables.
-// - Added VIP Values.
-// - Turned section headers in the rules to blue.
-// - Added button hover effect.
-//Version 1.4.1
-// - Added Option to turn off battle stats.
-// - Added TSMR Link.
+//To get Beta releases do thhe following;
+//Change the downloadURL above to 'https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/development/script.user.js'.
 
 //Made by Puls3 from Pendoria!
 //It's very easy to edit!
