@@ -18,7 +18,7 @@
 
 //Options
 // - Remove Battle Stats <0 - 1>
-var RemoveBattleStats = 1
+var RemoveBattleStats = 0
 
 //Edit these values to change colors as a whole
 var elite = "rgb(0, 153, 255)";
