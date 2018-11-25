@@ -1,16 +1,13 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.4.4
+// @version 1.4.5
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @grant none
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
-
-//To get Beta releases do thhe following;
-//Change the downloadURL above to 'https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/development/script.user.js'.
 
 //Made by Puls3 from Pendoria!
 //It's very easy to edit!
@@ -30,7 +27,7 @@ var profileguildname = "rgb(0, 123, 235)";
 
 //Add Style Element
 var head = document.getElementsByTagName('head')[0];
-head.insertAdjacentHTML("afterend", `
+head.insertAdjacentHTML("beforeend", `
 <link rel="icon" href="https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"/>
 <style>
 
@@ -44,11 +41,6 @@ head.insertAdjacentHTML("afterend", `
 
 body {
   background-image: url(https://zerthox.github.io/ClearVision/images/sapphire.jpg) !important;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 .green {
   background-color: ` + elite + ` !important;
