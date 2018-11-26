@@ -11,3 +11,6 @@ This script can be weird at times when used on Chrome, though easily fixed Puls3
 
 ## Settings
 The settings can be found at the top of the script.
+
+## Contributing
+If you are capable, and have a good idea that you want to implement, feel free to use Github to contribute!
