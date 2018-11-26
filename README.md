@@ -11,10 +11,18 @@ This script can be weird at times when used on Chrome, though easily fixed Puls3
 
 ## Settings
 The settings can be found at the top of the script.
-* Toggle the recolor <True / False>
-* Remove Battle Stats From Header <True / False>
-* Remove quest options from select quest <Battle / Farming / Mining / Prospecting / Woodcutting> <True / False>
-* Edit the colors used by the recolor <color>
+* Toggle Dual View. (Actions and Content at the same time)
+* Edit the border line used in dual view.
+* Toggle the recolor.
+* Remove Battle Stats From Header.
+* Remove Battle Tab from actions menu.
+* Toggle each quest option in Quest Selection box.
+* Edit the colors used by the recolor.
+* Toggle Pendoria Logo.
+* Toggle each TS in TS Selection box.
+* Toggle the TS Selection box & Work button.
+* Toggle added height to make up for removed TS selection box.
+* Toggle the wallpaper (Pend vs Custom)
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use Github to contribute!
