@@ -11,6 +11,10 @@ This script can be weird at times when used on Chrome, though easily fixed Puls3
 
 ## Settings
 The settings can be found at the top of the script.
+* Toggle the recolor <True / False>
+* Remove Battle Stats From Header <True / False>
+* Remove quest options from select quest <Battle / Farming / Mining / Prospecting / Woodcutting> <True / False>
+* Edit the colors used by the recolor <color>
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use Github to contribute!
