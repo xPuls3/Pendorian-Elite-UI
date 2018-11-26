@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.4.5
+// @version 1.5
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -14,8 +14,20 @@
 //If cloned please give credit!
 
 //Options
+// 1 = True & 0 = False
+
+//Toggle the recolor
+var EliteRecolor = 1
+
 // - Remove Battle Stats <0 - 1>
 var RemoveBattleStats = 0
+
+//Remove quest options from select quest <0 - 1>
+var RemoveBattleQuest = 0
+var RemoveFoodQuest = 0
+var RemoveCopperQuest = 0
+var RemoveGemsQuest = 0
+var RemoveWoodQuest = 0
 
 //Edit these values to change colors as a whole
 var elite = "rgb(0, 153, 255)";
@@ -25,6 +37,9 @@ var leetbuttonhover = "rgba(0, 153, 255, 0.8)";
 var leetdungeonback = "#334771";
 var profileguildname = "rgb(0, 123, 235)";
 
+//Options End
+
+if (EliteRecolor == 1) {
 //Add Style Element
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
@@ -182,7 +197,7 @@ progress::-webkit-progress-bar {
   color: ` + elite + ` !important;
 }
 </style>
-`);
+`);}
 
 //Add Link Elements
 var elem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[0];
@@ -193,4 +208,64 @@ elem.insertAdjacentHTML("beforebegin", `
 if (RemoveBattleStats == 1) {
   leetbattleelem = document.getElementsByClassName('header-stats-user')[0]
   leetbattleelem.parentNode.removeChild(leetbattleelem);
+}
+
+//Remove Battle Quest
+if (RemoveBattleQuest == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#quest-dropdown [value*="1"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Food Quest
+if (RemoveFoodQuest == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#quest-dropdown [value*="4"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Copper Quest
+if (RemoveCopperQuest == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#quest-dropdown [value*="3"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Gems Quest
+if (RemoveGemsQuest == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#quest-dropdown [value*="5"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Wood Quest
+if (RemoveWoodQuest == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#quest-dropdown [value*="2"] {
+  display: none !important;
+}
+</style>
+`);
 }
