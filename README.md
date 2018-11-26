@@ -9,6 +9,8 @@ If you have any issues using Violentmonkey's 'check for updates' feature and hav
 ## Notice
 This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
 
+If you don't like DualView or your Pendoria setup makes it look dumb, disable it!
+
 ## Settings
 The settings can be found at the top of the script.
 * Toggle Dual View. (Actions and Content at the same time)
