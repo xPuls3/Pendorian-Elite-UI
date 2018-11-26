@@ -7,7 +7,7 @@ Changes a large portion of Pendoria's text and UI to 'Elite' blue and makes smal
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then re-install directly from Github.
 
 ## Notice
-This script can be weird at times when used on Chrome, though easilt fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
+This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
 
 ## Settings
 The settings can be found at the top of the script.
