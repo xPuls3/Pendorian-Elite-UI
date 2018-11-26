@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.5
+// @version 1.6
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -19,15 +19,48 @@
 //Toggle the recolor
 var EliteRecolor = 1
 
-// - Remove Battle Stats <0 - 1>
+//DualContent
+//Show Gameframe content AND action content
+//Only looks good if your content box is tall enough
+var IWANTBOTH = 1
+var IwantBOTHLine = 220
+
+//Toggle logo removal
+//You 'should' leave this on
+var RemoveLogo = 1
+
+//Remove Battle Stats <0 - 1>
 var RemoveBattleStats = 0
 
 //Remove quest options from select quest <0 - 1>
+//Your going to want to leave whatever actions you do set to 0
 var RemoveBattleQuest = 0
 var RemoveFoodQuest = 0
 var RemoveCopperQuest = 0
 var RemoveGemsQuest = 0
 var RemoveWoodQuest = 0
+
+//Remove the battle tab in the actions section
+var RemoveBattleTab = 0
+
+//Remove tradeskill options from select tradeskill <0 - 1>
+//Your going to want to leave whatever actions you do set to 0
+var RemoveFoodSelect = 0
+var RemoveCopperSelect = 0
+var RemoveGemsSelect = 0
+var RemoveWoodSelect = 0
+//If you use this then you might as well enable the next option
+
+//Remove Tradeskill Select and Work button
+//Note: Use the bar to refresh
+//If you use this you will want to enable the next option as well
+var RemoveTSSelect = 0
+
+//Add a top padding to actions 
+var AddActionheight = 0
+
+//Toggle Background
+var bgimage = 1
 
 //Edit these values to change colors as a whole
 var elite = "rgb(0, 153, 255)";
@@ -39,8 +72,41 @@ var profileguildname = "rgb(0, 123, 235)";
 
 //Options End
 
+//Show Gameframe content AND action content
+if (IWANTBOTH == 1) {
+var head = document.getElementsByTagName('head')[0];
+head.insertAdjacentHTML("beforeend", `
+<style>
+#gameframe-battle {
+  display: block !important;
+  height: ` + IwantBOTHLine + `px;
+}
+#gameframe-content {
+  display: block !important;
+  height: calc(100% - ` + IwantBOTHLine + `px - 80px);
+  top: calc(70px + ` + IwantBOTHLine + `px);
+}
+#menu ul li:first-child {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Background Image
+if (bgimage == 1) {
+var head = document.getElementsByTagName('head')[0];
+head.insertAdjacentHTML("beforeend", `
+<style>
+  body {
+    background-image: url(https://zerthox.github.io/ClearVision/images/sapphire.jpg) !important;
+  }
+</style>
+`);
+}
+
+//Add recolor
 if (EliteRecolor == 1) {
-//Add Style Element
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
 <link rel="icon" href="https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"/>
@@ -53,23 +119,11 @@ head.insertAdjacentHTML("beforeend", `
 }
 
 /* UI CSS Below */
-
-body {
-  background-image: url(https://zerthox.github.io/ClearVision/images/sapphire.jpg) !important;
-}
 .green {
   background-color: ` + elite + ` !important;
 }
 #expwidth {
   background-color: ` + elite + ` !important;
-}
-#profile, #menu, #stats-hourly {
-  top: -50px;
-  background-color: rgba(0,0,0,0) !important;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) , rgba(0,0,0,0.3)) !important;
-}
-#logo {
-  display: none;
 }
 #quest_done {
   color: ` + elite + `;
@@ -199,6 +253,23 @@ progress::-webkit-progress-bar {
 </style>
 `);}
 
+//Remove Logo
+if (RemoveLogo == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#profile, #menu, #stats-hourly {
+  top: -50px;
+  background-color: rgba(0,0,0,0) !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) , rgba(0,0,0,0.3)) !important;
+}
+#logo {
+  display: none;
+}
+</style>
+`);
+}
+
 //Add Link Elements
 var elem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[0];
 elem.insertAdjacentHTML("beforebegin", `
@@ -265,6 +336,90 @@ if (RemoveWoodQuest == 1) {
 <style>
 #quest-dropdown [value*="2"] {
   display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Battle Tab
+if (RemoveBattleTab == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#gameframe-battle ul li:first-child {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Food Select
+if (RemoveFoodSelect == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#tradeskill [value*="3"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Copper Select
+if (RemoveCopperSelect == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#tradeskill [value*="2"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Gems Select
+if (RemoveGemsSelect == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#tradeskill [value*="4"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove Wood Select
+if (RemoveGemsSelect == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#tradeskill [value*="1"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove TS Select
+if (RemoveTSSelect == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#actioncontent [style*="text-align: center; margin-bottom: 10px; margin-top: 5px;"] {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Add height above TS Actions
+if (AddActionheight == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#actioncontent {
+  padding-top: 10px;
 }
 </style>
 `);
