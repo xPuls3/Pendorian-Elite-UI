@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.1
+// @version 1.6.2
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -61,6 +61,7 @@ var AddActionheight = 0
 
 //Toggle Background
 var bgimage = 1
+var bglink = "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
 
 //Edit these values to change colors as a whole
 var elite = "rgb(0, 153, 255)";
@@ -99,8 +100,8 @@ var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
 <style>
   body {
-    background-image: url(https://zerthox.github.io/ClearVision/images/sapphire.jpg) !important;
-  }
+     background-image: url( ` + bglink + ` ) !important;
+}
 </style>
 `);
 }
