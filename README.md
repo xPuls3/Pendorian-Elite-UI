@@ -27,16 +27,16 @@ The settings can be found at the top of the script.
 * Edit the border line used in dual view.
 * Toggle Frameless mode.
 * Toggle the recolor.
+* Edit the colors used by the recolor.
 * Remove Battle Stats From Header.
 * Remove Battle Tab from actions menu.
 * Remove TS Tab from actions menu.
 * Toggle each quest option in Quest Selection box.
-* Edit the colors used by the recolor.
 * Toggle Pendoria Logo.
 * Toggle each TS in TS Selection box.
 * Toggle the TS Selection box & Work button.
 * Toggle added height to make up for removed TS selection box.
-* Toggle the wallpaper. (Pend vs Custom)
+* Toggle the wallpaper. (Pendoria vs Elite / Custom)
 * Set wallpaper to a custom image.
 
 ## Contributing
