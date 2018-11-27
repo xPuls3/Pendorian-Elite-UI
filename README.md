@@ -8,7 +8,7 @@ Created by [Puls3](https://github.com/Xer0-Puls3)!
 
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then re-install directly from Github.
 
-Legacy releases can be found in the releases section on GitHub.
+Legacy releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
 
 ## Notice
 This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
