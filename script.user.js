@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.2
+// @version 1.6.3
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -24,6 +24,11 @@ var EliteRecolor = 1
 //Only looks good if your content box is tall enough
 var DualView = 0
 var DualViewLine = 220
+
+//Frameless
+//Remove the frames
+//Looks great!
+var Frameless = 0
 
 //Toggle logo removal
 //You 'should' leave this on
@@ -201,6 +206,15 @@ progress::-moz-progress-bar {
 progress::-webkit-progress-bar {
   background: ` + elite + `;
 }
+#progressbar-wrapper {
+  background: ` + leetdungeonback + `;
+}
+#exp {
+  background: ` + leetdungeonback + ` !important;
+}
+.tab-game-content [style*="width: 100%; border-radius: 10px; overflow: hidden; background-color: #31453a;"] {
+  background: ` + leetdungeonback + ` !important;
+}
 
 /* DUNGEON CSS BELOW */
 
@@ -269,6 +283,27 @@ if (RemoveLogo == 1) {
 }
 #logo {
   display: none;
+}
+</style>
+`);
+}
+
+//Frameless
+if (Frameless == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+.frame {
+  background: none;
+}
+#gameframe-status-wrapper:after, #progressbar-wrapper::after {
+  background: none;
+}
+#progressbar-wrapper .progressbar {
+  top: 0px;
+}
+#gameframe-status-wrapper {
+  line-height: 15px;
 }
 </style>
 `);
