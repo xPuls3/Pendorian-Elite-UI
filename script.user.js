@@ -48,6 +48,10 @@ var RemoveWoodQuest = 0
 //Remove the battle tab in the actions section
 var RemoveBattleTab = 0
 
+//Remove the TS tab in the actions section
+//for Battlers
+var RemoveTSTab = 0
+
 //Remove tradeskill options from select tradeskill <0 - 1>
 //Your going to want to leave whatever actions you do set to 0
 var RemoveFoodSelect = 0
@@ -386,6 +390,18 @@ if (RemoveBattleTab == 1) {
   head.insertAdjacentHTML("beforeend", `
 <style>
 #gameframe-battle ul li:first-child {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Remove TS Tab
+if (RemoveTSTab == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#gameframe-battle ul li:nth-child(2) {
   display: none !important;
 }
 </style>
