@@ -1,6 +1,8 @@
 # Pendorian Elite UI
 Changes a large portion of Pendoria's text and UI to 'Elite' blue and makes small changes to the UI.
 
+Created by [Puls3](https://github.com/Xer0-Puls3)!
+
 ## Downloads
 [Download](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
 
