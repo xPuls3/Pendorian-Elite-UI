@@ -40,4 +40,6 @@ If you are capable, and have a good idea that you want to implement, feel free t
 Try to keep everything optional to allow for a variety of playstyles.
 
 ## Clone Policy
-If you create a clone of this script and make edits, as long as you give credit where credit is do and provide a link to the original, you may create said clone and distribute it as much as you like within the Pendoria rules.
+If you create a clone or fork of this script and make edits, as long as you give credit where credit is do and provide a link to the original, you may create said clone and distribute it as much as you like within the Pendoria rules.
+
+Also, if all your doing is small usefull changes, consider contributing!
