@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6
+// @version 1.6.1
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -19,17 +19,17 @@
 //Toggle the recolor
 var EliteRecolor = 1
 
-//DualContent
+//DualView
 //Show Gameframe content AND action content
 //Only looks good if your content box is tall enough
-var IWANTBOTH = 1
-var IwantBOTHLine = 220
+var DualView = 0
+var DualViewLine = 220
 
 //Toggle logo removal
 //You 'should' leave this on
 var RemoveLogo = 1
 
-//Remove Battle Stats <0 - 1>
+//Remove Header Battle Stats <0 - 1>
 var RemoveBattleStats = 0
 
 //Remove quest options from select quest <0 - 1>
@@ -72,19 +72,19 @@ var profileguildname = "rgb(0, 123, 235)";
 
 //Options End
 
-//Show Gameframe content AND action content
-if (IWANTBOTH == 1) {
+//DualView
+if (DualView == 1) {
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
 <style>
 #gameframe-battle {
   display: block !important;
-  height: ` + IwantBOTHLine + `px;
+  height: ` + DualViewLine + `px;
 }
 #gameframe-content {
   display: block !important;
-  height: calc(100% - ` + IwantBOTHLine + `px - 80px);
-  top: calc(70px + ` + IwantBOTHLine + `px);
+  height: calc(100% - ` + DualViewLine + `px - 80px);
+  top: calc(70px + ` + DualViewLine + `px);
 }
 #menu ul li:first-child {
   display: none !important;
@@ -136,6 +136,9 @@ head.insertAdjacentHTML("beforeend", `
 }
 quest_abandon {
   background-color: ` + elite + ` !important;
+}
+#chat-composer input[type="submit"] {
+  background: ` + leetbutton + ` !important;
 }
 button {
   background: ` + leetbutton + ` !important;
