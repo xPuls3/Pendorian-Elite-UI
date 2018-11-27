@@ -6,7 +6,7 @@ Created by [Puls3](https://github.com/Xer0-Puls3)!
 ## Downloads
 [Download](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
 
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then re-install directly from Github.
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from Github.
 
 Legacy releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
 
@@ -17,7 +17,12 @@ Releases are posted in their own channel on the Discord!
 
 If you don't like DualView or your Pendoria setup makes it look dumb, disable it!
 
-Alot of features are disabled by default, I suggest looking through them for settings you might like.
+A Lot of features are disabled by default, I suggest looking through them for settings you might like.
+
+## Support
+This script is was created for Firefox, not Chrome, Chrome support relies on people reporting errors.
+
+This script was made for Violent Monkey, if you use Greasemonkey or Tampermonkey, I suggest switching.
 
 ## Contact
 [Discord](https://discord.gg/sX7nfjt)
@@ -52,6 +57,6 @@ Try to keep everything optional to allow for a variety of playstyles.
 ## Clone Policy
 If you create a clone or fork of this script and make edits, as long as you give credit where credit is do and provide a link to the original, you may create said clone and distribute it as much as you like within the Pendoria rules.
 
-Also, if all your doing is small usefull changes, consider contributing!
+Also, if all your doing is small useful changes, consider contributing!
 
 **Pro Tip:** GitHub is better than Greasyfork / Pastebin!
