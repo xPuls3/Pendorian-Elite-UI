@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.5
+// @version 1.6.6
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -21,6 +21,9 @@
 
 //Toggle the recolor
 var EliteRecolor = 1
+
+//Legacy Sidebar (Zampa Style)
+var legacySide = 1
 
 //DualView
 //Show Gameframe content AND action content
@@ -133,6 +136,9 @@ head.insertAdjacentHTML("beforeend", `
 
 .chat-username {
   color: ` + elite + `;
+}
+chat-local-error {
+  color: ` + elite + ` !important;
 }
 
 /* UI CSS Below */
@@ -294,6 +300,38 @@ if (RemoveLogo == 1) {
 }
 #logo {
   display: none;
+}
+</style>
+`);
+}
+
+//legacy Sidebar
+if (legacySide == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#menu .frame {
+  display: none;
+  width: 0px;
+  hieght: 0px;
+}
+#menu {
+  padding: 0px;
+  background: none !important;
+  height: auto !important;
+  overflow: hidden;
+}
+#menu li a {
+  font-family: "Open Sans", helvetica, arial;
+  color: #969696;
+  padding: 5px 0;
+  text-decoration: none;
+  font-size: 15px;
+  padding-left: 15px;
+}
+#menu li.active a, #menu li:hover a{
+	color: #FFFFFF;
+	text-decoration: none !important;
 }
 </style>
 `);
