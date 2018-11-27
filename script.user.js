@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.4
+// @version 1.6.5
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -32,6 +32,10 @@ var DualViewLine = 220
 //Remove the frames
 //Looks great!
 var Frameless = 0
+
+//Links
+var TSMRLink = 1
+var ReleaseLink = 1
 
 //Toggle logo removal
 //You 'should' leave this on
@@ -327,10 +331,24 @@ if (Frameless == 1) {
 `);
 }
 
-//Add Link Elements
-var elem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[0];
-elem.insertAdjacentHTML("beforebegin", `
-<li style="vertical-align: top;"><a href="http://xer0-puls3.github.io/" target="_blank">TSMR</a></li>`);
+//Add TSMR Element
+if (TSMRLink == 1) {
+  var TSMRelem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[0];
+  TSMRelem.insertAdjacentHTML("beforebegin", `
+  <li style="vertical-align: top;"><a href="http://xer0-puls3.github.io/" target="_blank">TSMR</a></li>`);
+}
+
+//Add Release Element
+if (ReleaseLink == 1) {
+  if (TSMRLink == 1) {
+    var Relem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[1];
+  }
+  else {
+    var Relem = document.getElementById('gameframe-menu').childNodes[0].childNodes[0].childNodes[0];
+  }
+  Relem.insertAdjacentHTML("beforebegin", `
+  <li style="vertical-align: top;"><a href="https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases" target="_blank">Releases</a></li>`);
+}
 
 //Remove Battle Stats
 if (RemoveBattleStats == 1) {
