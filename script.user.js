@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.3
+// @version 1.6.4
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -299,6 +299,7 @@ if (Frameless == 1) {
 <style>
 .frame {
   background: none;
+  left: 8px;
 }
 #gameframe-status-wrapper:after, #progressbar-wrapper::after {
   background: none;
@@ -308,6 +309,16 @@ if (Frameless == 1) {
 }
 #gameframe-status-wrapper {
   line-height: 15px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+#gameframe-battle {
+  left: 0px;
+  right: 0px;
+}
+#chat {
+  padding: 0 ;
 }
 </style>
 `);
