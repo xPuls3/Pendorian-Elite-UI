@@ -59,4 +59,4 @@ If you create a clone or fork of this script and make edits, as long as you give
 
 Also, if all your doing is small useful changes, consider contributing!
 
-**Pro Tip:** GitHub is better than Greasyfork / Pastebin!
+**Pro Tip:** GitHub is better than Greasyfork / Pastebin! (Fork this repository)
