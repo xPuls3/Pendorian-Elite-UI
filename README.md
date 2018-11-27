@@ -6,14 +6,14 @@ Created by [Puls3](https://github.com/Xer0-Puls3)!
 ## Downloads
 [Download](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
 
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from Github.
-
 Legacy releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
+
+Releases are posted in their own channel on the [Discord](https://discord.gg/sX7nfjt)!
 
 ## Notice
 This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
 
-Releases are posted in their own channel on the Discord!
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from Github.
 
 If you don't like DualView or your Pendoria setup makes it look dumb, disable it!
 
