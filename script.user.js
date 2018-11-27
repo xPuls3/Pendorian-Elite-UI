@@ -13,6 +13,9 @@
 //It's very easy to edit!
 //If cloned please give credit!
 
+//Also follow the Clone Policy!
+//Clone Policy; https://goo.gl/AyAdqy
+
 //Options
 // 1 = True & 0 = False
 
