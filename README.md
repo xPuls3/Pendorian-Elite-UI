@@ -13,9 +13,14 @@ Legacy releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elit
 ## Notice
 This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
 
+Releases are posted in their own channel on the Discord!
+
 If you don't like DualView or your Pendoria setup makes it look dumb, disable it!
 
 Alot of features are disabled by default, I suggest looking through them for settings you might like.
+
+## Contact
+[Discord](https://discord.gg/sX7nfjt)
 
 ## Issues
 There are currently no known issues in the current release.
