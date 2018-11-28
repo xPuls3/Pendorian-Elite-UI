@@ -31,10 +31,11 @@ This script was made for Violentmonkey, if you use Greasemonkey or Tampermonkey,
 There are currently no known issues in the current release.
 If you find any issues use the issues feature on GitHub using as much detail as possible so that it can be fixed swiftly.
 
-## Settings
+## Settings / Features
 The settings can be found at the top of the script.
 * Toggle Dual View. (Actions and Content at the same time)
 * Edit the border line used in dual view.
+* Toggle Legacy Sidebar.
 * Toggle Frameless mode.
 * Toggle the recolor.
 * Edit the colors used by the recolor.
