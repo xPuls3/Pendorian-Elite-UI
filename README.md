@@ -15,8 +15,6 @@ This script can be weird at times when used on Chrome, though easily fixed Puls3
 
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
 
-If you don't like DualView or your Pendoria setup makes it look dumb, disable it!
-
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
 ## Support
