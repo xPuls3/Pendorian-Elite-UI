@@ -17,6 +17,8 @@ If you have any issues using Violentmonkey's 'check for updates' feature and hav
 
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
+Given that Puls3 is a tester, most features (without being given away) will be made compatible with this script before their release on the live server.
+
 ## Support
 This script is was created for Firefox, not Chrome, Chrome support relies on people reporting errors.
 
