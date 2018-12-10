@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.6
+// @version 1.6.7
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -62,6 +62,9 @@ var RemoveBattleTab = 0
 //for Battlers
 var RemoveTSTab = 0
 
+//Remove Battle Rhodium Boosts (Gold & Stat)
+var RemoveBattleGoldStat = 0
+
 //Remove tradeskill options from select tradeskill <0 - 1>
 //Your going to want to leave whatever actions you do set to 0
 var RemoveFoodSelect = 0
@@ -118,7 +121,7 @@ if (bgimage == 1) {
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
 <style>
-  body {
+body {
      background-image: url( ` + bglink + ` ) !important;
 }
 </style>
@@ -137,13 +140,20 @@ head.insertAdjacentHTML("beforeend", `
 .chat-username {
   color: ` + elite + `;
 }
-chat-local-error {
+.chat-local-error {
+  color: ` + elite + ` !important;
+}
+#chat-messages ul li [style*="color: #ea907b;"] {
   color: ` + elite + ` !important;
 }
 
 /* UI CSS Below */
+
 .green {
   background-color: ` + elite + ` !important;
+}
+#header-stats {
+  color: ` + elite + `;
 }
 #expwidth {
   background-color: ` + elite + ` !important;
@@ -285,6 +295,7 @@ progress::-webkit-progress-bar {
 #double_battle span {
   color: ` + elite + ` !important;
 }
+
 </style>
 `);}
 
@@ -545,6 +556,33 @@ if (AddActionheight == 1) {
 <style>
 #actioncontent {
   padding-top: 10px;
+}
+</style>
+`);
+}
+
+//Remove GoldBoost & Stat Drop Boost
+if (RemoveBattleGoldStat == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: left; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(1) {
+  display: none;
+}
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: left; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(2) {
+  display: none;
+}
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: left; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(3) {
+  display: none;
+}
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: right; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(1) {
+  display: none;
+}
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: right; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(2) {
+  display: none;
+}
+#gameframe-content .tab-game-content [style*="color: white; text-align: center; float: right; width: 50%;"] [style*="width: auto; margin: auto; text-align: left; display: inline-block;"] tr:nth-child(3) {
+  display: none;
 }
 </style>
 `);
