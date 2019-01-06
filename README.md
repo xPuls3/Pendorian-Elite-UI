@@ -49,6 +49,7 @@ The settings can be found at the top of the script.
 * Toggle added height to make up for removed TS selection box & work button.
 * Edit the wallpaper. (Pendoria vs Elite / Custom)
 * Set wallpaper to a custom image.
+* Extend the header above chat for Side-By-Side mode.
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use GitHub to contribute!
