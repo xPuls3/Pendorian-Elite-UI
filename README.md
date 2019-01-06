@@ -31,23 +31,23 @@ This script was made for Violentmonkey, if you use Greasemonkey or Tampermonkey,
 There are currently no known issues in the current release.
 If you find any issues use the issues feature on GitHub using as much detail as possible so that it can be fixed swiftly.
 
-## Settings / Features
+## Features
 The settings can be found at the top of the script.
-* Toggle Dual View. (Actions and Content at the same time)
-* Edit the border line used in dual view.
-* Toggle Legacy Sidebar.
-* Toggle Frameless mode.
-* Toggle the recolor.
-* Edit the colors used by the recolor.
+* Dual View. (Actions and Content at the same time)
+* Legacy Sidebar.
+* Frameless mode.
+* Custom Re-Color.
+* Re-Color Presets.
 * Remove Battle Stats From Header.
 * Remove Battle Tab from actions menu.
 * Remove TS Tab from actions menu.
-* Toggle each quest option in Quest Selection box.
-* Toggle Pendoria Logo.
-* Toggle each TS in TS Selection box.
-* Toggle the TS Selection box & Work button.
-* Toggle added height to make up for removed TS selection box.
-* Toggle the wallpaper. (Pendoria vs Elite / Custom)
+* Remove specific quest options in Quest Selection menu.
+* Remove the Pendoria Logo.
+* Remove each TS in TS Selection box.
+* Remove the TS Selection box.
+* Remove the TS Selection box & Work button.
+* Toggle added height to make up for removed TS selection box & work button.
+* Edit the wallpaper. (Pendoria vs Elite / Custom)
 * Set wallpaper to a custom image.
 
 ## Contributing
