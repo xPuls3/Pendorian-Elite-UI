@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 1.6.7
+// @version 1.7
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -19,11 +19,13 @@
 //Options
 // 1 = True & 0 = False
 
-//Toggle the recolor
-var EliteRecolor = 1
-
 //Legacy Sidebar (Zampa Style)
 var legacySide = 1
+
+//Side-By-Side Extended Header
+//Make the currency and battle stats bar extend above chat
+//Only for built-in Pendoria Side-By-Side!
+var ExtendedHeader = 0
 
 //DualView
 //Show Gameframe content AND action content
@@ -34,7 +36,7 @@ var DualViewLine = 220
 //Frameless
 //Remove the frames
 //Looks great!
-var Frameless = 0
+var Frameless = 1
 
 //Links
 var TSMRLink = 1
@@ -73,6 +75,10 @@ var RemoveGemsSelect = 0
 var RemoveWoodSelect = 0
 //If you use this then you might as well enable the next option
 
+//Remove Tradeskill Select and NOT Work button
+//If you use this then you might wanna see if you like the next option more
+var RemoveTSSelectLeaveWork = 0
+
 //Remove Tradeskill Select and Work button
 //Note: Use the bar to refresh
 //If you use this you will want to enable the next option as well
@@ -82,57 +88,72 @@ var RemoveTSSelect = 0
 var AddActionheight = 0
 
 //Toggle Background
+//0 = Default Pendoria
+//1 = Decided by Recolor
+//2 = Custom
 var bgimage = 1
+
+//Custom Background Link
 var bglink = "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
 
+//Edit Favicon
+var faviconlink = "https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"
+
+//Toggle the recolor
+var EliteRecolor = 1
+
+if (EliteRecolor == 1) {
+
+//Select the recolor preset
 //Edit these values to change colors as a whole
+
+// 1 = Elite Blue
+// 2 = Toxic Green
+var RecolorVersion = 1
+
+if (RecolorVersion == 1) {
+//Elite Blue Recolor
 var elite = "rgb(0, 153, 255)";
 var darkelite = "rgb(0, 123, 235)";
 var leetbutton = "rgba(0, 153, 255, 0.5)";
 var leetbuttonhover = "rgba(0, 153, 255, 0.8)";
-var leetdungeonback = "#334771";
+var leetdungeonback = "rgb(51, 71, 113)";
 var profileguildname = "rgb(0, 123, 235)";
+var chatmentiontabcolor = "rgb(0, 153, 255)";
+var chatmentioncolor = "rgb(0, 219, 255)";
+
+if (bgimage == 1) {
+  var bglink = "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
+}
+
+}
+  
+if (RecolorVersion == 2) {
+//Toxic Green Recolor
+var elite = "rgb(0, 255, 30)";
+var darkelite = "rgb(0, 235, 30)";
+var leetbutton = "rgba(0, 153, 30, 0.5)";
+var leetbuttonhover = "rgba(0, 153, 30, 0.8)";
+var leetdungeonback = "rgb(51, 71, 30)";
+var profileguildname = "rgb(0, 123, 30)";
+var chatmentiontabcolor = "rgb(0, 153, 30)";
+var chatmentioncolor = "rgb(0, 219, 30)";
+  
+if (bgimage == 1) {
+  var bglink = "http://www.urwallpapers.com/download/1927/abstract_green_hd_wallpaper.jpg"
+}
+  
+}
+  
+}
 
 //Options End
-
-//DualView
-if (DualView == 1) {
-var head = document.getElementsByTagName('head')[0];
-head.insertAdjacentHTML("beforeend", `
-<style>
-#gameframe-battle {
-  display: block !important;
-  height: ` + DualViewLine + `px;
-}
-#gameframe-content {
-  display: block !important;
-  height: calc(100% - ` + DualViewLine + `px - 80px);
-  top: calc(70px + ` + DualViewLine + `px);
-}
-#menu ul li:first-child {
-  display: none !important;
-}
-</style>
-`);
-}
-
-//Background Image
-if (bgimage == 1) {
-var head = document.getElementsByTagName('head')[0];
-head.insertAdjacentHTML("beforeend", `
-<style>
-body {
-     background-image: url( ` + bglink + ` ) !important;
-}
-</style>
-`);
-}
 
 //Add recolor
 if (EliteRecolor == 1) {
 var head = document.getElementsByTagName('head')[0];
 head.insertAdjacentHTML("beforeend", `
-<link rel="icon" href="https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"/>
+<link rel="icon" href="` + faviconlink + `"/>
 <style>
 
 /* CHAT CSS BELOW */
@@ -145,6 +166,12 @@ head.insertAdjacentHTML("beforeend", `
 }
 #chat-messages ul li [style*="color: #ea907b;"] {
   color: ` + elite + ` !important;
+}
+.chat-hilighted {
+  color: ` + chatmentiontabcolor + ` !important;
+}
+.username-hilighted {
+  color: ` + chatmentioncolor + ` !important;
 }
 
 /* UI CSS Below */
@@ -348,6 +375,39 @@ if (legacySide == 1) {
 `);
 }
 
+//DualView
+if (DualView == 1) {
+var head = document.getElementsByTagName('head')[0];
+head.insertAdjacentHTML("beforeend", `
+<style>
+#gameframe-battle {
+  display: block !important;
+  height: ` + DualViewLine + `px;
+}
+#gameframe-content {
+  display: block !important;
+  height: calc(100% - ` + DualViewLine + `px - 80px);
+  top: calc(70px + ` + DualViewLine + `px);
+}
+#menu ul li:first-child {
+  display: none !important;
+}
+</style>
+`);
+}
+
+//Background Image
+if (bgimage > 0) {
+var head = document.getElementsByTagName('head')[0];
+head.insertAdjacentHTML("beforeend", `
+<style>
+body {
+     background-image: url( ` + bglink + ` ) !important;
+}
+</style>
+`);
+}
+
 //Frameless
 if (Frameless == 1) {
   var head = document.getElementsByTagName('head')[0];
@@ -375,6 +435,23 @@ if (Frameless == 1) {
 }
 #chat {
   padding: 0 ;
+}
+</style>
+`);
+}
+
+//Side-By-Side Extended Header
+if (ExtendedHeader == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#header-content {
+  width: calc(100% - 255px) !important;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.header-stats-skills div, header-stats-resources div {
+  padding-right: 100px;
 }
 </style>
 `);
@@ -537,6 +614,18 @@ if (RemoveGemsSelect == 1) {
 `);
 }
 
+//Remove TS Select and leave work button
+if (RemoveTSSelectLeaveWork == 1) {
+  var head = document.getElementsByTagName('head')[0];
+  head.insertAdjacentHTML("beforeend", `
+<style>
+#tradeskill {
+  display: none !important;
+}
+</style>
+`);
+}
+
 //Remove TS Select
 if (RemoveTSSelect == 1) {
   var head = document.getElementsByTagName('head')[0];
@@ -548,6 +637,8 @@ if (RemoveTSSelect == 1) {
 </style>
 `);
 }
+
+
 
 //Add height above TS Actions
 if (AddActionheight == 1) {
