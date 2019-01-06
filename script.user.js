@@ -50,7 +50,7 @@ var RemoveLogo = 1
 var RemoveBattleStats = 0
 
 //Remove quest options from select quest <0 - 1>
-//Your going to want to leave whatever actions you do set to 0
+//You're going to want to leave whatever actions you do set to 0
 var RemoveBattleQuest = 0
 var RemoveFoodQuest = 0
 var RemoveCopperQuest = 0
@@ -68,7 +68,7 @@ var RemoveTSTab = 0
 var RemoveBattleGoldStat = 0
 
 //Remove tradeskill options from select tradeskill <0 - 1>
-//Your going to want to leave whatever actions you do set to 0
+//You're going to want to leave whatever actions you do set to 0
 var RemoveFoodSelect = 0
 var RemoveCopperSelect = 0
 var RemoveGemsSelect = 0
