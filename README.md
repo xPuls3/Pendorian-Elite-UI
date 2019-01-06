@@ -20,9 +20,9 @@ A Lot of features are disabled by default, I suggest looking through them for se
 Given that Puls3 is a tester, most features (without being given away) will be made compatible with this script before their release on the live server.
 
 ## Support
-This script is was created for Firefox, not Chrome, Chrome support relies on people reporting errors.
+This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
 
-This script was made for Violentmonkey, if you use Greasemonkey or Tampermonkey, I suggest switching.
+This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching.
 
 ## Contact
 [Discord](https://discord.gg/sX7nfjt)
