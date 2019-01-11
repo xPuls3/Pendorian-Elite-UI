@@ -310,7 +310,7 @@ progress::-webkit-progress-bar {
 #double_tradeskill span {
   color: ` + elite + ` !important;
 }
-.terms-section-header {
+.terms-section-header, .question {
   color: ` + elite + ` !important;
 }
 
