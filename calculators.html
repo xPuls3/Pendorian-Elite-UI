@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128730743-1"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+  	gtag('config', 'UA-128730743-1');
+	</script>
+	<title>TS Master Race</title>
+	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/calcs.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body {
+    		background-color:rgba(100, 100, 100, 1);
+    		background-image: url(assets/images/bg.jpg);
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+    		background-size: cover;
+			font-family: "Open Sans", helvetica, arial;
+		}
+		.reshreturn, .gearreturn {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+<div class="iconbar">
+	<img class="icon" src="assets/images/icon.png" width="70" height="70">
+	<div class="header">Master Race</div>
+</div>
+
+<div class="linksection">
+	<a href="index.html" class="link">News</a>
+	<a href="guilds.html" class="link">Guilds</a>
+	<a id="activelink" href="calculators.html" class="link">Calcs</a>
+	<a href="lists.html" class="link">Lists</a>
+</div>
+
+<div class="content">
+	<div class="head" style="color:#228B22;">TS Income Calculator</div>
+    <div id="resh" class="calc">
+    	<table>
+        	<tr><td><span style="color: #FFCC99;">TS Actions</span></td></tr>
+        	<tr><td><span style="color: #747AC6;">Modified By Luck</span></td></tr>
+        	<tr><td><span style="color: #FFFFFF;">Fill out without dungeons or double!</span></td></tr>
+    	</table>
+        <table>
+            <tr><td>Base Resources:</td><td><input style="width:175px" id="BaseRes" type="number" min="1"> (Without Or Lowest Quint Activation)</td></tr>
+            <tr><td>Quint Resources:</td><td><input style="width:175px" id="QuintRes" type="number" min="1"> (Highest Quint Activation)</td></tr>
+            <tr><td>Base Tax:</td><td><input style="width:175px" id="BaseTax" type="number" min="1"> (Optional) (Without Or Lowest Quint Activation)</td></tr>
+            <tr><td>Quint Tax:</td><td><input style="width:175px" id="QuintTax" type="number" min="1"> (Optional) (Highest Quint Activation)</td></tr>
+            <tr><td>Experience:</td><td><input style="width:175px" id="reshcurexp" type="number" min="1"> (Optional)</td></tr>
+            <tr><td>Quint Chance:</td><td><input style="width:175px" id="QuintChance" type="number" step=".01" min="0">%</td></tr>
+            <tr><td>Resource Price:</td><td><input style="width:175px" id="ResPrice" type="number" min="1"> Gold (Optional)</td></tr>
+            <tr><td>Actions Per Day:</td><td><input style="width:175px" id="ResActions" type="number" min="1"> (Optional)</td></tr>
+            <tr><td><button id="reshcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr class="reshreturn"><td style="color: #228B22;" class="reshreturn" id="reshresultalt"></td></tr>
+            <tr class="reshreturn"><td style="color: yellow;" class="reshreturn" id="reshresult2alt"></td></tr>
+            <tr class="reshreturn"><td style="color: cyan;" class="reshreturn" id="reshresult3alt"></td></tr>
+            <tr class="reshreturn"><td style="color: #0adc2f" class="reshreturn" id="reshresult4alt"></td></tr>
+            <tr class="reshreturn"><td style="color: #ffe100" class="reshreturn" id="reshresult5alt"></td></tr></tr>
+            <tr class="reshreturn"><td style="color: #228B22;" class="reshreturn" id="reshresult"></td></tr>
+            <tr class="reshreturn"><td style="color: yellow;" class="reshreturn" id="reshresult2"></td></tr>
+            <tr class="reshreturn"><td style="color: cyan;" class="reshreturn" id="reshresult3"></td></tr>
+            <tr class="reshreturn"><td style="color: #0adc2f" class="reshreturn" id="reshresult4"></td></tr>
+            <tr class="reshreturn"><td style="color: #ffe100" class="reshreturn" id="reshresult5"></td></tr>
+            <tr class="reshreturn"><td style="color: #228B22;" class="reshreturn" id="reshresultalted"></td></tr>
+            <tr class="reshreturn"><td style="color: yellow;" class="reshreturn" id="reshresult2alted"></td></tr>
+            <tr class="reshreturn"><td style="color: cyan;" class="reshreturn" id="reshresult3alted"></td></tr>
+            <tr class="reshreturn"><td style="color: #0adc2f" class="reshreturn" id="reshresult4alted"></td></tr>
+            <tr class="reshreturn"><td style="color: #ffe100" class="reshreturn" id="reshresult5alted"></td></tr>
+            <tr class="reshreturn"><td style="color: #228B22;" class="reshreturn" id="reshresultday"></td></tr>
+            <tr class="reshreturn"><td style="color: yellow;" class="reshreturn" id="reshresult2day"></td></tr>
+            <tr class="reshreturn"><td style="color: cyan;" class="reshreturn" id="reshresult3day"></td></tr>
+            <tr class="reshreturn"><td style="color: #0adc2f" class="reshreturn" id="reshresult4day"></td></tr>
+            <tr class="reshreturn"><td style="color: #ffe100" class="reshreturn" id="reshresult5day"></td></tr>
+            <tr class="reshreturn" id="resherrordis"><td style="color: red;" class="reshreturn" id="resherror"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: #98fb98; text-shadow: 0 0 2px;">Ingot Drop & Dungeon Uptime Calculator</div>
+    <div id="ingot" class="calc">
+        <table>
+        	<tr><td><span style="color: cyan;">Global Drops</span></td></tr>
+        	<tr><td><span style="color: #747AC6;">Modified By Luck</span></td></tr>
+            <tr><td>Global Drop Boost:</td><td><input style="width:200px" id="ingotdb" min="0" max="100" type="number"></td></tr>
+            <tr><td>Wishing Well:</td><td><input style="width:200px" id="ingotww" min="0" type="number"></td></tr>
+            <tr><td><button id="ingotcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: #98fb98; text-shadow: 0 0 2px;" id="ingotresult"></td></tr>
+            <tr><td style="color: #98fb98; text-shadow: 0 0 2px;" id="ingotresult2"></td></tr>
+            <tr><td style="color: red;" id="ingoterror"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: orange;">TS Gear Calculator</div>
+    <div id="tsgear" class="calc">
+        <table>
+        	<tr><td><span style="color: orange;">TS Gear</span></td></tr>
+            <tr><td>Item Level:</td><td><input style="width:200px" id="tsgearlevel" type="number" min="1"></td></tr>
+            <tr><td>Armory Effect:</td><td><input style="width:200px" id="tsgeararmory" type="number" min="0"></td></tr>
+            <tr>
+            	<td>Tier:</td>
+            	<td>
+            		<select style="width:205px" id="tsgeartier">
+            			<option style="background-color: rgb(73, 73, 73); color: grey;" value=0>Basic</option>
+            			<option style="background-color: rgb(73, 73, 73); color: #d6acac" value=1>Normal</option>
+            			<option style="background-color: rgb(73, 73, 73); color: #92B6E5;" value=2>Rare</option>
+            			<option style="background-color: rgb(73, 73, 73); color: #d346d3" value=3>Epic</option>
+            			<option style="background-color: rgb(73, 73, 73); color: orange;" value=4>Legendary</option>
+            			<option style="background-color: rgb(73, 73, 73); color: #98fb98; text-shadow: 0 0 2px;" value=5>Runic</option>
+            		</select>
+            	</td>
+            </tr>
+            <tr><td>Upgrade Level:</td><td><input style="width:200px" id="tsgearuplevel" type="number" min="0"></td></tr>
+            <tr><td><button id="tsgearcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: #98bda1;" class="gearreturn" id="tsgearquintresult"></td></tr>
+            <tr><td style="color: #98bda1;" class="gearreturn" id="tsgearresresult"></td></tr>
+            <tr><td style="color: #98bda1;" class="gearreturn" id="tsgearexpresult"></td></tr>
+            <tr><td style="color: red;" class="gearreturn" id="tsgearerror"></td></tr>
+        </table>
+    </div>
+</div>
+    
+<div class="content">
+	<div class="head" style="color: gray;">Quint Chance</div>
+	<div id="quint" class="calc">
+        <table>
+        	<tr><td><span style="color: gray;">Spare Part Boost</span></td></tr>
+            <tr><td>Scrapyard Level:</td><td><input style="width:75px" id="quintscrap" type="number" min="0"></td></tr>
+            <tr><td>Current Quint Chance:</td><td><input style="width:75px" id="curquint" type="number" step=".1" min="0">%</td></tr>
+            <tr><td>Wanted Quint Chance:</td><td><input style="width:75px" id="wantedquint" type="number" step=".1" min="0.1">%</td></tr>
+            <tr><td><button id="quintcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: gray;" id="quintresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: gray;">Resource Boost</div>
+    <div id="resboost" class="calc">
+    	<table>
+    		<tr><td><span style="color: gray;">Spare Part Boost</span></td></tr>
+            <tr><td>Scrapyard Level:</td><td><input style="width:75px" id="resscrap" type="number" min="0"></td></tr>
+            <tr><td>Current Res Boost:</td><td><input style="width:75px" id="curres" type="number" step=".1" min="0">%</td></tr>
+            <tr><td>Wanted Res Boost:</td><td><input style="width:75px" id="wantedres" type="number" step=".1" min="0.1">%</td></tr>
+            <tr><td><button id="rescalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: gray;" id="resresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: teal;">Quest Boost</div>
+    <div id="questboost" class="calc">
+        <table>
+        	<tr><td><span style="color: teal;">Rhodium Boost</span></td></tr>
+            <tr><td>Current Quest Boost:</td><td><input style="width:75px" id="curquest" type="number" min="0">%</td></tr>
+            <tr><td>Wanted Quest Boost:</td><td><input style="width:75px" id="wantedquest" type="number" min="1" max="80">%</td></tr>
+            <tr><td><button id="questcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: teal;" id="questresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: teal;">Spare Part Boost</div>
+    <div id="spboost" class="calc">
+        <table>
+        	<tr><td><span style="color: teal;">Rhodium Boost</span></td></tr>
+            <tr><td>Spare Part Boost:</td><td><input style="width:75px" id="cursp" type="number" min="0">%</td></tr>
+            <tr><td>Wanted Spare Part Boost:</td><td><input style="width:75px" id="wantedsp" type="number" min="1" max="100">%</td></tr>
+            <tr><td><button id="spcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+         	<tr><td style="color: teal;" id="spresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: teal;">Global Drop Boost</div>
+    <div id="gdboost" class="calc">
+        <table>
+        	<tr><td><span style="color: teal;">Rhodium Boost</span></td></tr>
+            <tr><td>Global Drop Boost:</td><td><input style="width:75px" id="curgd" type="number" min="0">%</td></tr>
+            <tr><td>Wanted Global Drop Boost:</td><td><input style="width:75px" id="wantedgd" type="number" min="1" max="100">%</td></tr>
+            <tr><td><button id="gdcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: teal;" id="gdresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: teal;">Global Exp Boost</div>
+    <div id="xpboost" class="calc">
+        <table>
+        	<tr><td><span style="color: teal;">Rhodium Boost</span></td></tr>
+            <tr><td>Global Exp Boost:</td><td><input style="width:75px" id="curxp" type="number" min="0">%</td></tr>
+            <tr><td>Wanted Global Exp Boost:</td><td><input style="width:75px" id="wantedxp" type="number" min="1" max="500">%</td></tr>
+            <tr><td><button id="xpcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: teal;" id="xpresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: #98fb98; text-shadow: 0 0 2px;">Bound Rhodium</div>
+    <div id="boundboost" class="calc">
+        <table>
+        	<tr><td><span style="color: #98fb98; text-shadow: 0 0 2px;">Rhodium Store</span></td></tr>
+            <tr><td>Purchased Bound Rhodium:</td><td><input style="width:75px" id="curbound" type="number" min="0"></td></tr>
+            <tr><td>Wanted Bound Rhodium:</td><td><input style="width:75px" id="wantedbound" type="number" min="1" max="25"></td></tr>
+            <tr><td><button id="boundcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: yellow;" id="boundresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="content">
+	<div class="head" style="color: cyan;">Experience Calculator</div>
+    <div id="exp" class="calc">
+        <table>
+        	<tr><td><span style="color: #FFCC99;">TS Actions</span></td></tr>
+        	<tr><td>Experience:</td><td><input style="width:200px" id="curexp" type="number" min="1"></td></tr>
+            <tr><td><button id="expcalc">Calculate</button></td></tr>
+        </table>
+        <table>
+            <tr><td style="color: cyan;" id="expresult"></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<script>
+    function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function number_format (number, decimals, dec_point, thousands_sep) {
+    // Strip all characters but numerical ones.
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
+    var currentTab = 0;
+    $(document).ready(function () {
+      $("#tabs").tabs({ activate: function(event ,ui){
+              currentTab = ui.newTab.index();
+                }});
+    });
+
+    $("#reshcalc").click (function () {
+        var bres = $("#BaseRes").val();
+        var qres = $("#QuintRes").val()
+        var basetax = $("#BaseTax").val();
+        var quinttax = $("#QuintTax").val();
+        var qchance = $("#QuintChance").val();
+        var resprice = $("#ResPrice").val();
+        var ractions = $("#ResActions").val();
+        var curexp = $("#reshcurexp").val();
+        $(".reshreturn").hide();
+        if (isNumber (bres) && isNumber (qres) && isNumber (qchance)) {
+            $("#reshresult").text("");
+            $("#reshresultalt").text("");
+            $("#reshresultalted").text("");
+            $("#reshresultday").text("");
+            $("#reshresult2").text("");
+            $("#reshresult2alt").text("");
+            $("#reshresult2alted").text("");
+            $("#reshresult2day").text("");
+            $("#reshresult3").text("");
+            $("#reshresult3alt").text("");
+            $("#reshresult3alted").text("");
+            $("#reshresult3day").text("");
+        	bres = parseInt (bres,10);
+        	qres = parseInt(qres,10);
+       		actions = parseInt(actions,10);
+       		if (isNumber (ractions)) {
+	       		ractions = parseInt(ractions,10);
+       		}
+       		qchance /= 100;
+       		qtier = Math.floor(qchance);
+       		qchance -= 1 * qtier;
+        	var qactions = 600 * qchance;
+        	var actions = 600 - qactions;
+        	result = (bres * actions) + (qres * qactions);
+        	resultalt = result / 600;
+        	resultalted = resultalt * 1000;
+       		if (isNumber (curexp)) {
+       			curexp = parseInt(curexp,10);
+       			result3 = curexp * 600;
+       			result3alt = curexp;
+       			result3alted = curexp * 1000;
+				$("#reshresult3").text (number_format(result3) +" Exp Per Hour.");
+            	$("#reshresult3alt").text (number_format(result3alt) +" Exp Per Action.");
+            	$("#reshresult3alted").text (number_format(result3alted) +" Exp Per 1k Actions.");
+       			if (isNumber (ractions)) {
+	       			result3day = curexp * ractions;
+       				$("#reshresult3day").text (number_format(result3day) +" Exp Per Day.");
+   				}
+   			}	
+       		if (isNumber (resprice)) {
+	       		resprice = parseInt(resprice,10);
+       			result2 = result * resprice;
+       			result2alt = result2 / 600;
+       			result2alted = result2alt * 1000;
+            	$("#reshresult2").text (number_format(result2) +" Gold Per Hour.");
+            	$("#reshresult2alt").text (number_format(result2alt) +" Gold Per Action.");
+            	$("#reshresult2alted").text (number_format(result2alted) +" Gold Per 1k Actions.");
+       			if (isNumber (ractions)) {
+	       			result2day = result2alt * ractions;
+	       			$("#reshresult2day").text (number_format(result2day) +" Gold Per Day.");
+	       		}
+   			}
+            $("#reshresult").text (number_format(result) +" Resources Per Hour.");
+            $("#reshresultalt").text (number_format(resultalt) +" Resources Per Action.");
+            $("#reshresultalted").text (number_format(resultalted) +" Resources Per 1k Actions.");
+        	if (isNumber (ractions)) {
+	        	resultday = resultalt * ractions;
+	        	$("#reshresultday").text (number_format(resultday) +" Resources Per Day.");
+        	}
+        	if (isNumber (basetax) && isNumber (quinttax) ) {
+        		result4 = (basetax * actions) + (quinttax * qactions);
+        		result4alt = result4 / 600;
+        		result4alted = result4alt * 1000;
+            	$("#reshresult4").text (number_format(result4) +" Tax Per Hour.");
+            	$("#reshresult4alt").text (number_format(result4alt) +" Tax Per Action.");
+            	$("#reshresult4alted").text (number_format(result4alted) +" Tax Per 1k Actions.");
+        		if (isNumber (ractions)) {
+	        		result4day = result4alt * ractions;
+	        		$("#reshresult4day").text (number_format(result4day) +" Tax Per Day.");
+        		}
+       			if (isNumber (resprice)) {
+       				result5 = result4 * resprice;
+       				result5alt = result5 / 600;
+       				result5alted = result5alt * 1000;
+            		$("#reshresult5").text (number_format(result5) +" Tax Value Per Hour.");
+            		$("#reshresult5alt").text (number_format(result5alt) +" Tax Value Per Action.");
+            		$("#reshresult5alted").text (number_format(result5alted) +" Tax Value Per 1k Actions.");
+       				if (isNumber (ractions)) {
+	       				result5day = result5alt * ractions;
+	       				$("#reshresult5day").text (number_format(result5day) +" Tax Value Per Day.");
+	       			}
+   				}
+        	}
+        	$(".reshreturn").show();
+        	$("#resherrordis").hide();
+        } else {
+	        $("#resherrordis").show();
+	        $("#resherror").show();
+            $("#resherror").text ("Incorrect Input!");
+        }
+    });
+    $("#tsgearcalc").click (function () {
+	    var gearlevel = $("#tsgearlevel").val();
+	    var geararmory = $("#tsgeararmory").val();
+		var gearuplevel = $("#tsgearuplevel").val();
+		var gtier = document.getElementById("tsgeartier").value;
+		$(".gearreturn").hide();
+	    if (isNumber (gearlevel) && isNumber (geararmory) && isNumber (gearuplevel)) {
+			$("#tsgearquintresult").text("");
+			$("#tsgearresresult").text("");
+			$("#tsgearexpresult").text("");
+			$("#tsgearerror").text ("");
+		    var temp1 = ((Math.pow(1.0015,gearlevel)) / 100) * 0.5 * (1 + (geararmory/100));
+		    var temp2 = 1 + (gearuplevel/10);
+		    var tempA1 = temp1 * 0.5 * temp2;
+		    var tempB1 = temp1 * 1 * temp2;
+		    var tempC1 = temp1 * 2 * temp2;
+		    var gmult = 1;
+			if (gtier == 0){gmult = 0.46875;}
+			if (gtier == 1){gmult = 0.625;}
+			if (gtier == 2){gmult = 0.71875;}
+			if (gtier == 3){gmult = 0.78125;}
+			if (gtier == 4){gmult = 0.90625;}
+			if (gtier == 5){gmult = 1;}
+		    var tempA2 = tempA1 * gmult * 10000;
+		    var tempB2 = tempB1 * gmult * 10000;
+		    var tempC2 = tempC1 * gmult * 1000;
+		    var result1 = Math.round(tempA2) /100;
+		    var result2 = Math.round(tempB2) /100;
+		    var result3 = Math.round(tempC2) /10;
+		    
+			$("#tsgearquintresult").text ("+" + result1 + "% Quint.");
+			$("#tsgearresresult").text ("+" + result2 +"% Resources.");
+			$("#tsgearexpresult").text ("+" + result3 +"% TS Exp.");
+			$(".gearreturn").show();
+		} else {
+			$("#tsgearerror").show();
+			$("#tsgearerror").text ("Incorrect Input!");
+		}
+    });
+    $("#quintcalc").click (function () {
+        var scrapyard = $("#quintscrap").val();
+        var curquint = $("#curquint").val();
+        var wantedquint = $("#wantedquint").val();
+        if (isNumber (curquint) && isNumber (wantedquint)) {
+            wantedquint = parseFloat (wantedquint,10);
+            curquint = parseFloat (curquint,10);
+            curquint *= 10;
+            wantedquint *= 10;
+            var result = 0;
+            while (curquint < wantedquint) {
+                curquint++;
+                result += Math.round(Math.pow(0.99,scrapyard) * curquint * 20);
+            }
+            $("#quintresult").text (number_format(result) +" Spare Parts Required.");
+        } else {
+            $("#quintresult").text ("0 Spare Parts Required.");
+        }
+    });
+    $("#rescalc").click (function () {
+        var scrapyard = $("#resscrap").val();
+        var curres = $("#curres").val();
+        var wantedres = $("#wantedres").val();
+        if (isNumber (curres) && isNumber (wantedres)) {
+            wantedres = parseFloat (wantedres,10);
+            curres = parseFloat (curres,10);
+            curres *= 10;
+            wantedres *= 10;
+            var result = 0;
+            while (curres < wantedres) {
+                curres++;
+                result += Math.round(Math.pow(0.99,scrapyard) * curres * 10);
+            }
+            $("#resresult").text (number_format(result) +" Spare Parts Required.");
+        } else {
+            $("#resresult").text ("0 Spare Parts Required.");
+        }
+    });
+    $("#questcalc").click (function () {
+        var curquest = $("#curquest").val();
+        var wantedquest = $("#wantedquest").val();
+        if (isNumber (curquest) && isNumber (wantedquest)) {
+            wantedquest = parseInt (wantedquest,10);
+            curquest = parseInt(curquest,10);
+            var result = 0;
+            while (curquest < wantedquest) {
+                curquest++;
+                result += Math.round(curquest * 2);
+            }
+            $("#questresult").text (number_format(result) +" Rhodium Required.");
+        } else {
+            $("#questresult").text ("0 Rhodium Required.");
+        }
+    });
+    $("#spcalc").click (function () {
+        var cursp = $("#cursp").val();
+        var wantedsp = $("#wantedsp").val();
+        if (isNumber (cursp) && isNumber (wantedsp)) {
+            wantedsp = parseInt (wantedsp,10);
+            cursp = parseInt(cursp,10);
+            var result = 0;
+            while (cursp < wantedsp) {
+                cursp++;
+                result += Math.round(cursp * 2);
+            }
+            $("#spresult").text (number_format(result) +" Rhodium Required.");
+        } else {
+            $("#spresult").text ("0 Rhodium Required.");
+        }
+    });
+    $("#gdcalc").click (function () {
+        var curgd = $("#curgd").val();
+        var wantedgd = $("#wantedgd").val();
+        if (isNumber (curgd) && isNumber (wantedgd)) {
+            wantedgd = parseInt (wantedgd,10);
+            curgd = parseInt(curgd,10);
+            var result = 0;
+            while (curgd < wantedgd) {
+                curgd++;
+                result += Math.round(curgd * 2);
+            }
+            $("#gdresult").text (number_format(result) +" Rhodium Required.");
+        } else {
+            $("#gdresult").text ("0 Rhodium Required.");
+        }
+    });
+    $("#xpcalc").click (function () {
+        var curxp = $("#curxp").val();
+        var wantedxp = $("#wantedxp").val();
+        if (isNumber (curxp) && isNumber (wantedxp)) {
+            wantedxp = parseInt (wantedxp,10);
+            curxp = parseInt(curxp,10);
+            var result = 0;
+            while (curxp < wantedxp) {
+                curxp++;
+                result += 2 + Math.floor(curxp / 10 - 0.01);
+            }
+            $("#xpresult").text (number_format(result) +" Rhodium Required.");
+        } else {
+            $("#xpresult").text ("0 Rhodium Required.");
+        }
+    });
+    $("#boundcalc").click (function () {
+        var curbound = $("#curbound").val();
+        var wantedbound = $("#wantedbound").val();
+        if (isNumber (curbound) && isNumber (wantedbound)) {
+            wantedbound = parseInt (wantedbound,10);
+            curbound = parseInt(curbound,10);
+            var result = 0;
+            while (curbound < wantedbound) {
+                curbound++;
+                result += curbound * 1000000;
+            }
+            $("#boundresult").text (number_format(result) +" Gold Required.");
+        } else {
+            $("#boundresult").text ("0 Gold Required.");
+        }
+    });
+    $("#expcalc").click (function () {
+        var curexp = $("#curexp").val();
+        if (isNumber (curexp)) {
+            curexp = parseInt(curexp,10);
+            var result = 0;
+            result = curexp * 600
+            $("#expresult").text (number_format(result) +" Exp Per Hour.");
+        } else {
+            $("#expresult").text ("0 Exp Per Hour.");
+        }
+    });
+    $("#ingotcalc").click (function () {
+        var ww = $("#ingotww").val();
+        var db = $("#ingotdb").val();
+        console.log(db)
+        //var gra = $("#ingotgr").val();
+        if (isNumber (ww) && isNumber (db) /*&& isNumber (gra)*/) {
+            ww = parseInt(ww,10);
+            db = parseInt(db,10);
+            //gra = parseInt(gra,10);
+            //var gr = 2*gra;
+            //if (gra > 1) {
+	            //if (gra < 4) {
+	            	//gr += (0.2*(gra-1)) * gra;
+            	//} else if (gra > 3) {
+	            	//gr += (0.*(gra-1)) * gra;
+            	//}
+			//}
+           	db = db / 100;
+           	db = db + 1;
+            ww /= 100;
+            ww += 1;
+           	//gr /= 100;
+           	//gr += 1;
+            result = 6 / db;
+            result /= ww;
+            //result /= gr;
+            result = Math.round(result*1000);
+            var result2 = Math.round(((10000 / result) / 10)*100);
+            $("#ingotresult").text("1 Ingot Per "+ number_format(result) +" Actions.");
+            $("#ingotresult2").text("" + number_format(result2) + "% Dungeon Uptime.");
+        } else {
+            $("#ingoterror").text ("Incorrect Input!");
+        }
+    });
+</script>
+</body>
+</html>
