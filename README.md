@@ -22,10 +22,10 @@ Given that Puls3 is a tester, most features (without being given away) will be m
 ## Support
 This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
 
-This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching.
+This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required.
 
 ## Contact
-[Discord](https://discord.gg/sX7nfjt)
+I have a [Discord](https://discord.gg/sX7nfjt).
 
 ## Issues
 There are currently no known issues in the current release.
@@ -59,6 +59,6 @@ Try to keep everything optional to allow for a variety of playstyles.
 ## Clone Policy
 If you create a clone or fork of this script and make edits, as long as you give credit where credit is due and provide a link to the original, you may create said clone and distribute it as much as you like within the Pendoria rules.
 
-Also, if all you're doing is small useful changes, consider contributing!
+Also, if all you're doing is small and useful changes, consider contributing!
 
 **Pro Tip:** GitHub is better than Greasyfork / Pastebin! (Fork this repository)
