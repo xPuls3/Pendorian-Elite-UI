@@ -8,7 +8,13 @@ Created by [Puls3](https://github.com/Xer0-Puls3)!
 ## Downloads
 [Download](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
 
-Legacy releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
+Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
+
+## Installation
+* First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
+* Then go to the Downloads section above, and click the download link.
+* Violentmonkey will display a "confirm Installation" button, confirm the installation.
+* Afterwards refresh Pendoria.
 
 ## Notice
 This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
