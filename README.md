@@ -39,6 +39,7 @@ If you find any issues use the issues feature on GitHub using as much detail as 
 
 ## Features
 The settings can be found at the top of the script.
+Modify them via your script editor.
 * Dual View. (Actions and Content at the same time)
 * Legacy Sidebar.
 * Frameless mode.
