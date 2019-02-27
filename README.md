@@ -60,6 +60,7 @@ Modify them via your script editor.
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use GitHub to contribute!
+Any contributors will be given the credit they deserve, unless requested otherwise.
 
 Try to keep everything optional to allow for a variety of playstyles.
 
