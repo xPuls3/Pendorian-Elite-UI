@@ -40,8 +40,6 @@ var Finished = 0;
 // 0 = False
 
 // Always Ignore Declarations!
-// Example Declaration:
-// Modules.Example = {};
 
 // Recolor Module
 
