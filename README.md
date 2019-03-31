@@ -17,13 +17,11 @@ Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-El
 * Afterwards refresh Pendoria.
 
 ## Notice
-This script can be weird at times when used on Chrome, though easily fixed Puls3 doesn't use Chrome and as such doesn't notice them, remember to report any bugs you find!
-
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
-
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
 Given that Puls3 is a tester, most features (without being given away) will be made compatible with this script before their release on the live server.
+
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
 
 ## Support
 This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
@@ -40,23 +38,17 @@ If you find any issues use the issues feature on GitHub using as much detail as 
 ## Features
 The settings can be found at the top of the script.
 Modify them via your script editor.
-* Dual View. (Actions and Content at the same time)
+* Recolor.
+* Frameless Mode.
+* Dual View.
+* Favicon.
+* Background.
 * Legacy Sidebar.
-* Frameless mode.
-* Custom Re-Color.
-* Re-Color Presets.
-* Remove Battle Stats From Header.
-* Remove Battle Tab from actions menu.
-* Remove TS Tab from actions menu.
-* Remove specific quest options in Quest Selection menu.
-* Remove the Pendoria Logo.
-* Remove each TS in TS Selection box.
-* Remove the TS Selection box.
-* Remove the TS Selection box & Work button.
-* Toggle added height to make up for removed TS selection box & work button.
-* Edit the wallpaper. (Pendoria vs Elite / Custom)
-* Set wallpaper to a custom image.
-* Extend the header above chat for Side-By-Side mode.
+* Remove Pendoria Logo.
+* Dungeon Sidebar.
+* RemoveTabs.
+* Remove Tradeskill Dropdown.
+* Remove Battle Stats.
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use GitHub to contribute!
