@@ -38,17 +38,17 @@ If you find any issues use the issues feature on GitHub using as much detail as 
 ## Features
 The settings can be found at the top of the script.
 Modify them via your script editor.
-* Recolor.
+* Recolor Everything.
 * Frameless Mode.
-* Dual View.
-* Favicon.
-* Background.
+* Dual View. (Shows content & actions)
+* Edit Favicon.
+* Edit Background.
 * Legacy Sidebar.
 * Remove Pendoria Logo.
-* Dungeon Sidebar.
-* RemoveTabs.
-* Remove Tradeskill Dropdown.
-* Remove Battle Stats.
+* Make Dungeons a sidebar link.
+* Remove the action tabs.
+* Remove tradeskill dropdown.
+* Remove battle stats on the header.
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use GitHub to contribute!
