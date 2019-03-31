@@ -39,8 +39,6 @@ var Finished = 0;
 // 1 = True
 // 0 = False
 
-// Always Ignore Declarations!
-
 // Recolor Module
 
 	// Changes the color of almost everything.
@@ -112,13 +110,13 @@ var Finished = 0;
 	// Removes the Dungeon tab and adds a link on the sidebar.
 
 	// Dungeon Sidebar Module, Enable / Disable
-	Modules.DungeonSidebar.Status = 0;
+	Modules.DungeonSidebar.Status = 1;
 	
 // Remove Battle Stats
 	// Removes the battle stats in the header.
 	
 	// Remove Battle Stats, Enable / Disable
-	Modules.RemoveBattleStats.Status = 1;
+	Modules.RemoveBattleStats.Status = 0;
 
 // Remove Tabs Module
 	// Removes the tabs on the actions page.
