@@ -19,7 +19,7 @@ Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-El
 ## Notice
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
-Given that Puls3 is a tester, most features (without being given away) will be made compatible with this script before their release on the live server.
+Given that Puls3 is a tester and active on the development server, new features will most likely be made compatable before they arrive on the live game.
 
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
 
