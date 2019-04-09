@@ -14,7 +14,7 @@ Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-El
 * First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
 * Then go to the Downloads section above, and click the download link.
 * Violentmonkey will display a "confirm Installation" button, confirm the installation.
-* Afterwards refresh Pendoria.
+* Refresh Pendoria.
 
 ## Notice
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
@@ -27,6 +27,13 @@ If you have any issues using Violentmonkey's 'check for updates' feature and hav
 This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
 
 This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required.
+
+## Customization
+* Open up the Violentmonkey extension.
+* Open up the Violentmonkey dashboard.
+* Scroll to Pendorian Elite UI and click the edit button.
+* Scroll to the [Options] section.
+* Customize the values.
 
 ## Contact
 I have a [Discord](https://discord.gg/sX7nfjt).
