@@ -36,7 +36,9 @@ This script was made for Violentmonkey though may work on other extensions, if y
 * Customize the values.
 
 ## Contact
-I have a [Discord](https://discord.gg/sX7nfjt).
+My name is Puls3 in Pendoria.
+
+I also have a [Discord](https://discord.gg/sX7nfjt).
 
 ## Issues
 There are currently no known issues in the current release.
