@@ -67,7 +67,9 @@ Any contributors will be given the credit they deserve, unless requested otherwi
 Try to keep everything optional to allow for a variety of playstyles.
 
 ## Clone Policy
-If you create a clone or fork of this script and make edits, as long as you give credit where credit is due and provide a link to the original, you may create said clone and distribute it as much as you like within the Pendoria rules.
+If you create a clone or fork of this script and make edits, as long as you give credit where credit is due and provide a link to the original, you may create said clone and distribute it via Github. However, you are not allowed to distribute this script, or any alteration of this script, on any other sites. (eg. Greasyfork or BitBucket)
+
+**This is subject to change, Puls3 maintains all rights to Pendorian Elite UI at all times.**
 
 Also, if all you're doing is small and useful changes, consider contributing!
 
