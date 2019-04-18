@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.0
+// @version 2.0.1
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -213,7 +213,7 @@ function Recolor() {
 	
 	/* UI CSS Below */
 	
-	#invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event, #mailcount, #action-info {
+	#invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event, #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
 		color: var(--Elite-Color) !important;
 	}
 	#header-stats, #quest_done, #quest_prog {
@@ -414,6 +414,9 @@ function RemoveLogo() {
 	}
 	#logo {
 		display: none;
+	}
+	#content > .wrapper:first-child > header:first-child {
+		pointer-events: none;
 	}`
 	Style = Style + "<style>" + t + "</style>";
 	Modules.RemoveLogo.Finished = 1;
