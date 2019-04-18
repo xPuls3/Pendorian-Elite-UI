@@ -219,7 +219,7 @@ function Recolor() {
 	#header-stats, #quest_done, #quest_prog {
 		color: var(--Elite-Color);
 	}
-	.green, #expwidth, #building-progress, #chat-composer input[type="submit"], .toast-success {
+	.green, #expwidth, #building-progress, #profile-scraptown-building-progress, #profile-encampment-building-progress, #chat-composer input[type="submit"], .toast-success {
 		background-color: var(--Elite-Color) !important;
 	}
 	button {
