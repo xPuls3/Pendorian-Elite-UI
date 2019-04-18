@@ -213,7 +213,7 @@ function Recolor() {
 	
 	/* UI CSS Below */
 	
-	#invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event, #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
+	#invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event[style="color:red;"], #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
 		color: var(--Elite-Color) !important;
 	}
 	#header-stats, #quest_done, #quest_prog {
