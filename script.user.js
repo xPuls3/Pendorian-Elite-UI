@@ -417,6 +417,9 @@ function RemoveLogo() {
 	}
 	#content > .wrapper:first-child > header:first-child {
 		pointer-events: none;
+	}
+	#profile-dungeon-queue-refresh {
+		pointer-events: auto;
 	}`
 	Style = Style + "<style>" + t + "</style>";
 	Modules.RemoveLogo.Finished = 1;
