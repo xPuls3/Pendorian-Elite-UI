@@ -3,46 +3,9 @@ Changes a large portion of Pendoria's text and UI to 'Elite' blue and makes smal
 
 Every last feature can be toggled, including the recolor!
 
-Created by [Puls3](https://github.com/Xer0-Puls3)!
-
-## Downloads
-[Download](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
-
-Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases).
-
-## Installation
-* First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
-* Then go to the Downloads section above, and click the download link.
-* Violentmonkey will display a "confirm Installation" button, confirm the installation.
-* Refresh Pendoria.
-
-## Customization
-* Open up the Violentmonkey extension.
-* Open up the Violentmonkey dashboard.
-* Scroll to Pendorian Elite UI and click the edit button.
-* Scroll to the [Options] section.
-* Customize the values.
-
-## Notice
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
-Given that Puls3 is a tester and active on the development server, new features will most likely be made compatable before they arrive on the live game.
-
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
-
-## Support
-This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
-
-This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required.
-
-## Contact
-My name is Puls3 in Pendoria.
-
-I also have a [Discord](https://discord.gg/sX7nfjt).
-
-## Issues
-There are currently no known issues in the current release.
-If you find any issues use the issues feature on GitHub using as much detail as possible so that it can be fixed swiftly.
+Created by [Puls3](https://github.com/Xer0-Puls3)!
 
 ## Features
 The settings can be found at the top of the script.
@@ -58,6 +21,50 @@ Modify them via your script editor.
 * Remove the action tabs.
 * Remove tradeskill dropdown.
 * Remove battle stats on the header.
+* Full customizability!
+
+## Downloads
+[Current Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
+
+[Latest 1.X release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
+
+[Older releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
+
+## Installation
+* First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
+* Then go to the Downloads section above, and click the download link.
+* Violentmonkey will display a "confirm Installation" button, confirm the installation.
+* Refresh Pendoria.
+
+## Customization
+* Open up the Violentmonkey extension.
+* Open up the Violentmonkey dashboard.
+* Scroll to Pendorian Elite UI and click the edit button.
+* Scroll to the [Options] section.
+* Customize the values.
+
+## Notice
+Given that Puls3 is a tester and active on the development server, new features will most likely be made compatable before they arrive on the live game.
+
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
+
+## Support
+This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
+
+This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required.
+
+No support is provided to older releases, only the latest release.
+
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
+
+## Contact
+My name is Puls3 in Pendoria.
+
+I also have a [Discord](https://discord.gg/sX7nfjt).
+
+## Issues
+There are currently no known issues in the current release.
+If you find any issues use the issues feature on GitHub using as much detail as possible so that it can be fixed swiftly.
 
 ## Contributing
 If you are capable, and have a good idea that you want to implement, feel free to use GitHub to contribute!
@@ -65,6 +72,8 @@ If you are capable, and have a good idea that you want to implement, feel free t
 Any contributors will be given the credit they deserve, unless requested otherwise.
 
 Try to keep everything optional to allow for a variety of playstyles.
+
+All additions must be permitted by Pendoria staff.
 
 ## Clone Policy
 If you create a clone or fork of this script and make edits, as long as you give credit where credit is due and provide a link to the original, you may create said clone and distribute it via Github. However, you are not allowed to distribute this script, or any alteration of this script, on any other sites. (eg. Greasyfork or BitBucket)
