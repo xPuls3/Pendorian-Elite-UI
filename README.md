@@ -24,11 +24,13 @@ Modify them via your script editor.
 * Full customizability!
 
 ## Downloads
-[Latest Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
+[Latest Dev Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/dev/script.user.js)
+
+[Latest Stable Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
 
 [Last 1.x Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
 
-[Older releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
+[Older Releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
 
 ## Installation
 * First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
