@@ -16,6 +16,13 @@ Previous releases can be found [here](https://github.com/Xer0-Puls3/Pendorian-El
 * Violentmonkey will display a "confirm Installation" button, confirm the installation.
 * Refresh Pendoria.
 
+## Customization
+* Open up the Violentmonkey extension.
+* Open up the Violentmonkey dashboard.
+* Scroll to Pendorian Elite UI and click the edit button.
+* Scroll to the [Options] section.
+* Customize the values.
+
 ## Notice
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
@@ -27,13 +34,6 @@ If you have any issues using Violentmonkey's 'check for updates' feature and hav
 This script is was created for Firefox, not Chrome, Chrome support relies on users reporting errors.
 
 This script was made for Violentmonkey though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required.
-
-## Customization
-* Open up the Violentmonkey extension.
-* Open up the Violentmonkey dashboard.
-* Scroll to Pendorian Elite UI and click the edit button.
-* Scroll to the [Options] section.
-* Customize the values.
 
 ## Contact
 My name is Puls3 in Pendoria.
