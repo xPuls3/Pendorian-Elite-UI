@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.0.1
+// @version 2.0.2
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -418,7 +418,7 @@ function RemoveLogo() {
 	#content > .wrapper:first-child > header:first-child {
 		pointer-events: none;
 	}
-	#profile-dungeon-queue-refresh {
+	#header-stats {
 		pointer-events: auto;
 	}`
 	Style = Style + "<style>" + t + "</style>";
