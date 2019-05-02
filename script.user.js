@@ -85,6 +85,9 @@ var Finished = 0;
 	// Background Module, Background Link
 	Modules.Background.Link = "https://zerthox.github.io/ClearVision/images/sapphire.jpg";
 
+	// 'Stellar collision' by KuldarLeement
+	// Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
+
 // Favicon Module, Declaration
 	// Changes the favicon.
 
