@@ -26,9 +26,9 @@ Modify them via your script editor.
 ## Downloads
 [Latest Dev Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/dev/script.user.js)
 
-[Latest Stable Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js)
+[Latest Stable Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js) (recommended)
 
-[Last 1.x Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
+[Final 1.x Legacy Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
 
 [Older Releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
 
