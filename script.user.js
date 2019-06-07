@@ -13,25 +13,6 @@
 // It's very easy to edit!
 // If cloned please give credit!
 
-
-
-
-// Changes in 2.1
-// Added add extra links
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Also follow the Clone Policy!
 // Clone Policy; https://goo.gl/AyAdqy
 
