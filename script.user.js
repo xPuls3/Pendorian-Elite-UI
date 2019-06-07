@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.0.2
+// @version 2.1.0
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -27,6 +27,7 @@ var Modules = {
 	LegacySidebar: {},
 	RemoveLogo: {},
 	DungeonSidebar: {},
+	ExtraBottomLinks: {},
 	RemoveTabs: {},
 	RemoveTradeskillSelection: {},
 	RemoveBattleStats: {}
@@ -85,7 +86,7 @@ var Finished = 0;
 	// Background Module, Background Link
 	Modules.Background.Link = "https://zerthox.github.io/ClearVision/images/sapphire.jpg";
 
-	// 'Stellar collision' by KuldarLeement
+	// 'Stellar Collision' by KuldarLeement
 	// Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
 
 // Favicon Module, Declaration
@@ -115,7 +116,7 @@ var Finished = 0;
 	// Dungeon Sidebar Module, Enable / Disable
 	Modules.DungeonSidebar.Status = 1;
 	
-// Remove Battle Stats
+// Remove Battle Stats Module
 	// Removes the battle stats in the header.
 	
 	// Remove Battle Stats, Enable / Disable
@@ -130,7 +131,7 @@ var Finished = 0;
 	// Remove Tabs Module, Enable / Disable
 	Modules.RemoveTabs.Status = 0;
 	
-// Remove Tradeskill Selection
+// Remove Tradeskill Selection Module
 	// Removes the Tradeskill Selection dropdown next to the work button.
 	// Removes the work button.
 	// Ensure that you are already doing the TS that you want to continue doing!
@@ -143,6 +144,49 @@ var Finished = 0;
 	// Adds a small amount of space above the action text.
 	// Without this it will look awkward.
 	Modules.RemoveTradeskillSelection.AddSpace = 0;
+
+// Extra Bottom Links Module
+	// Adds more links to the bottom of the screen
+	
+	// Extra Bottom Links Module, Enable / Disable
+	Modules.ExtraBottomLinks.Status = 1;
+	
+	// Declarations, Ignore this!
+	Modules.ExtraBottomLinks.Links = {};
+	
+	// Add links below.
+	
+		// Make sure you use a different declaration for each!
+		// For example, if you have the following, you cannot have another that also says 'Example'!
+		// You would have to change it to 'Example2', or something else that uses letters!
+		// 'Modules.ExtraBottomLinks.Links.Example'
+		
+		// Karubo's ROI Calculator Link
+		Modules.ExtraBottomLinks.Links.ROI = {
+			Name: "Karubo's ROI",
+			Link: "http://tiny.cc/KaruboROI"
+		}
+		
+		Modules.ExtraBottomLinks.Links.Calcs = {
+			Name: "Puls3's Calcs",
+			Link: "https://xer0-puls3.github.io/calculators/"
+		}
+		
+	// Example Links Section Below!
+	/*
+		Modules.ExtraBottomLinks.Links.Example1 = {
+			Name: "Example",
+			Link: "www.example.com"
+		}
+		Modules.ExtraBottomLinks.Links.Example2 = {
+			Name: "Example2",
+			Link: "www.example2.com"
+		}
+		Modules.ExtraBottomLinks.Links.Example3 = {
+			Name: "Example3",
+			Link: "www.example3.com"
+		}
+	*/
 
 // The Menu Is Currently In Development!
 // Please Ignore!
@@ -173,6 +217,7 @@ function Origin() {
 	if (Modules.RemoveTabs.Status == 1) { RemoveTabs() }
 	if (Modules.RemoveTradeskillSelection.Status == 1) { RemoveTradeskillSelection() }
 	if (Modules.RemoveBattleStats.Status == 1) { RemoveBattleStats() }
+	if (Modules.ExtraBottomLinks.Status == 1) { ExtraBottomLinks() }
 }
 
 function Finish() {
@@ -518,6 +563,18 @@ function RemoveTradeskillSelection() {
 	}
 	Style = Style + "<style>" + t + "</style>";
 	Modules.RemoveTradeskillSelection.Finished = 1;
+	if ( CheckFinished() ) { Finish() }
+}
+
+function ExtraBottomLinks() {
+	var k = Object.keys(Modules.ExtraBottomLinks.Links);
+	var e = $("#gameframe-menu #togglechat").parent();
+	var t
+	for (i = 0; i < k.length; i++) {
+		Modules.ExtraBottomLinks.Links[k[i]]
+		e.after('<li style="vertical-align: top;"><a href="' + Modules.ExtraBottomLinks.Links[k[i]].Link + '" target="_blank">' + Modules.ExtraBottomLinks.Links[k[i]].Name + '</a></li>');
+	}
+	Modules.ExtraBottomLinks.Finished = 1;
 	if ( CheckFinished() ) { Finish() }
 }
 
