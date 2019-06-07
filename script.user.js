@@ -77,7 +77,7 @@ var Finished = 0;
 	// The how far down the frame the line between content and actions is.
 	Modules.DualView.Line = 220;
 
-// Background Module
+// Background Module, Declaration
 	// Changes the background.
 
 	// Background Module, Enable / Disable
@@ -85,11 +85,11 @@ var Finished = 0;
 
 	// Background Module, Background Link
 	Modules.Background.Link = "https://zerthox.github.io/ClearVision/images/sapphire.jpg";
-	
+
 	// 'Stellar Collision' by KuldarLeement
 	// Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
 
-// Favicon Module
+// Favicon Module, Declaration
 	// Changes the favicon.
 
 	// Favicon Module, Enable / Disable
@@ -144,7 +144,7 @@ var Finished = 0;
 	// Adds a small amount of space above the action text.
 	// Without this it will look awkward.
 	Modules.RemoveTradeskillSelection.AddSpace = 0;
-	
+
 // Extra Bottom Links Module
 	// Adds more links to the bottom of the screen
 	
