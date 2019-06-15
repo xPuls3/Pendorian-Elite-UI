@@ -1,7 +1,7 @@
 # Pendorian Elite UI
 Changes a large portion of Pendoria's text and UI to 'Elite' blue and makes small changes to the UI.
 
-Every last feature can be toggled, including the recolor!
+Every last feature can be customized or disabled, including the recolor!
 
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
