@@ -55,13 +55,13 @@ This script is was created for Firefox and only Firefox, not Chrome, not Opera, 
 
 I'm at a dilema when it comes to browsers, for now Firefox remains the official standard, though it might switch to Chrome.
 
-This script was made for Violentmonkey, though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required. Greasemonkey users are greatly emphasized to switch as it is the cause of many compatability issues with cripts.
+This script was made for Violentmonkey, though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required. Greasemonkey users beware, it is the cause of many compatability issues.
 
-Microsoft Edge & Internet Explorer experience native issues inside Pendoria, and are incapable of running correctly - No support is provided to either of them. If you use either you should look into much better alternatives.
+Microsoft Edge & Internet Explorer experience native issues inside Pendoria, and are incapable of running correctly - No support is provided to either of them. If you use either you should look into alternatives.
 
 No support is provided to older versions, only the latest releases, this includes older versions of browsers and extensions.
 
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall and reinstall directly from GitHub.
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall it, and reinstall directly from GitHub.
 
 ## Contact
 My name is Puls3 in Pendoria, if you have any need to contact me you should do it there. If you require an immediate response message me directly on Discord.
