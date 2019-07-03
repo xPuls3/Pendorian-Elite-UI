@@ -30,7 +30,7 @@ Modify them via your script editor.
 
 [Final 1.x Legacy Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
 
-[Older Releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
+[All Releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
 
 ## Installation
 * First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
