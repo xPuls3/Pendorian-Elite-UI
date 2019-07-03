@@ -553,7 +553,7 @@ function RemoveTradeskillSelection() {
 	var t = `
 	#actioncontent > div:nth-child(2) {
 		display: none !important;
-	`;
+	}`;
 	if (Modules.RemoveTradeskillSelection.AddSpace == 1) { 
 		t = t + `
 		#actioncontent {
