@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.1.1
+// @version 2.2-beta
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -158,13 +158,16 @@ var Finished = 0;
 	
 		// Make sure you use a different declaration for each!
 		// For example, if you have the following, you cannot have another that also says 'Example'!
-		// You would have to change it to 'Example2', or something else that uses letters!
+		// You would have to change it to 'Example2', or something else that is alphanumeric!
 		// 'Modules.ExtraBottomLinks.Links.Example'
 		
 		// Karubo's ROI Calculator Link
 		Modules.ExtraBottomLinks.Links.ROI = {
 			Name: "Karubo's ROI",
-			Link: "http://tiny.cc/KaruboROI"
+			// New Karubo Website
+			Link: "http://pendcalc.karubo.de/"
+			// Old Google Sheets URL
+			// Link: "http://tiny.cc/KaruboROI"
 		}
 		
 		Modules.ExtraBottomLinks.Links.Calcs = {
