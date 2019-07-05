@@ -25,9 +25,10 @@ If applicable, add screenshots to help explain your problem.
 
 Please complete the following information**
  - OS: [e.g. Windows, Ubuntu]
- - Browser [e.g. Chrome, Firefox]
- - Version [e.g. 2.0]
+ - Browser [e.g. Chrome, Firefox, Opera]
+ - Browser Version [e.g. 2.0]
  - Extension [e.g. Violentmonkey, Greasemonkey, Tampermonkey]
+ - Pendorian Elite UI Version [eg. 2.1]
 
 **Additional context**
 Add any other context about the problem here.

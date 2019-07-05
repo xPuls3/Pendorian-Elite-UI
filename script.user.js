@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.1
+// @version 2.1.1
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -553,7 +553,7 @@ function RemoveTradeskillSelection() {
 	var t = `
 	#actioncontent > div:nth-child(2) {
 		display: none !important;
-	`;
+	}`;
 	if (Modules.RemoveTradeskillSelection.AddSpace == 1) { 
 		t = t + `
 		#actioncontent {
