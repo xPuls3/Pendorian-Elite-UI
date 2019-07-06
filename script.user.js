@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2-beta.1
+// @version 2.2-beta.2
 // @author Puls3
 // @include http*://*pendoria.net* 
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -16,6 +16,13 @@
 // Also follow the Clone Policy!
 // Clone Policy; https://goo.gl/AyAdqy
 
+// [Development Changes]
+// Moved tiny edits from the recolor to a new Edits Module.
+// Added a Rounded Borders Module.
+// Rewrote the core functions to make development easier.
+// Updated Karubo's ROI link to use his new link.
+// Updated old code to use better coding practices, no effect.
+
 // [Declarations]
 // Leave these few lines alone!
 Modules = Register();
@@ -24,7 +31,6 @@ let Style = "";
 // [Options]
 
 // Recolor Module
-
 	// Changes the color of almost everything.
 
 	// Recolor Module, Enable / Disable
@@ -40,7 +46,14 @@ let Style = "";
 	Modules.Recolor.MentionColor = "rgb(0, 219, 255)";
 	Modules.Recolor.MentionTabColor = "rgb(0, 153, 255)";
 
-// Frameless Module
+// Edits Module
+	// Tiny edits that used to be included with the recolor.
+	// Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
+
+	// Edits Module, Enable / Disable
+	Modules.Edits.Status = true;
+
+// Frameless Mode Module
 	// Removes all of the frames.
 	// Adjusts sizes to look good without frames.
 
@@ -60,7 +73,19 @@ let Style = "";
 	// The how far down the frame the line between content and actions is.
 	Modules.DualView.Line = 220;
 
-// Background Module, Declaration
+// Rounded Borders Module
+	// Makes most of the game's main area corners round.
+	// Requires the Frameless Mode Module.
+
+	// Rounded Borders Module, Enable / Disable
+	Modules.RoundedBorders.Status = false;
+
+	// Rounded Borders Module, Rounded Amount
+	// Changes how round the corners are.
+	// Uses CSS values!
+	Modules.RoundedBorders.Amount = "16px";
+
+// Background Module
 	// Changes the background.
 
 	// Background Module, Enable / Disable
@@ -186,17 +211,19 @@ Origin();
 function Register() {
 	return {
 		Recolor: {},
+		Edits: {},
 		Frameless: {},
 		DualView: {},
-		Favicon: {},
+		RoundedBorders: {},
 		Background: {},
+		Favicon: {},
 		LegacySidebar: {},
 		RemoveLogo: {},
 		DungeonSidebar: {},
-		ExtraBottomLinks: {},
+		RemoveBattleStats: {},
 		RemoveTabs: {},
 		RemoveTradeskillSelection: {},
-		RemoveBattleStats: {}
+		ExtraBottomLinks: {}
 	}
 }
 
@@ -205,8 +232,8 @@ function Origin() {
 	let promiseList = [];
 	for (let i = 0; i < k.length; i++) {
 		if (Modules[k[i]].Status) {
-			promiseList.push( new Promise( function (resolve, reject) {
-				Modules[k[i]].Code(resolve, reject);
+			promiseList.push( new Promise( function (resolve) {
+				Modules[k[i]].Code(resolve);
 			}));
 		}
 	}
@@ -221,7 +248,7 @@ function ApplyStyles() {
 
 function Define() {
 
-	Modules.Recolor.Code = function (resolve, reject) {
+	Modules.Recolor.Code = function (resolve) {
 		const t = `
 		/* COLOR CSS BELOW */
 		
@@ -319,9 +346,6 @@ function Define() {
 		#dungeon-progressbar-wrapper .progressbar, #encampment-building-progress  {
 			background-color: var(--Elite-Color) !important;
 		}
-		#dungeon-dialogue {
-			display: none;
-		}
 		
 		/* VIP Section */
 		
@@ -344,7 +368,17 @@ function Define() {
 		resolve();
 	};
 
-	Modules.Frameless.Code = function (resolve, reject) {
+	Modules.Edits.Code = function (resolve) {
+		const t = `
+		#dungeon-dialogue {
+			display: none;
+		}
+		`;
+		Style = Style + "<style id='Elite-Style-Recolor'>" + t + "</style>";
+		resolve();
+	};
+
+	Modules.Frameless.Code = function (resolve) {
 		t = `
 		.frame {
 			background: none;
@@ -352,6 +386,9 @@ function Define() {
 		}
 		#gameframe-status-wrapper:after, #progressbar-wrapper::after {
 			background: none;
+		}
+		#progressbar-wrapper {
+			bottom: 0px;
 		}
 		#progressbar-wrapper .progressbar {
 			top: 0px;
@@ -373,7 +410,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.DualView.Code = function (resolve, reject) {
+	Modules.DualView.Code = function (resolve) {
 		const t = `
 		html {
 			--DualViewLine: ` + Modules.DualView.Line + `px;
@@ -394,7 +431,22 @@ function Define() {
 		resolve();
 	};
 
-	Modules.Background.Code = function (resolve, reject) {
+	Modules.RoundedBorders.Code = function (resolve) {
+		const l = Modules.RoundedBorders.Amount;
+		const t = `
+		#profile, #menu, #stats-hourly, #ether-resources-sidebar,`
+		+ `#gameframe-battle, #gameframe-content, #drop-statistics,`
+		+ `#gameframe-status-wrapper, #chat, #chat-form {
+			border-radius: ` + l + ` !important;
+		}
+		.nav-tabs > li > a {
+			border-radius: ` + l + ` ` + l + `0px 0px !important;
+		}`;
+		Style = Style + "<style>" + t + "</style>";
+		resolve();
+	};
+
+	Modules.Background.Code = function (resolve) {
 		const t = `
 		body {
 			background-image: url( ` + Modules.Background.Link + ` ) !important;
@@ -403,13 +455,13 @@ function Define() {
 		resolve();
 	};
 
-	Modules.Favicon.Code = function (resolve, reject) {
+	Modules.Favicon.Code = function (resolve) {
 		const t = `<link rel="icon" href="` + Modules.Favicon.Link + `"/>`;
 		Style = Style + t;
 		resolve();
 	};
 
-	Modules.LegacySidebar.Code = function (resolve, reject) {
+	Modules.LegacySidebar.Code = function (resolve) {
 		t = `
 		#menu .frame {
 			display: none;
@@ -438,7 +490,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.RemoveLogo.Code = function (resolve, reject) {
+	Modules.RemoveLogo.Code = function (resolve) {
 		const t = `
 		#profile, #menu, #stats-hourly {
 			top: -50px;
@@ -456,7 +508,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.DungeonSidebar.Code = function (resolve, reject) {
+	Modules.DungeonSidebar.Code = function (resolve) {
 		const t = `
 		#gameframe-battle > ul > li:nth-child(3) {
 			display: none;
@@ -513,7 +565,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.RemoveBattleStats.Code = function (resolve, reject) {
+	Modules.RemoveBattleStats.Code = function (resolve) {
 		const t = `
 	.header-stats-user {
 		display: none;
@@ -522,7 +574,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.RemoveTabs.Code = function (resolve, reject) {
+	Modules.RemoveTabs.Code = function (resolve) {
 		const t = `
 	#gameframe-battle > ul {
 		display: none;
@@ -531,7 +583,7 @@ function Define() {
 		resolve();
 	};
 
-	Modules.RemoveTradeskillSelection.Code = function (resolve, reject) {
+	Modules.RemoveTradeskillSelection.Code = function (resolve) {
 		let t = `
 	#actioncontent > div:nth-child(2) {
 		display: none !important;
@@ -547,10 +599,9 @@ function Define() {
 		resolve();
 	};
 
-	Modules.ExtraBottomLinks.Code = function (resolve, reject) {
+	Modules.ExtraBottomLinks.Code = function (resolve) {
 		const k = Object.keys(Modules.ExtraBottomLinks.Links);
 		let e = $("#gameframe-menu #togglechat").parent();
-		let t;
 		for (i = 0; i < k.length; i++) {
 			e.after('<li style="vertical-align: top;"><a href="' + Modules.ExtraBottomLinks.Links[k[i]].Link + '" target="_blank">' + Modules.ExtraBottomLinks.Links[k[i]].Name + '</a></li>');
 		}
