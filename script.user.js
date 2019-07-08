@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2-beta.2
+// @version 2.2-beta.3
 // @author Puls3
-// @include http*://*pendoria.net* 
+// @include http*://*pendoria.net*
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @updateURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @grant none
+// @run-at document-end
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
 
@@ -17,6 +19,9 @@
 // Clone Policy; https://goo.gl/AyAdqy
 
 // [Development Changes]
+// Added support for the login page.
+// Fixed unintentional errors on the login page.
+// Added quite a bit more UserScript metadata.
 // Moved tiny edits from the recolor to a new Edits Module.
 // Added a Rounded Borders Module.
 // Rewrote the core functions to make development easier.
@@ -205,36 +210,98 @@ let Style = "";
 Define();
 
 // Call Module Functions
-Origin();
+if (isGame()) {
+	Origin(1);
+} else {
+	Origin(0);
+}
 
 // Lists All Modules
 function Register() {
 	return {
-		Recolor: {},
-		Edits: {},
-		Frameless: {},
-		DualView: {},
-		RoundedBorders: {},
-		Background: {},
-		Favicon: {},
-		LegacySidebar: {},
-		RemoveLogo: {},
-		DungeonSidebar: {},
-		RemoveBattleStats: {},
-		RemoveTabs: {},
-		RemoveTradeskillSelection: {},
-		ExtraBottomLinks: {}
+		Recolor: {
+			Name: "Recolor Module",
+			Restate: "Recolor",
+			RunLogin: true
+		},
+		Edits: {
+			Name: "Edits Module",
+			Restate: "Edits",
+			RunLogin: false
+		},
+		Frameless: {
+			Name: "Frameless Mode Module",
+			Restate: "Frameless",
+			RunLogin: true
+		},
+		DualView: {
+			Name: "DualView Module",
+			Restate: "DualView",
+			RunLogin: false
+		},
+		RoundedBorders: {
+			Name: "Rounded Borders Module",
+			Restate: "RoundedBorders",
+			RunLogin: true,
+		},
+		Background: {
+			Name: "Background Module",
+			Restate: "Background",
+			RunLogin: true
+		},
+		Favicon: {
+			Name: "Favicon Module",
+			Restate: "Favicon",
+			RunLogin: true
+		},
+		LegacySidebar: {
+			Name: "Legacy Sidebar Module",
+			Restate: "LegacySidebar",
+			RunLogin: false
+		},
+		RemoveLogo: {
+			Name: "Remove Logo Module",
+			Restate: "RemoveLogo",
+			RunLogin: false
+		},
+		DungeonSidebar: {
+			Name: "Dungeon Sidebar Module",
+			Restate: "Dungeon Sidebar",
+			RunLogin: false
+		},
+		RemoveBattleStats: {
+			Name: "Remove Battle Stats Module",
+			Restate: "RemoveBattleStats",
+			RunLogin: false
+		},
+		RemoveTabs: {
+			Name: "Remove Tabs Module",
+			Restate: "RemoveTabs",
+			RunLogin: false
+		},
+		RemoveTradeskillSelection: {
+			Name: "Remove Tradeskill Selection Module",
+			Restate: "RemoveTradeskillSelection",
+			RunLogin: false
+		},
+		ExtraBottomLinks: {
+			Name: "Extra Bottom Links Module",
+			Restate: "ExtraBottomLinks",
+			RunLogin: false
+		}
 	}
 }
 
-function Origin() {
+function Origin(isGame) {
 	const k = Object.keys(Modules);
 	let promiseList = [];
 	for (let i = 0; i < k.length; i++) {
-		if (Modules[k[i]].Status) {
-			promiseList.push( new Promise( function (resolve) {
-				Modules[k[i]].Code(resolve);
-			}));
+		if (isGame || Modules[k[i]].RunLogin) {
+			if (Modules[k[i]].Status) {
+				promiseList.push( new Promise( function (resolve) {
+					Modules[k[i]].Code(resolve);
+				}));
+			}
 		}
 	}
 	Promise.all(promiseList).then(function () {
@@ -242,8 +309,13 @@ function Origin() {
 	});
 }
 
+function isGame() {
+	return window.location.pathname.includes("/game");
+}
+
 function ApplyStyles() {
 	$("head").append(Style);
+	Style = "";
 }
 
 function Define() {
@@ -268,6 +340,8 @@ function Define() {
 		.chat-username, .chat-local-error, #chat-messages ul li span[style*="color: #ea907b;"] {
 			color: var(--Elite-Color) !important;
 		}
+		
+		/* Note: 'hilighted' typo is due to Pendoria having a typo, not me! */
 		.username-hilighted {
 			color: var(--Elite-Mention-Color) !important;
 		}
@@ -462,7 +536,7 @@ function Define() {
 	};
 
 	Modules.LegacySidebar.Code = function (resolve) {
-		t = `
+		const t = `
 		#menu .frame {
 			display: none;
 			width: 0px;
@@ -567,27 +641,27 @@ function Define() {
 
 	Modules.RemoveBattleStats.Code = function (resolve) {
 		const t = `
-	.header-stats-user {
-		display: none;
-	}`;
+		.header-stats-user {
+			display: none;
+		}`;
 		Style = Style + "<style>" + t + "</style>";
 		resolve();
 	};
 
 	Modules.RemoveTabs.Code = function (resolve) {
 		const t = `
-	#gameframe-battle > ul {
-		display: none;
-	}`;
+		#gameframe-battle > ul {
+			display: none;
+		}`;
 		Style = Style + "<style>" + t + "</style>";
 		resolve();
 	};
 
 	Modules.RemoveTradeskillSelection.Code = function (resolve) {
 		let t = `
-	#actioncontent > div:nth-child(2) {
-		display: none !important;
-	}`;
+		#actioncontent > div:nth-child(2) {
+			display: none !important;
+		}`;
 		if (Modules.RemoveTradeskillSelection.AddSpace === 1) {
 			t = t + `
 		#actioncontent {
