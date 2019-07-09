@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2-beta.4
+// @version 2.2-beta.4.1
 // @author Puls3
 // @include http*://*pendoria.net*
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -639,26 +639,26 @@ function Define() {
                     })
                 });
                 ajaxPost('/dungeons/in-progress', function (inProgress) {
-                    window.$progressbarWrapper = $('#dungeon-progressbar-wrapper');
-                    window.$startButton = $('.dungeon-button-start');
+                    $progressbarWrapper = $('#dungeon-progressbar-wrapper');
+                    $startButton = $('.dungeon-button-start');
                     if (inProgress) {
-                        window.$progressbarWrapper.attr('hidden', false);
-                        window.$startButton.attr('hidden', true);
-                        window.setDungeonDialogueText(window.dungeonTextInProgress);
+                        $progressbarWrapper.attr('hidden', false);
+                        $startButton.attr('hidden', true);
+                        setDungeonDialogueText(dungeonTextInProgress);
                     } else {
-                        window.$progressbarWrapper.attr('hidden', true);
-                        window.$startButton.attr('hidden', false);
-                        window.setDungeonDialogueText(window.dungeonTextDone);
+                        $progressbarWrapper.attr('hidden', true);
+                        $startButton.attr('hidden', false);
+                        setDungeonDialogueText(dungeonTextDone);
                     }
-                    window.$dungeonDialogue = $('#dungeon-dialogue');
-                    window.$dungeonDialogue.attr('hidden', false);
-                    window.$dungeonControls = $('.dungeon-controls');
-                    window.$dungeonControls.attr('hidden', false);
-                    window.updateDungeonActivatorCount();
-                    window.updateProfileDungeonActivatorCount();
+                    $dungeonDialogue = $('#dungeon-dialogue');
+                    $dungeonDialogue.attr('hidden', false);
+                    $dungeonControls = $('.dungeon-controls');
+                    $dungeonControls.attr('hidden', false);
+                    updateDungeonActivatorCount();
+                    updateProfileDungeonActivatorCount();
                 });
                 ajaxPost('/dungeons/boosts', function (dungeonBoosts) {
-                    window.dungeonTools.updateBoostPrices(dungeonBoosts);
+                    dungeonTools.updateBoostPrices(dungeonBoosts);
                 });
             });
         });
