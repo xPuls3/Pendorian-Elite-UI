@@ -1,11 +1,14 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2-beta.4.1
+// @version 2.2-rc
 // @author Puls3
 // @include http*://*pendoria.net*
+// @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
+// @supportURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/issues
 // @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @updateURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @icon https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico
 // @grant none
 // @run-at document-end
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
@@ -18,17 +21,6 @@
 // Also follow the Clone Policy!
 // Clone Policy; https://goo.gl/AyAdqy
 
-// [Development Changes]
-// Added support for the login page.
-// Increased compatibility for the Remove Logo Module.
-// Added quite a bit more UserScript metadata.
-// Moved tiny edits from the recolor to a new Edits Module.
-// Added a Rounded Borders Module.
-// Rewrote the core functions to make development easier.
-// Updated Karubo's ROI link to use his new link.
-// Updated old code to use better coding practices, no effect.
-// Added Sidebar Stats Module
-
 // [Declarations]
 // Leave these few lines alone!
 let Modules = Register();
@@ -38,107 +30,107 @@ let Style = "";
 
 // Global Options
 
-// Turn this on to get console logs from the script.
-const debug = false;
+    // Turn this on to get console logs from the script.
+    const debug = false;
 
 // Recolor Module
 // Changes the color of almost everything.
 
-// Recolor Module, Enable / Disable
-Modules.Recolor.Status = true;
+    // Recolor Module, Enable / Disable
+    Modules.Recolor.Status = true;
 
-// Recolor Module, Colors
-Modules.Recolor.Color = "rgb(0, 153, 255)";
-Modules.Recolor.DarkColor = "rgb(0, 123, 235)";
-Modules.Recolor.ButtonColor = "rgba(0, 153, 255, 0.5)";
-Modules.Recolor.ButtonHoverColor = "rgba(0, 153, 255, 0.8)";
-Modules.Recolor.ProgressBackgroundColor = "rgb(51, 71, 113)";
-Modules.Recolor.ProfileLinkColor = "rgb(0, 123, 235)";
-Modules.Recolor.MentionColor = "rgb(0, 219, 255)";
-Modules.Recolor.MentionTabColor = "rgb(0, 153, 255)";
+    // Recolor Module, Colors
+    Modules.Recolor.Color = "rgb(0, 153, 255)";
+    Modules.Recolor.DarkColor = "rgb(0, 123, 235)";
+    Modules.Recolor.ButtonColor = "rgba(0, 153, 255, 0.5)";
+    Modules.Recolor.ButtonHoverColor = "rgba(0, 153, 255, 0.8)";
+    Modules.Recolor.ProgressBackgroundColor = "rgb(51, 71, 113)";
+    Modules.Recolor.ProfileLinkColor = "rgb(0, 123, 235)";
+    Modules.Recolor.MentionColor = "rgb(0, 219, 255)";
+    Modules.Recolor.MentionTabColor = "rgb(0, 153, 255)";
 
 // Edits Module
 // Tiny edits that used to be included with the recolor.
 // Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
 
-// Edits Module, Enable / Disable
-Modules.Edits.Status = true;
+    // Edits Module, Enable / Disable
+    Modules.Edits.Status = true;
 
 // Frameless Mode Module
 // Removes all of the frames.
 // Adjusts sizes to look good without frames.
 
-// Frameless Module, Enable / Disable
-// Removes the 'frames' on the entire game.
-Modules.Frameless.Status = true;
+    // Frameless Module, Enable / Disable
+    // Removes the 'frames' on the entire game.
+    Modules.Frameless.Status = true;
 
 // Dual View Module
 // Forces the actions page to always show and shortens it.
 // Forces the content to always show below the actions page.
 // Requires Dungeon Sidebar to work correctly!
 
-// Dual View Module, Enable / Disable
-Modules.DualView.Status = false;
+    // Dual View Module, Enable / Disable
+    Modules.DualView.Status = false;
 
-// Dual View Module, Line
-// The how far down the frame the line between content and actions is.
-Modules.DualView.Line = 220;
+    // Dual View Module, Line
+    // The how far down the frame the line between content and actions is.
+    Modules.DualView.Line = 220;
 
 // Rounded Borders Module
 // Makes most of the game's main area corners round.
 // Requires the Frameless Mode Module.
 
-// Rounded Borders Module, Enable / Disable
-Modules.RoundedBorders.Status = false;
+    // Rounded Borders Module, Enable / Disable
+    Modules.RoundedBorders.Status = false;
 
-// Rounded Borders Module, Rounded Amount
-// Changes how round the corners are.
-// Uses CSS values!
-Modules.RoundedBorders.Amount = "16px";
+    // Rounded Borders Module, Rounded Amount
+    // Changes how round the corners are.
+    // Uses CSS values!
+    Modules.RoundedBorders.Amount = "16px";
 
 // Background Module
 // Changes the background.
 
-// Background Module, Enable / Disable
-Modules.Background.Status = true;
+    // Background Module, Enable / Disable
+    Modules.Background.Status = true;
 
-// Background Module, Background Link
-Modules.Background.Link = "https://zerthox.github.io/ClearVision/images/sapphire.jpg";
-// Image 'Stellar Collision' by KuldarLeement
-// Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
+    // Background Module, Background Link
+    Modules.Background.Link = "https://zerthox.github.io/ClearVision/images/sapphire.jpg";
+    // Image 'Stellar Collision' by KuldarLeement
+    // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
 
 // Favicon Module, Declaration
 // Changes the favicon.
 
-// Favicon Module, Enable / Disable
-Modules.Favicon.Status = true;
+    // Favicon Module, Enable / Disable
+    Modules.Favicon.Status = true;
 
-// Favicon Module, Favicon Link
-Modules.Favicon.Link = "https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico";
+    // Favicon Module, Favicon Link
+    Modules.Favicon.Link = "https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico";
 
 // Legacy Sidebar Module
 // Makes the sidebar look almost like the original sidebar designed by Zampa.
 
-// Legacy Sidebar Module, Enable / Disable
-Modules.LegacySidebar.Status = true;
+    // Legacy Sidebar Module, Enable / Disable
+    Modules.LegacySidebar.Status = true;
 
 // Remove Logo Module
 // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
 
-// Legacy Sidebar Module, Enable / Disable
-Modules.RemoveLogo.Status = true;
+    // Legacy Sidebar Module, Enable / Disable
+    Modules.RemoveLogo.Status = true;
 
 // Dungeon Sidebar Module
 // Removes the Dungeon tab and adds a link on the sidebar.
 
-// Dungeon Sidebar Module, Enable / Disable
-Modules.DungeonSidebar.Status = true;
+    // Dungeon Sidebar Module, Enable / Disable
+    Modules.DungeonSidebar.Status = true;
 
 // Remove Battle Stats Module
 // Removes the battle stats in the header.
 
-// Remove Battle Stats, Enable / Disable
-Modules.RemoveBattleStats.Status = false;
+    // Remove Battle Stats, Enable / Disable
+    Modules.RemoveBattleStats.Status = false;
 
 // Remove Tabs Module
 // Removes the tabs on the actions page.
@@ -146,8 +138,8 @@ Modules.RemoveBattleStats.Status = false;
 
 // Made for the specialized, by the specialized!
 
-// Remove Tabs Module, Enable / Disable
-Modules.RemoveTabs.Status = false;
+    // Remove Tabs Module, Enable / Disable
+    Modules.RemoveTabs.Status = false;
 
 // Remove Tradeskill Selection Module
 // Removes the Tradeskill Selection dropdown next to the work button.
@@ -156,80 +148,74 @@ Modules.RemoveTabs.Status = false;
 
 // Made for the specialized, by the specialized!
 
-// Remove Tabs Module, Enable / Disable
-Modules.RemoveTradeskillSelection.Status = false;
+    // Remove Tabs Module, Enable / Disable
+    Modules.RemoveTradeskillSelection.Status = false;
 
-// Adds a small amount of space above the action text.
-// Without this it will look awkward.
-Modules.RemoveTradeskillSelection.AddSpace = false;
+    // Adds a small amount of space above the action text.
+    // Without this it will look awkward.
+    Modules.RemoveTradeskillSelection.AddSpace = false;
 
 // Extra Bottom Links Module
 // Adds more links to the bottom of the screen
 
-// Extra Bottom Links Module, Enable / Disable
-Modules.ExtraBottomLinks.Status = true;
+    // Extra Bottom Links Module, Enable / Disable
+    Modules.ExtraBottomLinks.Status = true;
 
-// Defining Links Object, Ignore This
-Modules.ExtraBottomLinks.Links = {};
+    // Defining Links Object, Ignore This
+    Modules.ExtraBottomLinks.Links = {};
 
-// Add links option below.
+    // Add links option below.
 
-// Make sure you use a different declaration for each!
-// For example, if you have the following, you cannot have another that also says 'Example'!
-// You would have to change it to 'Example2', or something else that is alphanumeric!
-// 'Modules.ExtraBottomLinks.Links.Example'
+        // Make sure you use a different declaration for each!
+        // For example, if you have the following, you cannot have another that also says 'Example'!
+        // You would have to change it to 'Example2', or something else that is alphanumeric!
+        // 'Modules.ExtraBottomLinks.Links.Example'
 
-// Karubo's ROI Calculator Link
-Modules.ExtraBottomLinks.Links.ROI = {
-    Name: "Karubo's ROI",
-    // New Karubo Website
-    Link: "http://pendcalc.karubo.de/"
-    // Old Google Sheets URL
-    // Link: "http://tiny.cc/KaruboROI"
-};
+        // Karubo's ROI Calculator Link
+        Modules.ExtraBottomLinks.Links.ROI = {
+            Name: "Karubo's ROI",
+            // New Karubo Website
+            Link: "http://pendcalc.karubo.de/"
+            // Old Google Sheets URL
+            // Link: "http://tiny.cc/KaruboROI"
+        };
 
-Modules.ExtraBottomLinks.Links.Calcs = {
-    Name: "Puls3's Calcs",
-    Link: "https://xer0-puls3.github.io/calculators/"
-};
+        Modules.ExtraBottomLinks.Links.Calcs = {
+            Name: "Puls3's Calcs",
+            Link: "https://xer0-puls3.github.io/calculators/"
+        };
 
-// Example Links Section Below!
-/*
-    Modules.ExtraBottomLinks.Links.Example1 = {
-        Name: "Example 1",
-        Link: "www.example.com"
-    }
-    Modules.ExtraBottomLinks.Links.Example2 = {
-        Name: "Example 2",
-        Link: "www.example2.com"
-    }
-    Modules.ExtraBottomLinks.Links.Example3 = {
-        Name: "Example 3",
-        Link: "www.example3.com"
-    }
-*/
+        // Example Links Section Below!
+        /*
+            Modules.ExtraBottomLinks.Links.Example1 = {
+                Name: "Example 1",
+                Link: "www.example.com"
+            }
+            Modules.ExtraBottomLinks.Links.Example2 = {
+                Name: "Example 2",
+                Link: "www.example2.com"
+            }
+            Modules.ExtraBottomLinks.Links.Example3 = {
+                Name: "Example 3",
+                Link: "www.example3.com"
+            }
+        */
 
 // Stat Sidebar Module
 // Adds all header stats to the sidebar
 
-// Sidebar Stats Module, Enable / Disable
-// Enable at least one of the other options below or there will be issues.
-Modules.SidebarStats.Status = false;
+    // Sidebar Stats Module, Enable / Disable
+    // Enable at least one of the other options below or there will be issues.
+    Modules.SidebarStats.Status = false;
 
-// Sidebar Stats Module, Show Battle Skills, Enable / Disable
-Modules.SidebarStats.Skills = true;
+    // Sidebar Stats Module, Show Battle Skills, Enable / Disable
+    Modules.SidebarStats.Skills = true;
 
-// Sidebar Stats Module, Show Resources, Enable / Disable
-Modules.SidebarStats.Resources = true;
+    // Sidebar Stats Module, Show Resources, Enable / Disable
+    Modules.SidebarStats.Resources = true;
 
-// Sidebar Stats Module, Show Currency, Enable / Disable
-Modules.SidebarStats.Currency = true;
-
-// Provide Statistics Option
-// Provide anonymous statistics.
-// This will be extremely helpful with no downsides.
-// This is automatically disabled if the browser settings force it to.
-const trStats = true;
+    // Sidebar Stats Module, Show Currency, Enable / Disable
+    Modules.SidebarStats.Currency = true;
 
 // [Functions]
 
@@ -313,7 +299,6 @@ function Register() {
 function Origin(isGame) {
     const k = Object.keys(Modules);
     let promiseList = [];
-    if (trStats) {tr()}
     for (let i = 0; i < k.length; i++) {
         if (isGame || Modules[k[i]].RunLogin) {
             if (Modules[k[i]].Status) {
@@ -843,22 +828,6 @@ function Define() {
     }
 
 
-}
-
-function tr() {
-    $(window).on('load', function () {
-        setTimeout(function () {
-            $(`head`).prepend('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143519732-1"></script>');
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                window.dataLayer.push(arguments);
-            }
-
-            gtag('js', new Date());
-            gtag('config', 'UA-143519732-1');
-        }, 2000);
-    });
 }
 
 const logType = {
