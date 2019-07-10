@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2-rc
+// @version 2.2
 // @author Puls3
 // @include http*://*pendoria.net*
 // @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
