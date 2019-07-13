@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2
+// @version 2.2.1
 // @author Puls3
 // @include http*://*pendoria.net*
 // @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
@@ -678,7 +678,7 @@ function Define() {
 		#actioncontent > div:nth-child(2) {
             display: none !important;
         }`;
-        if (Modules.RemoveTradeskillSelection.AddSpace === 1) {
+        if (Modules.RemoveTradeskillSelection.AddSpace === true) {
             t = t + `
             #actioncontent {
                 margin-top: 15px;
