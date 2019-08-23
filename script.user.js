@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.2.1
+// @version 2.3
 // @author Puls3
 // @include http*://*pendoria.net*
 // @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
@@ -22,7 +22,7 @@
 // Clone Policy; https://goo.gl/AyAdqy
 
 // [Declarations]
-// Leave these few lines alone!
+// Leave these two lines alone!
 let Modules = Register();
 let Style = "";
 
@@ -30,8 +30,8 @@ let Style = "";
 
 // Global Options
 
-    // Turn this on to get console logs from the script.
-    const debug = false;
+// Turn this on to get console logs from the script.
+const debug = false;
 
 // Recolor Module
 // Changes the color of almost everything.
@@ -89,7 +89,7 @@ let Style = "";
     Modules.RoundedBorders.Amount = "16px";
 
 // Background Module
-// Changes the background.
+    // Changes the background.
 
     // Background Module, Enable / Disable
     Modules.Background.Status = true;
@@ -99,7 +99,7 @@ let Style = "";
     // Image 'Stellar Collision' by KuldarLeement
     // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
 
-// Favicon Module, Declaration
+// Favicon Module
 // Changes the favicon.
 
     // Favicon Module, Enable / Disable
@@ -117,7 +117,7 @@ let Style = "";
 // Remove Logo Module
 // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
 
-    // Legacy Sidebar Module, Enable / Disable
+    // Remove Logo Module, Enable / Disable
     Modules.RemoveLogo.Status = true;
 
 // Dungeon Sidebar Module
@@ -132,9 +132,22 @@ let Style = "";
     // Remove Battle Stats, Enable / Disable
     Modules.RemoveBattleStats.Status = false;
 
+// Areas Included Module
+// Removes the Areas tab and adds the content to the battle tab.
+
+    // Areas Included Module, Enable / Disable
+    Modules.AreasIncluded.Status = true;
+
+// Remove Battle Stats Module
+// Removes the battle stats in the header.
+
+    // Remove Battle Stats, Enable / Disable
+    Modules.RemoveBattleStats.Status = false;
+
 // Remove Tabs Module
 // Removes the tabs on the actions page.
 // Requires Dungeon Sidebar to be active!
+// Requires Areas Included to be active!
 
 // Made for the specialized, by the specialized!
 
@@ -148,7 +161,7 @@ let Style = "";
 
 // Made for the specialized, by the specialized!
 
-    // Remove Tabs Module, Enable / Disable
+    // Remove Tradeskill Selection Module, Enable / Disable
     Modules.RemoveTradeskillSelection.Status = false;
 
     // Adds a small amount of space above the action text.
@@ -156,7 +169,7 @@ let Style = "";
     Modules.RemoveTradeskillSelection.AddSpace = false;
 
 // Extra Bottom Links Module
-// Adds more links to the bottom of the screen
+    // Adds more links to the bottom of the screen
 
     // Extra Bottom Links Module, Enable / Disable
     Modules.ExtraBottomLinks.Status = true;
@@ -202,7 +215,7 @@ let Style = "";
         */
 
 // Stat Sidebar Module
-// Adds all header stats to the sidebar
+    // Adds all header stats to the sidebar
 
     // Sidebar Stats Module, Enable / Disable
     // Enable at least one of the other options below or there will be issues.
@@ -232,7 +245,6 @@ if (isGame()) {
 // Lists All Modules
 function Register() {
     return {
-        //Object.keys({name})[0]
         Recolor: {
             Name: "Recolor Module",
             RunLogin: true
@@ -272,6 +284,10 @@ function Register() {
         DungeonSidebar: {
             Name: "Dungeon Sidebar Module",
             RunLogin: false
+        },
+        AreasIncluded: {
+            Name: "Areas Included Module",
+            RunLogin: false,
         },
         RemoveBattleStats: {
             Name: "Remove Battle Stats Module",
@@ -323,9 +339,6 @@ function isGame() {
 
 function ApplyStyles() {
     $("head").append(Style);
-    if (debug) {
-        logDo("Style elements inserted.", 0)
-    }
     Style = "";
 }
 
@@ -593,8 +606,11 @@ function Define() {
     };
 
     Modules.DungeonSidebar.Code = function (resolve) {
+        setTimeout(function () {
+            $("#gameframe-battle > ul > li:contains('Dungeons')").hide();
+        }, 10000);
         const t = `
-		#gameframe-battle > ul > li:nth-child(3) {
+		#gameframe-battle > ul > li:nth-child(4) {
 			display: none;
 		}
 		#dungeon-content, #dungeon-tools-content {
@@ -605,8 +621,8 @@ function Define() {
 
         // Function Below Grabbed From Pendoria And Modified
         // Heavily modified, as this code is less than awesome.
-        // noinspection JSCheckFunctionSignatures,JSCheckFunctionSignatures
         $("#elite-dungeon-button").click(function (event) {
+            $("#gameframe-battle > ul > li:contains('Dungeons')").hide();
             event.preventDefault();
             ajaxPost("/action/dungeons", function (data) {
                 $('#gameframe-content').html(data).show();
@@ -647,7 +663,103 @@ function Define() {
                 });
             });
         });
+        resolve();
+    };
 
+    Modules.AreasIncluded.Code = function (resolve) {
+        setTimeout(function () {
+            $('#gameframe-battle .nav-tabs li').off('click');
+            $('#gameframe-battle .nav-tabs li').on('click', 'a', function (e) {
+                let url;
+                if (e.currentTarget.textContent === "Battle") {
+                    url = "battle";
+                } else if (e.currentTarget.textContent === "Tradeskill") {
+                    url = "tradeskill"
+                } else if (e.currentTarget.textContent === 'Dungeons') {
+                    // Open dungeons instead
+                    url = 'dungeons';
+                } else if (e.currentTarget.textContent === 'Area') {
+                    // Open dungeons instead
+                    url = 'area';
+                }
+                ajaxPost("/action/" + url, function (data) {
+                    $('#actioncontent').html(data);
+                    if (url === 'dungeons') {
+                        ajaxPost("/action/dungeons", function (data) {
+                            $('#gameframe-battle').html(data).show();
+                            $('#dungeon-tools-content [tooltip-title]').each(function () {
+                                $(this).qtip({
+                                    content: {
+                                        title: $(this).attr('tooltip-title'),
+                                        text: $(this).attr('tooltip-text'),
+                                    },
+                                    style: {classes: 'qtip-dark'},
+                                    position: {
+                                        target: 'mouse'
+                                    }
+                                })
+                            });
+                            ajaxPost('/dungeons/in-progress', function (inProgress) {
+                                $progressbarWrapper = $('#dungeon-progressbar-wrapper');
+                                $startButton = $('.dungeon-button-start');
+                                if (inProgress) {
+                                    $progressbarWrapper.attr('hidden', false);
+                                    $startButton.attr('hidden', true);
+                                    setDungeonDialogueText(dungeonTextInProgress);
+                                } else {
+                                    $progressbarWrapper.attr('hidden', true);
+                                    $startButton.attr('hidden', false);
+                                    setDungeonDialogueText(dungeonTextDone);
+                                }
+                                $dungeonDialogue = $('#dungeon-dialogue');
+                                $dungeonDialogue.attr('hidden', false);
+                                $dungeonControls = $('.dungeon-controls');
+                                $dungeonControls.attr('hidden', false);
+                                updateDungeonActivatorCount();
+                                updateProfileDungeonActivatorCount();
+                            });
+                            ajaxPost('/dungeons/boosts', function (dungeonBoosts) {
+                                dungeonTools.updateBoostPrices(dungeonBoosts);
+                            });
+                        });
+                    }
+                    if (url === 'tradeskill') {
+                        $('#stats-hourly-tab-battle').attr('hidden', true);
+                        $('#stats-hourly-tab-tradeskill').attr('hidden', false);
+                    }
+                    if (url === 'battle') {
+                        $('#stats-hourly-tab-battle').attr('hidden', false);
+                        $('#stats-hourly-tab-tradeskill').attr('hidden', true);
+                        if (!$("#AreasIncluded").first.length) {
+                            $("#nofight").after("<div id='AreasIncluded'></div>");
+                            $("#gameframe-battle > ul > li:contains('Area')").hide();
+                        }
+                        if ($("#gameframe-battle > ul > li:contains('Area')").length) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/action/area",
+                                success: function (data) {
+                                    $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                                }
+                            })
+                        }
+                    }
+                });
+            });
+            if (!$("#AreasIncluded").first.length) {
+                $("#nofight").after("<div id='AreasIncluded'></div>");
+                $("#gameframe-battle > ul > li:contains('Area')").hide();
+            }
+            if ($("#gameframe-battle > ul > li:contains('Area')").length) {
+                $.ajax({
+                    type: "POST",
+                    url: "/action/area",
+                    success: function (data) {
+                        $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                    }
+                })
+            }
+        }, 10000);
         resolve();
     };
 
@@ -826,15 +938,13 @@ function Define() {
         $("#profile").after(t2);
         resolve();
     }
-
-
 }
 
 const logType = {
-    0: ["[%cOKAY%c] ", "color:green;"],
-    1: ["[%cERROR%c] ", "color:red;"]
+    0: ["OKAY", "color:green;"],
+    1: ["ERROR", "color:red;"]
 };
 
 function logDo(i, t) {
-    console.log(logType[t][0] + i, logType[t][1], "color: initial;");
+    console.log("%c[%c" + logType[t][0] + "%c] " + i, "color: blue;", logType[t][1], "color: blue;");
 }
