@@ -18,6 +18,7 @@ Modify them via your script editor.
 * Legacy Sidebar.
 * Remove Pendoria Logo.
 * Make Dungeons a sidebar link.
+* Move Areas into the Battle tab.
 * Remove the action tabs.
 * Remove tradeskill dropdown.
 * Remove battle stats on the header.
@@ -25,9 +26,9 @@ Modify them via your script editor.
 * Full customizability!
 
 ## Downloads
-[Latest Stable Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js) (recommended)
+[Latest Stable Release](http://bit.ly/32bLqL4) (recommended)
 
-[Latest Dev Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/dev/script.user.js)
+[Latest Dev Release](http://bit.ly/2HwNQeK)
 
 [Final 1.x Legacy Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
 
@@ -47,14 +48,12 @@ Modify them via your script editor.
 * Customize the values.
 
 ## Notice
-Given that Puls3 is a tester and active on the development server, new features will most likely be made compatable before they arrive on the live game.
+Given that Puls3 is a tester (was, the testing program shut down) and active on the development server, new features will most likely be made compatable before they even arrive on the live game.
 
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall then reinstall directly from GitHub.
 
 ## Support
-This script is was created for Firefox and only Firefox, not Chrome, not Opera, and not Vivaldi, alternate browser support relies on users reporting errors.
-
-I'm at a dilema when it comes to browsers, for now Firefox remains the official standard, though it might switch to Chrome.
+This script is was created for Firefox and only Firefox, not Chrome, not Opera, and not Vivaldi, alternate browser support relies on users reporting errors. Despite this I attempt to provide the best experience across all mainstream browsers.
 
 This script was made for Violentmonkey, though may work on other extensions, if you use Greasemonkey or Tampermonkey, I suggest switching, though it's not required. Greasemonkey users beware, it is the cause of many compatability issues.
 
@@ -62,10 +61,10 @@ Microsoft Edge, Internet Explorer, & Safari, all experience native issues inside
 
 No support is provided to older versions, only the latest releases, this includes older versions of browsers and extensions.
 
-If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall it, and reinstall directly from GitHub.
+If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork or have used a development release, then uninstall it, and reinstall directly from GitHub.
 
 ## Contact
-My name is Puls3 in Pendoria, if you have any need to contact me you should do it there. If you require an immediate response message me directly on Discord. (Puls3#1288)
+My name is Puls3 on Pendoria, if you have any need to contact me you should do it there. If you require an immediate response message me directly on Discord. (Puls3#1288)
 
 ## Issues
 There are currently no known issues in the current release.
