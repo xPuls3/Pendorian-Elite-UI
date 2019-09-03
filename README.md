@@ -5,7 +5,7 @@ Every last feature can be customized or disabled, including the recolor!
 
 A Lot of features are disabled by default, I suggest looking through them for settings you might like.
 
-Created by [Puls3](https://github.com/Xer0-Puls3)!
+Created by [Puls3](https://github.com/xPuls3)!
 
 ## Features
 The settings can be found at the top of the script.
@@ -25,13 +25,13 @@ Modify them via your script editor.
 * Full customizability!
 
 ## Downloads
-[Latest Stable Release](http://bit.ly/2HwNQeK) (recommended)
+[Latest Stable Release](https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js) (recommended)
 
-[Latest Dev Release](http://bit.ly/32bLqL4)
+[Latest Dev Release](https://github.com/xPuls3/Pendorian-Elite-UI/raw/dev/script.user.js) (unstable)
 
-[Final 1.x Legacy Release](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases/tag/1.7.1)
+[Final 1.x Legacy Release](https://github.com/xPuls3/Pendorian-Elite-UI/releases/tag/1.7.1)
 
-[All Releases](https://github.com/Xer0-Puls3/Pendorian-Elite-UI/releases)
+[All Releases](https://github.com/xPuls3/Pendorian-Elite-UI/releases)
 
 ## Installation
 * First, download [Violentmonkey](https://violentmonkey.github.io/get-it/).
