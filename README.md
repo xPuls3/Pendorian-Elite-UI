@@ -64,6 +64,11 @@ No support is provided to older versions, only the latest releases, this include
 
 If you have any issues using Violentmonkey's 'check for updates' feature and have been using the script since it was on Greasyfork, then uninstall it, and reinstall directly from GitHub.
 
+## Suggestions
+If you have any ideas or potential features you would like to be added, let me know and I'll consider adding them.
+
+I'm tracking every suggestion I'm considering [here](https://github.com/xPuls3/Pendorian-Elite-UI/projects/1).
+
 ## Contact
 My name is Puls3 in Pendoria, if you have any need to contact me you should do it there. If you require an immediate response message me directly on Discord. (Puls3#1288)
 
