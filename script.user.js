@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.3
+// @version 2.3.1
 // @author Puls3
 // @include http*://*pendoria.net*
-// @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
-// @supportURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/issues
-// @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
-// @updateURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
-// @icon https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico
+// @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
+// @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
+// @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @updateURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @icon https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/master/favicon.ico
 // @grant none
 // @run-at document-end
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
@@ -106,7 +106,7 @@ const debug = false;
     Modules.Favicon.Status = true;
 
     // Favicon Module, Favicon Link
-    Modules.Favicon.Link = "https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico";
+    Modules.Favicon.Link = "https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/master/favicon.ico";
 
 // Legacy Sidebar Module
 // Makes the sidebar look almost like the original sidebar designed by Zampa.
@@ -195,7 +195,7 @@ const debug = false;
 
         Modules.ExtraBottomLinks.Links.Calcs = {
             Name: "Puls3's Calcs",
-            Link: "https://xer0-puls3.github.io/calculators/"
+            Link: "https://xPuls3.github.io/calculators/"
         };
 
         // Example Links Section Below!
