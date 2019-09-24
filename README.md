@@ -80,8 +80,10 @@ If you find any issues use the 'issues' feature on GitHub and provide as much de
 ## Credits
 All contributors will be listed here along with their contributions.
 ### Puls3
+[On GitHub](https://github.com/xPuls3/)
 * Wrote most of the code.
-### SilentXer0
+### Silent
+[On GitHub](https://github.com/SilentXer0/)
 * Added the Custom Background Image option.
 * Major adjustments to Frameless Mode.
 
