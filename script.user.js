@@ -613,7 +613,8 @@ function Define() {
 
     Modules.Favicon.Code = function (resolve) {
         const t = `<link rel="icon" href="` + Modules.Favicon.Options.Link + `"/>`;
-        resolve(t);
+	$("head").append(t);
+        resolve();
     };
 
     Modules.LegacySidebar.Code = function (resolve) {
