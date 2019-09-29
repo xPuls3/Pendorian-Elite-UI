@@ -1,18 +1,21 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.4-beta
+// @version 2.4-beta.1
 // @author Puls3
 // @include http*://*pendoria.net*
-// @homepage https://github.com/Xer0-Puls3/Pendorian-Elite-UI/
-// @supportURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/issues
-// @downloadURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
-// @updateURL https://github.com/Xer0-Puls3/Pendorian-Elite-UI/raw/master/script.user.js
-// @icon https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico
+// @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
+// @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
+// @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @updateURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @icon https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/master/favicon.ico
 // @grant none
 // @run-at document-end
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
+
+// Pendorian Elite UI is distributed only on GitHub!
+// - https://github.com/xPuls3/Pendorian-Elite-UI/
 
 // This script was created by Puls3!
 // - Puls3 from Pendoria
@@ -75,7 +78,7 @@ Modules.DualView.Options = {
     Status: false,
 
     // Dual View Module, Line
-    // The how far down the frame (in pixels) the line between content and actions is.
+    // How far down the frame (in pixels) the line between content and actions is.
     Line: 220
 
 };
@@ -119,7 +122,7 @@ Modules.Favicon.Options = {
     Status: true,
 
     // Favicon Module, Favicon Link
-    Link: "https://raw.githubusercontent.com/Xer0-Puls3/Pendorian-Elite-UI/master/favicon.ico"
+    Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
 
 };
 
@@ -229,7 +232,13 @@ Modules.ExtraBottomLinks.Options = {
         // Puls3's Calculator Link
         Calcs: {
             Name: "Puls3's Calcs",
-            Link: "https://xer0-puls3.github.io/calculators/"
+            Link: "https://xpuls3.github.io/calculators/"
+        },
+
+        // Impulsive Puls3's Updates Link
+        ImpulsiveUpdate: {
+            Name: "Impulsive Update",
+            Link: "https://impulsiveupdate.blogspot.com/"
         },
 
     }
@@ -238,11 +247,12 @@ Modules.ExtraBottomLinks.Options = {
 
 // Stat Sidebar Module
 // Adds all header stats to the sidebar
-// WARNING!!!
-// This module while having once been a great feature is now partially broken!
-// The style is broken, the JavaScript code behind it works just fine.
-// Unless you can fix it yourself; leave it off.
 Modules.SidebarStats.Options = {
+
+    // WARNING!!!
+    // This module while having once been a great feature is now partially broken!
+    // The style is broken, the JavaScript code behind it works just fine.
+    // Unless you can fix it yourself; leave it off.
 
     // Sidebar Stats Module, Enable / Disable
     // Enable at least one of the other options below or there will be issues.
@@ -259,6 +269,8 @@ Modules.SidebarStats.Options = {
 
 };
 
+// [Functions]
+
 Origin();
 
 function Origin() {
@@ -268,17 +280,6 @@ function Origin() {
     for (let i = 0; i < k.length; i++) {
         if (isGame || Modules[k[i]].RunLogin) {
             if (Modules[k[i]].Options.Status) {
-
-                // Local Storage Framework - Not used yet!
-                /*
-                if (typeof (Storage) !== "undefined") {
-                    let loadedOptions = typeof (localStorage.getItem("Pendorian Elite UI - " + Modules[k[i]].id) !== "undefined");
-                    if (typeof (LoadedOptions) !== "undefined") {
-                        Modules[k[i]].Options = LoadedOptions;
-                    }
-                }
-                */
-
                 promiseList.push(new Promise(function (resolve) {
                     Modules[k[i]].Code(resolve);
                 }).then(function (result) {
@@ -409,6 +410,8 @@ function Define() {
 
     Modules.Recolor.Code = function (resolve) {
         const t = `
+        /* Below is CSS - Youu shouldn't customize this unless you understand it! */
+        
 		/* Global Color Variables */
 		
             html {
@@ -515,7 +518,7 @@ function Define() {
                 color: rgb(0, 153, 255) !important;
             }
             
-            #quint span, .actionexperience, .actionexperience span, #double_tradeskill span, #guild_amount, #guild_currency, #gainedtype, #gainedres {
+            #quint span, .actionexperience, .actionexperience span, #double_tradeskill span, #guild_amount, #guild_currency, #gainedtype, #gainedres, #actionencampmentax {
                 color: var(--Elite-Color) !important;
             }
             
@@ -523,7 +526,6 @@ function Define() {
                 color: var(--Elite-Color) !important;
             }
 		`;
-
         resolve(t);
     };
 
@@ -716,7 +718,7 @@ function Define() {
 
     Modules.AreasIncluded.Code = function (resolve) {
         const t = `
-        #gameframe-battle > ul > li:nth-child(4) {
+        #gameframe-battle > ul > li:nth-child(3) {
 			display: none;
 		}`;
         setTimeout(function () {
