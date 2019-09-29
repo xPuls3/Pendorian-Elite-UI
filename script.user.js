@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.4-beta.1
+// @version 2.3.2
 // @author Puls3
 // @include http*://*pendoria.net*
 // @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
@@ -26,7 +26,7 @@ Define();
 // [Options]
 
 // Toggle Script Debugging
-let isDebug = true;
+let isDebug = false;
 
 // Recolor Module
 // Changes the color of almost everything.
