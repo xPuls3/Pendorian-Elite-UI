@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.3.2
+// @version 2.3.3
 // @author Puls3
 // @include http*://*pendoria.net*
 // @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
@@ -237,8 +237,8 @@ Modules.ExtraBottomLinks.Options = {
 
         // Impulsive Puls3's Updates Link
         ImpulsiveUpdate: {
-            Name: "Impulsive Update",
-            Link: "https://impulsiveupdate.blogspot.com/"
+            Name: "Impulsive Updates",
+            Link: "https://xpuls3.github.io/blog/"
         },
 
     }
@@ -540,10 +540,9 @@ function Define() {
 
     Modules.Frameless.Code = function (resolve) {
         const t = `
-		.frame {
-			background: none;
-			left: 8px;
-		}
+        #menu, #profile, #chat, #charity, #stats-hourly, #gameframe, #drop-statistics {
+          border: none !important;
+        }
 		#gameframe-status-wrapper:after, #progressbar-wrapper::after {
 			background: none;
 		}
@@ -558,13 +557,6 @@ function Define() {
 			top: 0px;
 			left: 0px;
 			right: 0px;
-		}
-		#gameframe-battle, #gameframe-content {
-			left: 0px;
-			right: 0px;
-		}
-		#chat {
-			padding: 0;
 		}`;
         resolve(t);
     };
