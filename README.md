@@ -86,7 +86,7 @@ All contributors will be listed here along with their contributions.
 ### Silent
 [On GitHub](https://github.com/SilentXer0/)
 * Added the Custom Background Image option.
-* Major adjustments to the Frameless Mode Module.
+* ~~Major adjustments to the Frameless Mode Module.~~ (Removed in v2.3.3)
 
 ## Contributing
 If you are capable, and have a good idea that you would like to implement, feel free to use GitHub to contribute!
