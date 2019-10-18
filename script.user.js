@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.3.3
+// @version 2.4
 // @author Puls3
-// @include http*://*pendoria.net*
+// @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
 // @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
 // @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
 // @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -26,7 +26,7 @@ Define();
 // [Options]
 
 // Toggle Script Debugging
-let isDebug = false;
+let isDebug = true;
 
 // Recolor Module
 // Changes the color of almost everything.
@@ -245,6 +245,15 @@ Modules.ExtraBottomLinks.Options = {
 
 };
 
+// Extended Header Module
+// Extends the header above chat in side-by-side mode.
+Modules.ExtendedHeader.Options = {
+
+    // Extended Header Module, Enable / Disable
+    Status: true
+
+};
+
 // Stat Sidebar Module
 // Adds all header stats to the sidebar
 Modules.SidebarStats.Options = {
@@ -306,7 +315,7 @@ function applyStyle(module) {
     if (matches.length !== 0) {
         matches.remove();
     }
-    $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '<style>')
+    $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
 }
 
 function logDo(i, t) {
@@ -396,6 +405,11 @@ function Register() {
         ExtraBottomLinks: {
             id: 'ExtraBottomLinks',
             Name: 'Extra Bottom Links',
+            RunLogin: false
+        },
+        ExtendedHeader: {
+            id: 'ExtendedHeader',
+            Name: 'Extended Header',
             RunLogin: false
         },
         SidebarStats: {
@@ -605,7 +619,7 @@ function Define() {
 
     Modules.Favicon.Code = function (resolve) {
         const t = `<link rel="icon" href="` + Modules.Favicon.Options.Link + `"/>`;
-	$("head").append(t);
+        $("head").append(t);
         resolve();
     };
 
@@ -818,26 +832,23 @@ function Define() {
 
     Modules.RemoveBattleStats.Code = function (resolve) {
         const t = `
-        <style>
 		.header-stats-user {
 			display: none;
 		}
-        </style>
         `;
         resolve(t);
     };
 
     Modules.RemoveTabs.Code = function (resolve) {
-        const t = `<style>
+        const t = `
 		#gameframe-battle > ul {
 			display: none;
-		}
-		</style>`;
+		}`;
         resolve(t);
     };
 
     Modules.RemoveTradeskillSelection.Code = function (resolve) {
-        let t = `<style>
+        let t = `
 		#actioncontent > div:nth-child(2) {
             display: none !important;
         }`;
@@ -862,9 +873,17 @@ function Define() {
         resolve();
     };
 
+    Modules.ExtendedHeader.Code = function (resolve) {
+        let t = `
+        #header-content {
+            width: calc(100% - 260px) !important
+        }
+        `;
+        resolve(t);
+    };
+
     Modules.SidebarStats.Code = function (resolve) {
         let t1 = `
-		<style>
 			#elite-stat-sidebar-holder {
 				width: 100%;
 				max-width: 100%;
@@ -894,8 +913,7 @@ function Define() {
 				text-align: right;
 				width: 50%;
 				float: left;
-			}
-		</style>`;
+			}`;
         let t2 = `
 		<div id="elite-stat-sidebar-holder">
 			<div class="frame frame-vertical-left"></div>
