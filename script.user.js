@@ -26,7 +26,7 @@ Define();
 // [Options]
 
 // Toggle Script Debugging
-let isDebug = true;
+let isDebug = false;
 
 // Recolor Module
 // Changes the color of almost everything.
