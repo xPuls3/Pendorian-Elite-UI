@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.4-beta
+// @version 2.4
 // @author Puls3
-// @include http*://*pendoria.net*
+// @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
 // @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
 // @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
 // @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -619,7 +619,7 @@ function Define() {
 
     Modules.Favicon.Code = function (resolve) {
         const t = `<link rel="icon" href="` + Modules.Favicon.Options.Link + `"/>`;
-	$("head").append(t);
+        $("head").append(t);
         resolve();
     };
 
