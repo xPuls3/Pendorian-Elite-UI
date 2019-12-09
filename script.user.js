@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.4
+// @version 2.4.1
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
 // @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
@@ -16,6 +16,9 @@
 
 // Pendorian Elite UI is distributed only on GitHub!
 // - https://github.com/xPuls3/Pendorian-Elite-UI/
+
+// Pendorian Elite UI also has a website!
+// - https://xpuls3.github.io/Pendorian-Elite-UI/
 
 // This script was created by Puls3!
 // - Puls3 from Pendoria
@@ -34,6 +37,10 @@ Modules.Recolor.Options = {
 
     // Recolor Module, Enable / Disable
     Status: true,
+
+    // Recolor Module, Swap Old Username Color Titles
+    // Changes cyan titles to match the new chat username color
+    TitleSwap: true,
 
     // Recolor Module, Colors
     Color: "rgb(0, 153, 255)",
@@ -223,10 +230,15 @@ Modules.ExtraBottomLinks.Options = {
         // Karubo's ROI Calculator Link
         ROI: {
             Name: "Karubo's ROI",
+
             // New Karubo Website
-            Link: "http://pendcalc.karubo.de/"
+            // - http://pendcalc.karubo.de/
+
             // Old Google Sheets URL
-            // Link: "http://tiny.cc/KaruboROI"
+            // - "http://tiny.cc/KaruboROI"
+
+            Link: "http://pendcalc.karubo.de/"
+
         },
 
         // Puls3's Calculator Link
@@ -445,6 +457,10 @@ function Define() {
             .chat-username {
                 color: var(--Elite-Chat-Color) !important;
             }
+            
+		    #chat-messages > ul > li > font[color="#00ffff"] {
+		        color: var(--Elite-Chat-Color) !important;
+		    }
             
             .chat-local-error, #chat-messages ul li span[style*="color: #ea907b;"] {
                 color: var(--Elite-Color) !important;
@@ -729,10 +745,11 @@ function Define() {
 			display: none;
 		}`;
         setTimeout(function () {
-            $('#gameframe-battle .nav-tabs li').off('click');
+            let $battleNav = $('#gameframe-battle .nav-tabs li');
+            $battleNav.off('click');
 
             // Function Below Grabbed From Pendoria And Modified
-            $('#gameframe-battle .nav-tabs li').on('click', 'a', function (e) {
+            $battleNav.on('click', 'a', function (e) {
                 let url;
                 if (e.currentTarget.textContent === 'Battle') {
                     url = 'battle';
