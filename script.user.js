@@ -30,7 +30,7 @@ Define();
 // [Options]
 
 // Toggle Script Debugging
-const isDebug = true;
+const isDebug = false;
 
 (function () {
 
