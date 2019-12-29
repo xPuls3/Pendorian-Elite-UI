@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.5-beta
+// @version 2.5
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -23,7 +23,7 @@
 // This script was created by Puls3!
 // - Puls3 on Pendoria
 
-const version = "2.5-beta";
+const version = GM_info.script.version;
 let Modules = Register();
 Define();
 
@@ -35,11 +35,13 @@ const isDebug = true;
 (function () {
 
     // Version Check Module
-    // Only checks once every 24h!
     Modules.VersionCheck.Options = {
 
         // Version Check Module, Enable / Disable
-        Status: true
+        Status: true,
+
+        // Version Check Module, Only check once every 24 hours
+        DailyLimit: true,
 
     };
 
@@ -129,7 +131,7 @@ const isDebug = true;
         // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
 
         // Background Module, Background Link
-        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
+        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
 
     };
 
@@ -411,9 +413,6 @@ function Register() {
         VersionCheck: {
             Name: 'Version Check',
             RunLogin: false,
-            Options: {
-                Status: true
-            }
         },
     };
 }
@@ -933,9 +932,9 @@ function Define() {
                 return false;
             }
         });
-        if (hasls) {
+        if (hasls || !Modules.VersionCheck.Options.DailyLimit) {
             let lastCheck = new Date(localStorage.getItem("Last Elite UI Version Check"));
-            if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || 1) {
+            if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !Modules.VersionCheck.Options.DailyLimit) {
                 new Promise(function (resolve) {
                     $.get('https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest', function (data) {
                         if (version.includes("-") && version.split("-")[0] === data.tag_name) {
@@ -968,7 +967,7 @@ function Define() {
 
                         const eliteVersionCloseButton = document.createElement('button');
                         eliteVersionCloseButton.innerText = "Close";
-                        eliteVersionCloseButton.setAttribute('onclick','$("#elite-version-window").remove();');
+                        eliteVersionCloseButton.setAttribute('onclick', '$("#elite-version-window").remove();');
 
                         eliteVersionWindowContent.appendChild(eliteVersionDownloadButton);
                         eliteVersionWindowContent.appendChild(eliteVersionNotesButton);
