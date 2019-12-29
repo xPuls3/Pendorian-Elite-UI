@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.4.1
+// @version 2.5
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
-// @homepage https://github.com/xPuls3/Pendorian-Elite-UI/
+// @homepage https://xpuls3.github.io/Pendorian-Elite-UI
 // @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
 // @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @updateURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -14,420 +14,405 @@
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
 
-// Pendorian Elite UI is distributed only on GitHub!
+// Pendorian Elite UI is only officially distributed on GitHub!
 // - https://github.com/xPuls3/Pendorian-Elite-UI/
 
-// Pendorian Elite UI also has a website!
+// Pendorian Elite UI also has an official website!
 // - https://xpuls3.github.io/Pendorian-Elite-UI/
 
 // This script was created by Puls3!
-// - Puls3 from Pendoria
+// - Puls3 on Pendoria
 
+const version = GM_info.script.version;
 let Modules = Register();
 Define();
 
 // [Options]
 
 // Toggle Script Debugging
-let isDebug = false;
+const isDebug = true;
 
-// Recolor Module
-// Changes the color of almost everything.
-Modules.Recolor.Options = {
+(function () {
 
-    // Recolor Module, Enable / Disable
-    Status: true,
+    // Version Check Module
+    Modules.VersionCheck.Options = {
 
-    // Recolor Module, Swap Old Username Color Titles
-    // Changes cyan titles to match the new chat username color
-    TitleSwap: true,
+        // Version Check Module, Enable / Disable
+        Status: true,
 
-    // Recolor Module, Colors
-    Color: "rgb(0, 153, 255)",
-    DarkColor: "rgb(0, 123, 235)",
-    ButtonColor: "rgba(0, 153, 255, 0.5)",
-    ButtonHoverColor: "rgba(0, 153, 255, 0.8)",
-    ProgressBackgroundColor: "rgb(51, 71, 113)",
-    ProfileLinkColor: "rgb(0, 123, 235)",
-    MentionColor: "rgb(0, 219, 255)",
-    MentionTabColor: "rgb(0, 153, 255)",
-    ChatUsernameColor: "rgb(0, 153, 255)",
+        // Version Check Module, Only check once every 24 hours
+        DailyLimit: true,
 
-};
+    };
 
-// Edits Module
-// Tiny edits that used to be included with the recolor.
-// Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
-Modules.Edits.Options = {
+    // Recolor Module
+    // Changes the color of almost everything.
+    Modules.Recolor.Options = {
 
-    // Edits Module, Enable / Disable
-    Status: true
+        // Recolor Module, Enable / Disable
+        Status: true,
 
-};
+        // Recolor Module, Swap Old Username Color Titles
+        // Changes cyan titles to match the new chat username color
+        TitleSwap: true,
 
-// Frameless Mode Module
-// Removes all of the frames.
-// Also adjusts sizes to look good without frames.
-Modules.Frameless.Options = {
+        // Recolor Module, Colors
+        Color: "rgb(0, 153, 255)",
+        DarkColor: "rgb(0, 123, 235)",
+        ButtonColor: "rgba(0, 153, 255, 0.5)",
+        ButtonHoverColor: "rgba(0, 153, 255, 0.8)",
+        ProgressBackgroundColor: "rgb(51, 71, 113)",
+        ProfileLinkColor: "rgb(0, 123, 235)",
+        MentionColor: "rgb(0, 219, 255)",
+        MentionTabColor: "rgb(0, 153, 255)",
+        ChatUsernameColor: "rgb(0, 153, 255)",
 
-    // Frameless Module, Enable / Disable
-    Status: true
+    };
 
-};
+    // Edits Module
+    // Tiny edits that used to be included with the recolor.
+    // Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
+    Modules.Edits.Options = {
 
-// Dual View Module
-// Forces the actions page to always show and shortens it.
-// Forces the content to always show below the actions page.
-// Requires Dungeon Sidebar to work correctly!
-Modules.DualView.Options = {
+        // Edits Module, Enable / Disable
+        Status: true
 
-    // Dual View Module, Enable / Disable
-    Status: false,
+    };
 
-    // Dual View Module, Line
-    // How far down the frame (in pixels) the line between content and actions is.
-    Line: 220
+    // Frameless Mode Module
+    // Removes all of the frames.
+    // Also adjusts sizes to look good without frames.
+    Modules.Frameless.Options = {
 
-};
+        // Frameless Module, Enable / Disable
+        Status: true
 
-// Rounded Borders Module
-// Makes most of the game's main area corners round.
-// Requires the Frameless Mode Module.
-Modules.RoundedBorders.Options = {
+    };
 
-    // Rounded Borders Module, Enable / Disable
-    Status: false,
+    // Dual View Module
+    // Forces the actions page to always show and shortens it.
+    // Forces the content to always show below the actions page.
+    // Requires Dungeon Sidebar to work correctly!
+    Modules.DualView.Options = {
 
-    // Rounded Borders Module, Rounded Amount
-    // Changes how round the corners are.
-    // Uses CSS values!
-    Amount: "16px"
+        // Dual View Module, Enable / Disable
+        Status: false,
 
-};
+        // Dual View Module, Line
+        // How far down the frame (in pixels) the line between content and actions is.
+        Line: 220
 
-// Background Module
-// Changes the background.
-Modules.Background.Options = {
+    };
 
-    // Background Module, Enable / Disable
-    Status: true,
+    // Rounded Borders Module
+    // Makes most of the game's main area corners round.
+    // Requires the Frameless Mode Module.
+    Modules.RoundedBorders.Options = {
 
-    // Standard Image: 'Stellar Collision' by KuldarLeement
-    // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
-    // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
+        // Rounded Borders Module, Enable / Disable
+        Status: false,
 
-    // Background Module, Background Link
-    Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
+        // Rounded Borders Module, Rounded Amount
+        // Changes how round the corners are.
+        // Uses CSS values!
+        Amount: "16px"
 
-};
+    };
 
-// Favicon Module
-// Changes the favicon.
-Modules.Favicon.Options = {
+    // Background Module
+    // Changes the background.
+    Modules.Background.Options = {
 
-    // Favicon Module, Enable / Disable
-    Status: true,
+        // Background Module, Enable / Disable
+        Status: true,
 
-    // Favicon Module, Favicon Link
-    Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
+        // Standard Image: 'Stellar Collision' by KuldarLeement
+        // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
+        // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
 
-};
+        // Background Module, Background Link
+        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
 
-// Legacy Sidebar Module
-// Makes the sidebar look almost like the original sidebar designed by Zampa.
-Modules.LegacySidebar.Options = {
+    };
 
-    // Legacy Sidebar Module, Enable / Disable
-    Status: true
+    // Favicon Module
+    // Changes the favicon.
+    Modules.Favicon.Options = {
 
-};
+        // Favicon Module, Enable / Disable
+        Status: true,
 
-// Remove Logo Module
-// Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
-Modules.RemoveLogo.Options = {
+        // Favicon Module, Favicon Link
+        Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
 
-    // Remove Logo Module, Enable / Disable
-    Status: true,
+    };
 
-};
+    // Legacy Sidebar Module
+    // Makes the sidebar look almost like the original sidebar designed by Zampa.
+    Modules.LegacySidebar.Options = {
 
-// Dungeon Sidebar Module
-// Removes the Dungeon tab and adds a link on the sidebar.
-Modules.DungeonSidebar.Options = {
+        // Legacy Sidebar Module, Enable / Disable
+        Status: true
 
-    // Dungeon Sidebar Module, Enable / Disable
-    Status: true
+    };
 
-};
+    // Remove Logo Module
+    // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
+    Modules.RemoveLogo.Options = {
 
-// Remove Battle Stats Module
-// Removes the battle stats in the header.
-Modules.RemoveBattleStats.Options = {
+        // Remove Logo Module, Enable / Disable
+        Status: true,
 
-    // Remove Battle Stats, Enable / Disable
-    Status: false
+    };
 
-};
+    // Dungeon Sidebar Module
+    // Removes the Dungeon tab and adds a link on the sidebar.
+    Modules.DungeonSidebar.Options = {
 
-// Areas Included Module
-// Removes the Areas tab and adds the content to the battle tab.
-Modules.AreasIncluded.Options = {
+        // Dungeon Sidebar Module, Enable / Disable
+        Status: true
 
-    // Areas Included Module, Enable / Disable
-    Status: true
+    };
 
-};
+    // Remove Battle Stats Module
+    // Removes the battle stats in the header.
+    Modules.RemoveBattleStats.Options = {
 
-// Remove Tabs Module
-// Removes the tabs on the actions page.
-// Requires Dungeon Sidebar to be active!
-// Requires Areas Included to be active!
-Modules.RemoveTabs.Options = {
+        // Remove Battle Stats, Enable / Disable
+        Status: false
 
-    // Remove Tabs Module, Enable / Disable
-    Status: false
+    };
 
-};
+    // Areas Included Module
+    // Removes the Areas tab and adds the content to the battle tab.
+    Modules.AreasIncluded.Options = {
 
-// Remove Tradeskill Selection Module
-// Removes the Tradeskill Selection dropdown next to the work button.
-// Removes the work button.
-// Ensure that you are already doing the TS that you want to continue doing!
-Modules.RemoveTradeskillSelection.Options = {
+        // Areas Included Module, Enable / Disable
+        Status: true
 
-    // Remove Tradeskill Selection Module, Enable / Disable
-    Status: false,
+    };
 
-    // Adds a small amount of space above the action text.
-    // Without this it will look awkward.
-    AddSpace: true
+    // Remove Tabs Module
+    // Removes the tabs on the actions page.
+    // Requires Dungeon Sidebar to be active!
+    // Requires Areas Included to be active!
+    Modules.RemoveTabs.Options = {
 
-};
+        // Remove Tabs Module, Enable / Disable
+        Status: false
 
-// Extra Bottom Links Module
-// Adds more links to the bottom of the screen
-Modules.ExtraBottomLinks.Options = {
+    };
 
-    // Extra Bottom Links Module, Enable / Disable
-    Status: true,
+    // Remove Tradeskill Selection Module
+    // Removes the Tradeskill Selection dropdown next to the work button.
+    // Removes the work button.
+    // Ensure that you are already doing the TS that you want to continue doing!
+    Modules.RemoveTradeskillSelection.Options = {
 
-    // Add links option below.
-    // Make sure you use a different declaration for each!
-    // For example, if you have 'Example' the following, you cannot have another that also says 'Example'!
-    // You would have to change it to 'AnotherExample', or something else that is alphanumeric!
-    Links: {
+        // Remove Tradeskill Selection Module, Enable / Disable
+        Status: false,
 
-        // Any suggestions of default links to add would be appreciated!
+        // Adds a small amount of space above the action text.
+        // Without this it will look awkward.
+        AddSpace: true
 
-        // Example Link Below
-        /*
-        Example: {
-            Name: "Example Link",
-            Link: "https://example.com"
-        },
-        */
+    };
 
-        // Karubo's ROI Calculator Link
-        ROI: {
-            Name: "Karubo's ROI",
+    // Extra Bottom Links Module
+    // Adds more links to the bottom of the screen
+    Modules.ExtraBottomLinks.Options = {
 
-            // New Karubo Website
-            // - http://pendcalc.karubo.de/
+        // Extra Bottom Links Module, Enable / Disable
+        Status: true,
 
-            // Old Google Sheets URL
-            // - "http://tiny.cc/KaruboROI"
+        // Add links option below.
+        // Make sure you use a different declaration for each!
+        // For example, if you have 'Example' the following, you cannot have another that also says 'Example'!
+        // You would have to change it to 'AnotherExample', or something else that is alphanumeric!
+        Links: {
 
-            Link: "http://pendcalc.karubo.de/"
+            // Any suggestions of default links to add would be appreciated!
 
-        },
+            // Example Link Below
+            /*
+            Example: {
+                Name: "Example Link",
+                Link: "https://example.com"
+            },
+            */
 
-        // Puls3's Calculator Link
-        Calcs: {
-            Name: "Puls3's Calcs",
-            Link: "https://xpuls3.github.io/calculators/"
-        },
+            // Karubo's ROI Calculator Link
+            ROI: {
+                Name: "Karubo's ROI",
 
-        // Impulsive Puls3's Updates Link
-        ImpulsiveUpdate: {
-            Name: "Impulsive Updates",
-            Link: "https://xpuls3.github.io/blog/"
-        },
+                // New Karubo Website
+                // - http://pendcalc.karubo.de/
 
-    }
+                // Old Google Sheets URL
+                // - "http://tiny.cc/KaruboROI"
 
-};
+                Link: "http://pendcalc.karubo.de/"
 
-// Extended Header Module
-// Extends the header above chat in side-by-side mode.
-Modules.ExtendedHeader.Options = {
+            },
 
-    // Extended Header Module, Enable / Disable
-    Status: true
+            // Puls3's Calculator Link
+            Calcs: {
+                Name: "Puls3's Calcs",
+                Link: "https://xpuls3.github.io/calculators/"
+            },
 
-};
+            // Impulsive Puls3's Updates Link
+            ImpulsiveUpdate: {
+                Name: "Impulsive Updates",
+                Link: "https://xpuls3.github.io/blog/"
+            },
 
-// Stat Sidebar Module
-// Adds all header stats to the sidebar
-Modules.SidebarStats.Options = {
+        }
 
-    // WARNING!!!
-    // This module while having once been a great feature is now partially broken!
-    // The style is broken, the JavaScript code behind it works just fine.
-    // Unless you can fix it yourself; leave it off.
+    };
 
-    // Sidebar Stats Module, Enable / Disable
-    // Enable at least one of the other options below or there will be issues.
-    Status: false,
+    // Extended Header Module
+    // Extends the header above chat in side-by-side mode.
+    Modules.ExtendedHeader.Options = {
 
-    // Sidebar Stats Module, Show Battle Skills, Enable / Disable
-    Skills: true,
+        // Extended Header Module, Enable / Disable
+        Status: true
 
-    // Sidebar Stats Module, Show Resources, Enable / Disable
-    Resources: true,
+    };
 
-    // Sidebar Stats Module, Show Currency, Enable / Disable
-    Currency: true
-
-};
+})();
 
 // [Functions]
 
-Origin();
+(function () {
 
-function Origin() {
-    const k = Object.keys(Modules);
-    let promiseList = [];
-    let isGame = checkIsGame();
-    for (let i = 0; i < k.length; i++) {
-        if (isGame || Modules[k[i]].RunLogin) {
-            if (Modules[k[i]].Options.Status) {
-                promiseList.push(new Promise(function (resolve) {
-                    Modules[k[i]].Code(resolve);
-                }).then(function (result) {
-                    if (result) {
-                        Modules[k[i]].Style = result;
-                        applyStyle(Modules[k[i]]);
+    Origin();
+
+    function Origin() {
+        logDo("Initiating Pendorian Elite UI v" + version, 0);
+        const k = Object.keys(Modules);
+        let promiseList = [];
+        let isGame = checkIsGame();
+        for (let i = 0; i < k.length; i++) {
+            Modules[k[i]].id = String(k[i]);
+            if (typeof (Modules[k[i]].Name) === "undefined") {
+                Modules[k[i]].Name = Modules[k[i]].id;
+            }
+            if (isGame || Modules[k[i]].RunLogin) {
+                if (typeof (Modules[k[i]].Options) !== "undefined") {
+                    if (Modules[k[i]].Options.Status) {
+                        if (typeof (Modules[k[i]].Code) !== "undefined") {
+                            promiseList.push(new Promise(function (resolve) {
+                                Modules[k[i]].Code(resolve);
+                            }).then(function (result) {
+                                if (result) {
+                                    Modules[k[i]].Style = result;
+                                    applyStyle(Modules[k[i]]);
+                                }
+                                if (isDebug) {
+                                    logDo(Modules[k[i]].Name + " Module Enabled", 0);
+                                }
+                            }));
+                        } else {
+                            logDo(Modules[k[i]].Name + " Module does not contain code", 1);
+                        }
                     }
-                    if (isDebug) {
-                        logDo(Modules[k[i]].Name + " Enabled.", 0);
-                    }
-                }));
+                } else {
+                    logDo(Modules[k[i]].Name + " Module does not contain options", 1);
+                }
             }
         }
+        Promise.all(promiseList).then(function () {
+            if (isDebug) {
+                logDo('Script Completely Loaded', 0);
+            }
+        });
     }
-    Promise.all(promiseList).then(function () {
-        if (isDebug) {
-            logDo('Script Completely Loaded.', 0);
+
+    function applyStyle(module) {
+        let matches = $('.Elite-UI-Style[Elite-UI-Module=' + module.id + ']');
+        if (matches.length !== 0) {
+            matches.remove();
         }
-    });
-}
-
-function applyStyle(module) {
-    let matches = $('.Elite-UI-Style[Elite-UI-Module=' + module.id + ']');
-    if (matches.length !== 0) {
-        matches.remove();
+        $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
     }
-    $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
-}
 
-function logDo(i, t) {
-    const logType = {
-        0: ['OKAY', 'color:green;'],
-        1: ['ERROR', 'color:red;']
-    };
-    console.log('%c[%c' + logType[t][0] + '%c] ' + i, 'color: none;', logType[t][1], 'color: none;');
-}
+    function checkIsGame() {
+        return true
+        //return window.location.pathname.includes('/game');
+    }
 
-function checkIsGame() {
-    return window.location.pathname.includes('/game');
-}
+})();
 
 function Register() {
     return {
         Recolor: {
-            id: 'Recolor',
             Name: 'Recolor',
             RunLogin: true
         },
         Edits: {
-            id: 'Edits',
             Name: 'Edits',
             RunLogin: false
         },
         Frameless: {
-            id: 'Frameless',
             Name: 'Frameless Mode',
             RunLogin: true
         },
         DualView: {
-            id: 'DualView',
             Name: 'DualView',
             RunLogin: false
         },
         RoundedBorders: {
-            id: 'RoundedBorders',
             Name: 'Rounded Borders',
             RunLogin: true
         },
         Background: {
-            id: 'Background',
             Name: 'Background',
             RunLogin: true
         },
         Favicon: {
-            id: 'Favicon',
             Name: 'Favicon',
             RunLogin: true
         },
         LegacySidebar: {
-            id: 'LegacySidebar',
             Name: 'Legacy Sidebar',
             RunLogin: false
         },
         RemoveLogo: {
-            id: 'RemoveLogo',
             Name: 'Remove Logo',
             RunLogin: false
         },
         DungeonSidebar: {
-            id: 'DungeonSidebar',
             Name: 'Dungeon Sidebar',
             RunLogin: false
         },
         AreasIncluded: {
-            id: 'AreasIncluded',
             Name: 'Areas Included',
             RunLogin: false
         },
         RemoveBattleStats: {
-            id: 'RemoveBattleStats',
             Name: 'Remove Battle Stats',
             RunLogin: false
         },
         RemoveTabs: {
-            id: 'RemoveTabs',
             Name: 'Remove Tabs',
             RunLogin: false
         },
         RemoveTradeskillSelection: {
-            id: 'RemoveTradeskillSelection',
             Name: 'Remove Tradeskill Selection',
             RunLogin: false
         },
         ExtraBottomLinks: {
-            id: 'ExtraBottomLinks',
             Name: 'Extra Bottom Links',
             RunLogin: false
         },
         ExtendedHeader: {
-            id: 'ExtendedHeader',
             Name: 'Extended Header',
             RunLogin: false
         },
-        SidebarStats: {
-            id: 'SidebarStats',
-            Name: 'Sidebar Stats',
-            RunLogin: false
+        VersionCheck: {
+            Name: 'Version Check',
+            RunLogin: false,
         },
     };
 }
@@ -436,21 +421,17 @@ function Define() {
 
     Modules.Recolor.Code = function (resolve) {
         const t = `
-        /* Below is CSS - Youu shouldn't customize this unless you understand it! */
-        
-		/* Global Color Variables */
-		
-            html {
-                --Elite-Color: ` + Modules.Recolor.Options.Color + `;
-                --Elite-Dark-Color: ` + Modules.Recolor.Options.DarkColor + `;
-                --Elite-Mention-Color: ` + Modules.Recolor.Options.MentionColor + `;
-                --Elite-Mention-Tab-Color: ` + Modules.Recolor.Options.MentionTabColor + `;
-                --Elite-Button-Color: ` + Modules.Recolor.Options.ButtonColor + `;
-                --Elite-Button-Hover-Color: ` + Modules.Recolor.Options.ButtonHoverColor + `;
-                --Elite-Profile-Link-Color: ` + Modules.Recolor.Options.ProfileLinkColor + `;
-                --Elite-Progress-Background-Color: ` + Modules.Recolor.Options.ProgressBackgroundColor + `;
-                --Elite-Chat-Color: ` + Modules.Recolor.Options.ChatUsernameColor + `;
-            }
+        html {
+            --Elite-Color: ` + Modules.Recolor.Options.Color + `;
+            --Elite-Dark-Color: ` + Modules.Recolor.Options.DarkColor + `;
+            --Elite-Mention-Color: ` + Modules.Recolor.Options.MentionColor + `;
+            --Elite-Mention-Tab-Color: ` + Modules.Recolor.Options.MentionTabColor + `;
+            --Elite-Button-Color: ` + Modules.Recolor.Options.ButtonColor + `;
+            --Elite-Button-Hover-Color: ` + Modules.Recolor.Options.ButtonHoverColor + `;
+            --Elite-Profile-Link-Color: ` + Modules.Recolor.Options.ProfileLinkColor + `;
+            --Elite-Progress-Background-Color: ` + Modules.Recolor.Options.ProgressBackgroundColor + `;
+            --Elite-Chat-Color: ` + Modules.Recolor.Options.ChatUsernameColor + `;
+        }
 		
 		/* Chat Color CSS */
 		
@@ -899,143 +880,120 @@ function Define() {
         resolve(t);
     };
 
-    Modules.SidebarStats.Code = function (resolve) {
-        let t1 = `
-			#elite-stat-sidebar-holder {
-				width: 100%;
-				max-width: 100%;
-				position: relative;
-				background: rgba(0, 0, 0, .8);
-				color: #fff;
-				overflow: hidden;
-                margin-bottom: 10px;
-			}
-			#elite-stat-sidebar {
-				overflow-y: auto;
-				margin-right: 10px;
-				margin-top: 10px;
-				padding: 1px 15px 15px;
-			}
-			#elite-stat-sidebar > .elite-holder {
-				border-bottom: 1px solid #575757;
-				width: calc(100% + 10px);
-				height: 20px;
-			}
-			#elite-stat-sidebar > .elite-holder > .stat-label {
-				text-align: left;
-				width: 50%;
-				float: left;
-			}
-			#elite-stat-sidebar > .elite-holder > .stat-amount {
-				text-align: right;
-				width: 50%;
-				float: left;
-			}`;
-        let t2 = `
-		<div id="elite-stat-sidebar-holder">
-			<div class="frame frame-vertical-left"></div>
-			<div class="frame frame-vertical-right"></div>
-			<div class="frame frame-horizontal-top"></div>
-			<div class="frame frame-horizontal-bottom"></div>
-			<div class="frame frame-top-left"></div>
-			<div class="frame frame-top-right"></div>
-			<div class="frame frame-bottom-right"></div>
-			<div class="frame frame-bottom-left"></div>
-			<div id="elite-stat-sidebar">
-		`;
-        if (Modules.SidebarStats.Options.Currency) {
-            t2 = t2 + `
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Gold</div>
-                    <div class="stat-amount">
-                        <span data-currency="Gold">` +
-                $('[data-currency="Gold"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Rhodium</div>
-                    <div class="stat-amount">
-                        <span data-currency="Rhodium">` +
-                $('[data-currency="Rhodium"]').text() + `</span>
-                        <span data-currency="Bound Rhodium">` +
-                $('[data-currency="Bound Rhodium"]').text() + `</span>
-                    </div>
-                </div>
-               <div class="elite-holder elite-resources">
-                    <div class="stat-label">Spare Parts</div>
-                    <div class="stat-amount">
-                        <span data-currency="Spare Parts">` +
-                $('[data-currency="Spare Parts"]').text() + `</span>
-                        <span data-currency="Bound Spare Parts">` +
-                $('[data-currency="Bound Spare Parts"]').text() + `</span>
-                    </div>
-                </div>`;
+    Modules.VersionCheck.Code = function (resolve) {
+        let t = `
+        .elite-version-window {
+            z-index: 999999999;
+            width: 100vw;
+            height: 100vh;
+            max-width: max-content;
+            background: rgba(0, 0, 0, 0.70);
         }
-        if (Modules.SidebarStats.Options.Skills) {
-            t2 = t2 + `
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Power</div>
-                    <div class="stat-amount">
-                        <span data-attributes="power">` +
-                $('[data-attributes="power"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Dex</div>
-                    <div class="stat-amount">
-                        <span data-attributes="dexterity">` +
-                $('[data-attributes="dexterity"]').text() + `</span>
-                    </div>
-                </div>
-               <div class="elite-holder elite-resources">
-                    <div class="stat-label">Agility</div>
-                    <div class="stat-amount">
-                        <span data-attributes="agility">` +
-                $('[data-attributes="agility"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Const</div>
-                    <div class="stat-amount">
-                        <span data-attributes="constitution">` +
-                $('[data-attributes="constitution"]').text() + `</span>
-                    </div>
-                </div>`;
+        
+        .elite-version-window h1 {
+            text-align: center;
+            padding-top: 10px;
         }
-        if (Modules.SidebarStats.Options.Resources) {
-            t2 = t2 + `
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Food</div>
-                    <div class="stat-amount">
-                        <span data-currency="Food">` +
-                $('[data-currency="Food"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Copper</div>
-                    <div class="stat-amount">
-                        <span data-currency="Copper">` +
-                $('[data-currency="Copper"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Gems</div>
-                    <div class="stat-amount">
-                        <span data-currency="Gems">` +
-                $('[data-currency="Gems"]').text() + `</span>
-                    </div>
-                </div>
-                <div class="elite-holder elite-resources">
-                    <div class="stat-label">Wood</div>
-                    <div class="stat-amount">
-                        <span data-currency="Wood">` +
-                $('[data-currency="Wood"]').text() + `</span>
-                    </div>
-                </div>`;
+        
+        .elite-version-window button {
+            text-align: center;
+            margin-right: 10px;
         }
-        t2 = t2 + `</div></div>`;
-        $('#profile').after(t2);
-        resolve(t1);
+        
+        .elite-version-content {
+            width: 30%;
+            min-width: max-content;
+            height: 135px;
+            background: black;
+            color: white;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            padding: 0px 50px 0px;
+        }
+        
+        .elite-version-border {
+            border: 10px solid transparent !important;
+            border-image-source: url(/images/frame.png) !important;
+            border-image-slice: 10 8 !important;
+            border-image-repeat: round !important;
+        }
+        `;
+        let hasls = (function () {
+            let test = 'test';
+            try {
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        });
+        if (hasls || !Modules.VersionCheck.Options.DailyLimit) {
+            let lastCheck = new Date(localStorage.getItem("Last Elite UI Version Check"));
+            if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !Modules.VersionCheck.Options.DailyLimit) {
+                new Promise(function (resolve) {
+                    $.get('https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest', function (data) {
+                        if (version.includes("-") && version.split("-")[0] === data.tag_name) {
+                            resolve(data.tag_name);
+                        } else if (version.split("-")[0] !== data.tag_name) {
+                            resolve(data.tag_name);
+                        } else {
+                            resolve(false);
+                        }
+                    });
+                }).then(function (newVer) {
+                    if (newVer !== false) {
+                        logDo("Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!", 1);
+
+                        const eliteVersionWindowBackground = document.createElement('div');
+                        eliteVersionWindowBackground.setAttribute('class', 'elite-version-window');
+                        eliteVersionWindowBackground.setAttribute('id', 'elite-version-window');
+
+                        const eliteVersionWindowContent = document.createElement('div');
+                        eliteVersionWindowContent.setAttribute('class', 'elite-version-content elite-version-border');
+                        eliteVersionWindowContent.innerHTML = "<h1>Outdated Elite UI Version!</h1><p>Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!</p>";
+
+                        const eliteVersionDownloadButton = document.createElement('button');
+                        eliteVersionDownloadButton.innerText = "Download";
+                        eliteVersionDownloadButton.setAttribute('onclick', "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js', '_blank');");
+
+                        const eliteVersionNotesButton = document.createElement('button');
+                        eliteVersionNotesButton.innerText = "Release Notes";
+                        eliteVersionNotesButton.setAttribute('onclick', "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/releases/latest', '_blank');");
+
+                        const eliteVersionCloseButton = document.createElement('button');
+                        eliteVersionCloseButton.innerText = "Close";
+                        eliteVersionCloseButton.setAttribute('onclick', '$("#elite-version-window").remove();');
+
+                        eliteVersionWindowContent.appendChild(eliteVersionDownloadButton);
+                        eliteVersionWindowContent.appendChild(eliteVersionNotesButton);
+                        eliteVersionWindowContent.appendChild(eliteVersionCloseButton);
+                        eliteVersionWindowBackground.appendChild(eliteVersionWindowContent);
+                        document.body.appendChild(eliteVersionWindowBackground);
+                    }
+                });
+                localStorage.setItem("Last Elite UI Version Check", String(new Date()));
+            }
+        }
+        resolve(t);
     };
 
+}
+
+function logDo(i, t) {
+    const logType = {
+        0: ['OKAY', 'color: rgb(0,148,255);'],
+        1: ['ERROR', 'color:red;']
+    };
+    let logArray = [
+        '%c[%cElite UI%c] [%c' + logType[t][0] + '%c] ' + i,
+        'color: none;', 'color: rgb(0,148,255);',
+        'color: none;', logType[t][1],
+        'color: none;'
+    ];
+    console.log.apply(null, logArray);
 }
