@@ -24,11 +24,12 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 Please complete the following information**
- - OS: [e.g. Windows, Ubuntu]
- - Browser [e.g. Chrome, Firefox, Opera]
- - Browser Version [e.g. 2.0]
- - Extension [e.g. Violentmonkey, Greasemonkey, Tampermonkey]
- - Pendorian Elite UI Version [eg. 2.1]
+ - OS [e.g. Windows, Ubuntu]:
+ - Browser [e.g. Chrome, Firefox, Opera]:
+ - Browser Version [e.g. 57.0]:
+ - Extension [e.g. Violentmonkey, Greasemonkey, Tampermonkey]:
+ - Extension Version [e.g. 2.11.2]:
+ - Pendorian Elite UI Version [eg. 2.1]:
 
 **Additional context**
 Add any other context about the problem here.
