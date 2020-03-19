@@ -338,8 +338,7 @@ const isDebug = false;
     }
 
     function checkIsGame() {
-        return true
-        //return window.location.pathname.includes('/game');
+        return (window.location.pathname === "/game");
     }
 
 })();
