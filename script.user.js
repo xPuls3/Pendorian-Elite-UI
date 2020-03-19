@@ -609,7 +609,12 @@ function Define() {
     Modules.Background.Code = function (resolve) {
         const t = `
 		body {
-			background-image: url( ` + Modules.Background.Options.Link + ` ) !important;
+			background: #171d1d url(` + Modules.Background.Options.Link + `) no-repeat scroll center center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
 		}`;
         resolve(t);
     };
