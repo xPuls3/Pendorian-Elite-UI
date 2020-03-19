@@ -3,7 +3,7 @@
 // @namespace http://pendoria.net/
 // @version 2.5
 // @author Puls3
-// @include /^https?:\/\/(?:.+\.)?pendoria.net\/?(?:.+)?$/
+// @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
 // @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
 // @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
@@ -543,8 +543,7 @@ function Define() {
         const t = `
 		#dungeon-dialogue {
 			display: none;
-		}
-		`;
+		}`;
         resolve(t);
     };
 
