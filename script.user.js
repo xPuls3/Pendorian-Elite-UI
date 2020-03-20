@@ -280,6 +280,15 @@ const isDebug = false;
 
     };
 
+    // Remove Gold Stat Module
+    // Removes Gold Boost & Stat Drop Boost from Rhodium Boosts
+    Modules.RemoveGoldStat.Options = {
+
+        // Remove Gold Stat Module, Enable / Disable
+        Status: false
+
+    };
+
 })();
 
 // [Functions]
@@ -405,6 +414,10 @@ function Register() {
         },
         ExtendedHeader: {
             Name: 'Extended Header',
+            RunLogin: false
+        },
+        RemoveGoldStat: {
+            Name: 'Remove Gold Stat',
             RunLogin: false
         },
         VersionCheck: {
@@ -867,6 +880,19 @@ function Define() {
         #header-content {
             width: calc(100% - 260px) !important
         }`;
+        resolve(t);
+    };
+
+    Modules.RemoveGoldStat.Code = function (resolve) {
+        const t = `
+        #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
+        #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
+		#rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(1),
+        #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(3),
+        #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(2),
+		#rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(1) {
+			display: none;
+		}`;
         resolve(t);
     };
 
