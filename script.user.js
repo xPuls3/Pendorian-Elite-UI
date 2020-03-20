@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.5
+// @version 2.5.1
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -331,9 +331,7 @@ const isDebug = false;
 
     function applyStyle(module) {
         let matches = $('.Elite-UI-Style[Elite-UI-Module=' + module.id + ']');
-        if (matches.length !== 0) {
-            matches.remove();
-        }
+        if (matches.length !== 0) matches.remove();
         $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
     }
 
@@ -534,8 +532,7 @@ function Define() {
             
             .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
                 color: var(--Elite-Color) !important;
-            }
-		`;
+            }`;
         resolve(t);
     };
 
@@ -765,18 +762,14 @@ function Define() {
                             });
                             ajaxPost('/dungeons/in-progress',
                                 function (inProgress) {
-                                    $progressbarWrapper = $(
-                                        '#dungeon-progressbar-wrapper');
+                                    $progressbarWrapper = $('#dungeon-progressbar-wrapper');
                                     $startButton = $('.dungeon-button-start');
                                     if (inProgress) {
-                                        $progressbarWrapper.attr('hidden',
-                                            false);
+                                        $progressbarWrapper.attr('hidden', false);
                                         $startButton.attr('hidden', true);
-                                        setDungeonDialogueText(
-                                            dungeonTextInProgress);
+                                        setDungeonDialogueText(dungeonTextInProgress);
                                     } else {
-                                        $progressbarWrapper.attr('hidden',
-                                            true);
+                                        $progressbarWrapper.attr('hidden', true);
                                         $startButton.attr('hidden', false);
                                         setDungeonDialogueText(dungeonTextDone);
                                     }
@@ -789,8 +782,7 @@ function Define() {
                                 });
                             ajaxPost('/dungeons/boosts',
                                 function (dungeonBoosts) {
-                                    dungeonTools.updateBoostPrices(
-                                        dungeonBoosts);
+                                    dungeonTools.updateBoostPrices(dungeonBoosts);
                                 });
                         });
                     }
@@ -809,9 +801,7 @@ function Define() {
                             type: 'POST',
                             url: '/action/area',
                             success: function (data) {
-                                $('#AreasIncluded').html(data.replace(
-                                    '<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>',
-                                    ''));
+                                $('#AreasIncluded').html(data.replace('<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>'));
                             }
                         });
                     }
@@ -835,8 +825,7 @@ function Define() {
         const t = `
 		.header-stats-user {
 			display: none;
-		}
-        `;
+		}`;
         resolve(t);
     };
 
@@ -867,10 +856,9 @@ function Define() {
         let e = $('#gameframe-menu #togglechat').parent();
         for (let i = 0; i < k.length; i++) {
             e.after('<li class="Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link" style="vertical-align: top;"><a href="' +
-                Modules.ExtraBottomLinks.Options.Links[k[i]].Link +
-                '" target="_blank">' +
+                Modules.ExtraBottomLinks.Options.Links[k[i]].Link + '" target="_blank">' +
                 Modules.ExtraBottomLinks.Options.Links[k[i]].Name + '</a></li>');
-        }
+    }
         resolve();
     };
 
@@ -878,8 +866,7 @@ function Define() {
         let t = `
         #header-content {
             width: calc(100% - 260px) !important
-        }
-        `;
+        }`;
         resolve(t);
     };
 
@@ -923,8 +910,7 @@ function Define() {
             border-image-source: url(/images/frame.png) !important;
             border-image-slice: 10 8 !important;
             border-image-repeat: round !important;
-        }
-        `;
+        }`;
         let hasls = (function () {
             let test = 'test';
             try {
