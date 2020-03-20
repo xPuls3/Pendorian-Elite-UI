@@ -814,7 +814,7 @@ function Define() {
                             type: 'POST',
                             url: '/action/area',
                             success: function (data) {
-                                $('#AreasIncluded').html(data.replace('<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>'));
+                                $('#AreasIncluded').html(data.replace('<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>', ''));
                             }
                         });
                     }
