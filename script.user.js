@@ -301,13 +301,12 @@ const isDebug = false;
         logDo("Initiating Pendorian Elite UI v" + version, 0);
         const k = Object.keys(Modules);
         let promiseList = [];
-        let isGame = checkIsGame();
+        let isGame = checkIsPath("/game");
+        let isLogin = checkIsPath("/");
         for (let i = 0; i < k.length; i++) {
             Modules[k[i]].id = String(k[i]);
-            if (typeof (Modules[k[i]].Name) === "undefined") {
-                Modules[k[i]].Name = Modules[k[i]].id;
-            }
-            if (isGame || Modules[k[i]].RunLogin) {
+            if (typeof (Modules[k[i]].Name) === "undefined") Modules[k[i]].Name = Modules[k[i]].id;
+            if (isGame || (isLogin && Modules[k[i]].RunLogin)) {
                 if (typeof (Modules[k[i]].Options) !== "undefined") {
                     if (Modules[k[i]].Options.Status) {
                         if (typeof (Modules[k[i]].Code) !== "undefined") {
@@ -332,9 +331,7 @@ const isDebug = false;
             }
         }
         Promise.all(promiseList).then(function () {
-            if (isDebug) {
-                logDo('Script Completely Loaded', 0);
-            }
+            if (isDebug) logDo('Script Completely Loaded', 0);
         });
     }
 
@@ -344,8 +341,8 @@ const isDebug = false;
         $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
     }
 
-    function checkIsGame() {
-        return (window.location.pathname === "/game");
+    function checkIsPath(x) {
+        return (window.location.pathname === x);
     }
 
 })();
