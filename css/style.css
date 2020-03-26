@@ -45,6 +45,11 @@ body {
     font-weight: 400;
 }
 
+#panel a {
+    font-size: 16px;
+    margin: 0;
+}
+
 #content, #footer {
     font-family: 'Quicksand', sans-serif;
 }
@@ -155,4 +160,8 @@ a {
 #footer {
     padding: 20px;
     text-align: center;
+}
+
+#Downloads ul > li:not(:last-of-type) {
+    margin-bottom: 5px;
 }
