@@ -16,7 +16,7 @@ You can find the Pendorian Elite UI Official Website here;
 
 [Latest Dev Release](https://github.com/xPuls3/Pendorian-Elite-UI/raw/dev/script.user.js) (unstable)
 
-[Final 1.x Legacy Release](https://github.com/xPuls3/Pendorian-Elite-UI/releases/tag/1.7.1)
+[Final 1.x Legacy Release](https://github.com/xPuls3/Pendorian-Elite-UI/raw/1.7.1/script.user.js)
 
 [All Releases](https://github.com/xPuls3/Pendorian-Elite-UI/releases)
 
