@@ -75,8 +75,7 @@ The most up to date clone policy can be found here;
 * **I do not** consent to this script being distributed either modified or unmodified without credit.
 * **I do not** consent to the distribution of this script under any circumstances outside of GitHub or GitLab. 
 
-As long as you give credit where credit is due and provide a link to the original, you may create a clone and distribute it via either Github or GitLab.  
-However, you are not allowed to distribute this script, or any alteration of this script, on any other sites. (eg. Greasy Fork or BitBucket) 
+As long as you give credit where credit is due and provide a link to the original, you may create a clone and distribute it via either a GitHub fork or a GitLab fork. You are not allowed to distribute this script, or any alteration of this script, on any other sites. (eg. Greasy Fork or BitBucket) 
 
 **This is subject to change, Puls3 maintains all rights to Pendorian Elite UI at all times.**
 
