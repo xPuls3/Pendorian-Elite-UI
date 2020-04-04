@@ -282,7 +282,7 @@ const isDebug = false;
 
     // Remove Gold Stat Module
     // Removes Gold Boost & Stat Drop Boost from Rhodium Boosts
-    modules.RemoveGoldStat.options = {
+    modules.removeGoldStat.options = {
 
         // Remove Gold Stat Module, Enable / Disable
         status: false,
@@ -413,7 +413,7 @@ function register() {
             name: "Extended Header",
             runLogin: false,
         },
-        RemoveGoldStat: {
+        removeGoldStat: {
             name: "Remove Gold Stat",
             runLogin: false,
         },
@@ -880,7 +880,7 @@ function define() {
         resolve(t);
     };
 
-    modules.RemoveGoldStat.code = function (resolve) {
+    modules.removeGoldStat.code = function (resolve) {
         const t = `
         #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
         #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
