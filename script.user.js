@@ -226,48 +226,23 @@ const isDebug = false;
         status: true,
 
         // Add links option below.
-        // Make sure you use a different declaration for each!
-        // For example, if you have 'Example' the following, you cannot have another that also says 'Example'!
-        // You would have to change it to 'AnotherExample', or something else that is alphanumeric!
-        links: {
+        links: [
 
             // Any suggestions of default links to add would be appreciated!
 
             // Example Link Below
-            /*
-            Example: {
-                name: "Example Link",
-                link: "https://example.com"
-            },
-            */
+            // ["Example", "http://example.com/"],
 
             // Karubo's ROI Calculator Link
-            karuboROI: {
-                name: "Karubo's ROI",
-
-                // New Karubo Website
-                // - http://pendcalc.karubo.de/
-
-                // Old Google Sheets URL
-                // - "http://tiny.cc/KaruboROI"
-
-                link: "http://pendcalc.karubo.de/",
-
-            },
+            ["Karubo's ROI", "http://pendcalc.karubo.de/"],
 
             // Puls3's Calculator Link
-            Calcs: {
-                name: "Puls3's Calcs",
-                link: "https://xpuls3.github.io/calculators/",
-            },
+            ["Puls3's Calcs", "https://xpuls3.github.io/calculators/"],
 
             // Impulsive Puls3's Updates Link
-            ImpulsiveUpdate: {
-                name: "Impulsive Updates",
-                link: "https://xpuls3.github.io/blog/",
-            },
+            ["Impulsive Updates", "https://xpuls3.github.io/blog/"],
 
-        },
+        ],
 
     };
 
@@ -862,12 +837,10 @@ function define() {
     };
 
     modules.extraBottomLinks.code = function (resolve) {
-        const k = Object.keys(modules.extraBottomLinks.options.links);
+        const links = modules.extraBottomLinks.options.links;
         let e = $("#gameframe-menu #togglechat").parent();
-        for (let i = 0; i < k.length; i++) {
-            e.after("<li class=\"Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link\" style=\"vertical-align: top;\"><a href=\"" +
-                modules.extraBottomLinks.options.links[k[i]].Link + "\" target=\"_blank\">" +
-                modules.extraBottomLinks.options.links[k[i]].name + "</a></li>");
+        for (let i = 0; i < links.length; i++) {
+            e.after(`<li class="Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link" style="vertical-align: top;"><a href="${links[i][1]}" target="_blank">${links[i][0]}</a></li>`);
         }
         resolve();
     };
