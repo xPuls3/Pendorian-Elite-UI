@@ -24,8 +24,8 @@
 // - Puls3 on Pendoria
 
 const version = GM_info.script.version;
-let Modules = Register();
-Define();
+let modules = register();
+define();
 
 // [Options]
 
@@ -35,57 +35,57 @@ const isDebug = false;
 (function () {
 
     // Version Check Module
-    Modules.VersionCheck.Options = {
+    modules.versionCheck.options = {
 
         // Version Check Module, Enable / Disable
-        Status: true,
+        status: true,
 
         // Version Check Module, Only check once every 24 hours
-        DailyLimit: true,
+        dailyLimit: true,
 
     };
 
     // Recolor Module
     // Changes the color of almost everything.
-    Modules.Recolor.Options = {
+    modules.recolor.options = {
 
         // Recolor Module, Enable / Disable
-        Status: true,
+        status: true,
 
         // Recolor Module, Swap Old Username Color Titles
         // Changes cyan titles to match the new chat username color
-        TitleSwap: true,
+        titleSwap: true,
 
         // Recolor Module, Colors
-        Color: "rgb(0, 153, 255)",
-        DarkColor: "rgb(0, 123, 235)",
-        ButtonColor: "rgba(0, 153, 255, 0.5)",
-        ButtonHoverColor: "rgba(0, 153, 255, 0.8)",
-        ProgressBackgroundColor: "rgb(51, 71, 113)",
-        ProfileLinkColor: "rgb(0, 123, 235)",
-        MentionColor: "rgb(0, 219, 255)",
-        MentionTabColor: "rgb(0, 153, 255)",
-        ChatUsernameColor: "rgb(0, 153, 255)",
+        color: "rgb(0, 153, 255)",
+        darkColor: "rgb(0, 123, 235)",
+        buttonColor: "rgba(0, 153, 255, 0.5)",
+        buttonHoverColor: "rgba(0, 153, 255, 0.8)",
+        progressBackgroundColor: "rgb(51, 71, 113)",
+        profileLinkColor: "rgb(0, 123, 235)",
+        mentionColor: "rgb(0, 219, 255)",
+        mentionTabColor: "rgb(0, 153, 255)",
+        chatUsernameColor: "rgb(0, 153, 255)",
 
     };
 
     // Edits Module
     // Tiny edits that used to be included with the recolor.
     // Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
-    Modules.Edits.Options = {
+    modules.edits.options = {
 
         // Edits Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
     // Frameless Mode Module
     // Removes all of the frames.
     // Also adjusts sizes to look good without frames.
-    Modules.Frameless.Options = {
+    modules.frameless.options = {
 
         // Frameless Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
@@ -93,54 +93,54 @@ const isDebug = false;
     // Forces the actions page to always show and shortens it.
     // Forces the content to always show below the actions page.
     // Requires Dungeon Sidebar to work correctly!
-    Modules.DualView.Options = {
+    modules.dualView.options = {
 
         // Dual View Module, Enable / Disable
-        Status: false,
+        status: false,
 
         // Dual View Module, Line
         // How far down the frame (in pixels) the line between content and actions is.
-        Line: 220,
+        line: 220,
 
     };
 
     // Rounded Borders Module
     // Makes most of the game's main area corners round.
     // Requires the Frameless Mode Module.
-    Modules.RoundedBorders.Options = {
+    modules.roundedBorders.options = {
 
         // Rounded Borders Module, Enable / Disable
-        Status: false,
+        status: false,
 
         // Rounded Borders Module, Rounded Amount
         // Changes how round the corners are.
         // Uses CSS values!
-        Amount: "16px",
+        amount: "16px",
 
     };
 
     // Background Module
     // Changes the background.
-    Modules.Background.Options = {
+    modules.background.options = {
 
         // Background Module, Enable / Disable
-        Status: true,
+        status: true,
 
         // Standard Image: 'Stellar Collision' by KuldarLeement
         // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
         // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
 
         // Background Module, Background Link
-        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
+        link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
 
     };
 
     // Favicon Module
     // Changes the favicon.
-    Modules.Favicon.Options = {
+    modules.favicon.options = {
 
         // Favicon Module, Enable / Disable
-        Status: true,
+        status: true,
 
         // Favicon Module, Favicon Link
         Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico",
@@ -149,46 +149,46 @@ const isDebug = false;
 
     // Legacy Sidebar Module
     // Makes the sidebar look almost like the original sidebar designed by Zampa.
-    Modules.LegacySidebar.Options = {
+    modules.legacySidebar.options = {
 
         // Legacy Sidebar Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
     // Remove Logo Module
     // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
-    Modules.RemoveLogo.Options = {
+    modules.removeLogo.options = {
 
         // Remove Logo Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
     // Dungeon Sidebar Module
     // Removes the Dungeon tab and adds a link on the sidebar.
-    Modules.DungeonSidebar.Options = {
+    modules.dungeonSidebar.options = {
 
         // Dungeon Sidebar Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
     // Remove Battle Stats Module
     // Removes the battle stats in the header.
-    Modules.RemoveBattleStats.Options = {
+    modules.removeBattleStats.options = {
 
         // Remove Battle Stats, Enable / Disable
-        Status: false,
+        status: false,
 
     };
 
     // Areas Included Module
     // Removes the Areas tab and adds the content to the battle tab.
-    Modules.AreasIncluded.Options = {
+    modules.areasIncluded.options = {
 
         // Areas Included Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
@@ -196,10 +196,10 @@ const isDebug = false;
     // Removes the tabs on the actions page.
     // Requires Dungeon Sidebar to be active!
     // Requires Areas Included to be active!
-    Modules.RemoveTabs.Options = {
+    modules.removeTabs.options = {
 
         // Remove Tabs Module, Enable / Disable
-        Status: false,
+        status: false,
 
     };
 
@@ -207,43 +207,43 @@ const isDebug = false;
     // Removes the Tradeskill Selection dropdown next to the work button.
     // Removes the work button.
     // Ensure that you are already doing the TS that you want to continue doing!
-    Modules.RemoveTradeskillSelection.Options = {
+    modules.removeTradeskillSelection.options = {
 
         // Remove Tradeskill Selection Module, Enable / Disable
-        Status: false,
+        status: false,
 
         // Adds a small amount of space above the action text.
         // Without this it will look awkward.
-        AddSpace: true,
+        addSpace: true,
 
     };
 
     // Extra Bottom Links Module
     // Adds more links to the bottom of the screen
-    Modules.ExtraBottomLinks.Options = {
+    modules.extraBottomLinks.options = {
 
         // Extra Bottom Links Module, Enable / Disable
-        Status: true,
+        status: true,
 
         // Add links option below.
         // Make sure you use a different declaration for each!
         // For example, if you have 'Example' the following, you cannot have another that also says 'Example'!
         // You would have to change it to 'AnotherExample', or something else that is alphanumeric!
-        Links: {
+        links: {
 
             // Any suggestions of default links to add would be appreciated!
 
             // Example Link Below
             /*
             Example: {
-                Name: "Example Link",
-                Link: "https://example.com"
+                name: "Example Link",
+                link: "https://example.com"
             },
             */
 
             // Karubo's ROI Calculator Link
-            ROI: {
-                Name: "Karubo's ROI",
+            karuboROI: {
+                name: "Karubo's ROI",
 
                 // New Karubo Website
                 // - http://pendcalc.karubo.de/
@@ -251,20 +251,20 @@ const isDebug = false;
                 // Old Google Sheets URL
                 // - "http://tiny.cc/KaruboROI"
 
-                Link: "http://pendcalc.karubo.de/",
+                link: "http://pendcalc.karubo.de/",
 
             },
 
             // Puls3's Calculator Link
             Calcs: {
-                Name: "Puls3's Calcs",
-                Link: "https://xpuls3.github.io/calculators/",
+                name: "Puls3's Calcs",
+                link: "https://xpuls3.github.io/calculators/",
             },
 
             // Impulsive Puls3's Updates Link
             ImpulsiveUpdate: {
-                Name: "Impulsive Updates",
-                Link: "https://xpuls3.github.io/blog/",
+                name: "Impulsive Updates",
+                link: "https://xpuls3.github.io/blog/",
             },
 
         },
@@ -273,19 +273,19 @@ const isDebug = false;
 
     // Extended Header Module
     // Extends the header above chat in side-by-side mode.
-    Modules.ExtendedHeader.Options = {
+    modules.extendedHeader.options = {
 
         // Extended Header Module, Enable / Disable
-        Status: true,
+        status: true,
 
     };
 
     // Remove Gold Stat Module
     // Removes Gold Boost & Stat Drop Boost from Rhodium Boosts
-    Modules.RemoveGoldStat.Options = {
+    modules.RemoveGoldStat.options = {
 
         // Remove Gold Stat Module, Enable / Disable
-        Status: false,
+        status: false,
 
     };
 
@@ -295,38 +295,38 @@ const isDebug = false;
 
 (function () {
 
-    Origin();
+    origin();
 
-    function Origin() {
+    function origin() {
         logDo("Initiating Pendorian Elite UI v" + version, 0);
-        const k = Object.keys(Modules);
+        const k = Object.keys(modules);
         let promiseList = [];
         let isGame = checkIsPath("/game");
         let isLogin = checkIsPath("/");
         for (let i = 0; i < k.length; i++) {
-            Modules[k[i]].id = String(k[i]);
-            if (typeof (Modules[k[i]].Name) === "undefined") Modules[k[i]].Name = Modules[k[i]].id;
-            if (isGame || (isLogin && Modules[k[i]].RunLogin)) {
-                if (typeof (Modules[k[i]].Options) !== "undefined") {
-                    if (Modules[k[i]].Options.Status) {
-                        if (typeof (Modules[k[i]].Code) !== "undefined") {
+            modules[k[i]].id = String(k[i]);
+            if (typeof (modules[k[i]].name) === "undefined") modules[k[i]].name = modules[k[i]].id;
+            if (isGame || (isLogin && modules[k[i]].runLogin)) {
+                if (typeof (modules[k[i]].options) !== "undefined") {
+                    if (modules[k[i]].options.status) {
+                        if (typeof (modules[k[i]].code) !== "undefined") {
                             promiseList.push(new Promise(function (resolve) {
-                                Modules[k[i]].Code(resolve);
+                                modules[k[i]].code(resolve);
                             }).then(function (result) {
                                 if (result) {
-                                    Modules[k[i]].Style = result;
-                                    applyStyle(Modules[k[i]]);
+                                    modules[k[i]].Style = result;
+                                    applyStyle(modules[k[i]]);
                                 }
                                 if (isDebug) {
-                                    logDo(Modules[k[i]].Name + " Module Enabled", 0);
+                                    logDo(modules[k[i]].name + " Module Enabled", 0);
                                 }
                             }));
                         } else {
-                            logDo(Modules[k[i]].Name + " Module does not contain code", 1);
+                            logDo(modules[k[i]].name + " Module does not contain code", 1);
                         }
                     }
                 } else {
-                    logDo(Modules[k[i]].Name + " Module does not contain options", 1);
+                    logDo(modules[k[i]].name + " Module does not contain options", 1);
                 }
             }
         }
@@ -347,97 +347,97 @@ const isDebug = false;
 
 })();
 
-function Register() {
+function register() {
     return {
-        Recolor: {
-            Name: "Recolor",
-            RunLogin: true,
+        recolor: {
+            name: "Recolor",
+            runLogin: true,
         },
-        Edits: {
-            Name: "Edits",
-            RunLogin: false,
+        edits: {
+            name: "Edits",
+            runLogin: false,
         },
-        Frameless: {
-            Name: "Frameless Mode",
-            RunLogin: true,
+        frameless: {
+            name: "Frameless Mode",
+            runLogin: true,
         },
-        DualView: {
-            Name: "DualView",
-            RunLogin: false,
+        dualView: {
+            name: "DualView",
+            runLogin: false,
         },
-        RoundedBorders: {
-            Name: "Rounded Borders",
-            RunLogin: true,
+        roundedBorders: {
+            name: "Rounded Borders",
+            runLogin: true,
         },
-        Background: {
-            Name: "Background",
-            RunLogin: true,
+        background: {
+            name: "Background",
+            runLogin: true,
         },
-        Favicon: {
-            Name: "Favicon",
-            RunLogin: true,
+        favicon: {
+            name: "Favicon",
+            runLogin: true,
         },
-        LegacySidebar: {
-            Name: "Legacy Sidebar",
-            RunLogin: false,
+        legacySidebar: {
+            name: "Legacy Sidebar",
+            runLogin: false,
         },
-        RemoveLogo: {
-            Name: "Remove Logo",
-            RunLogin: false,
+        removeLogo: {
+            name: "Remove Logo",
+            runLogin: false,
         },
-        DungeonSidebar: {
-            Name: "Dungeon Sidebar",
-            RunLogin: false,
+        dungeonSidebar: {
+            name: "Dungeon Sidebar",
+            runLogin: false,
         },
-        AreasIncluded: {
-            Name: "Areas Included",
-            RunLogin: false,
+        areasIncluded: {
+            name: "Areas Included",
+            runLogin: false,
         },
-        RemoveBattleStats: {
-            Name: "Remove Battle Stats",
-            RunLogin: false,
+        removeBattleStats: {
+            name: "Remove Battle Stats",
+            runLogin: false,
         },
-        RemoveTabs: {
-            Name: "Remove Tabs",
-            RunLogin: false,
+        removeTabs: {
+            name: "Remove Tabs",
+            runLogin: false,
         },
-        RemoveTradeskillSelection: {
-            Name: "Remove Tradeskill Selection",
-            RunLogin: false,
+        removeTradeskillSelection: {
+            name: "Remove Tradeskill Selection",
+            runLogin: false,
         },
-        ExtraBottomLinks: {
-            Name: "Extra Bottom Links",
-            RunLogin: false,
+        extraBottomLinks: {
+            name: "Extra Bottom Links",
+            runLogin: false,
         },
-        ExtendedHeader: {
-            Name: "Extended Header",
-            RunLogin: false,
+        extendedHeader: {
+            name: "Extended Header",
+            runLogin: false,
         },
         RemoveGoldStat: {
-            Name: "Remove Gold Stat",
-            RunLogin: false,
+            name: "Remove Gold Stat",
+            runLogin: false,
         },
-        VersionCheck: {
-            Name: "Version Check",
-            RunLogin: false,
+        versionCheck: {
+            name: "Version Check",
+            runLogin: false,
         },
     };
 }
 
-function Define() {
+function define() {
 
-    Modules.Recolor.Code = function (resolve) {
+    modules.recolor.code = function (resolve) {
         const t = `
         html {
-            --Elite-Color: ` + Modules.Recolor.Options.Color + `;
-            --Elite-Dark-Color: ` + Modules.Recolor.Options.DarkColor + `;
-            --Elite-Mention-Color: ` + Modules.Recolor.Options.MentionColor + `;
-            --Elite-Mention-Tab-Color: ` + Modules.Recolor.Options.MentionTabColor + `;
-            --Elite-Button-Color: ` + Modules.Recolor.Options.ButtonColor + `;
-            --Elite-Button-Hover-Color: ` + Modules.Recolor.Options.ButtonHoverColor + `;
-            --Elite-Profile-Link-Color: ` + Modules.Recolor.Options.ProfileLinkColor + `;
-            --Elite-Progress-Background-Color: ` + Modules.Recolor.Options.ProgressBackgroundColor + `;
-            --Elite-Chat-Color: ` + Modules.Recolor.Options.ChatUsernameColor + `;
+            --Elite-Color: ` + modules.recolor.options.color + `;
+            --Elite-Dark-Color: ` + modules.recolor.options.darkColor + `;
+            --Elite-Mention-Color: ` + modules.recolor.options.mentionColor + `;
+            --Elite-Mention-Tab-Color: ` + modules.recolor.options.mentionTabColor + `;
+            --Elite-Button-Color: ` + modules.recolor.options.buttonColor + `;
+            --Elite-Button-Hover-Color: ` + modules.recolor.options.buttonHoverColor + `;
+            --Elite-Profile-Link-Color: ` + modules.recolor.options.profileLinkColor + `;
+            --Elite-Progress-Background-Color: ` + modules.recolor.options.progressBackgroundColor + `;
+            --Elite-Chat-Color: ` + modules.recolor.options.chatUsernameColor + `;
         }
 		
 		/* Chat Color CSS */
@@ -546,7 +546,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.Edits.Code = function (resolve) {
+    modules.edits.code = function (resolve) {
         const t = `
 		#dungeon-dialogue {
 			display: none;
@@ -554,7 +554,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.Frameless.Code = function (resolve) {
+    modules.frameless.code = function (resolve) {
         const t = `
         #menu, #profile, #chat, #charity, #stats-hourly, #gameframe, #drop-statistics {
           border: none !important;
@@ -577,10 +577,10 @@ function Define() {
         resolve(t);
     };
 
-    Modules.DualView.Code = function (resolve) {
+    modules.dualView.code = function (resolve) {
         const t = `
 		html {
-			--DualViewLine: ` + Modules.DualView.Options.Line + `px;
+			--DualViewLine: ` + modules.dualView.options.line + `px;
 		}
 		#gameframe-battle {
 		  display: block !important;
@@ -597,8 +597,8 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RoundedBorders.Code = function (resolve) {
-        const l = Modules.RoundedBorders.Options.Amount;
+    modules.roundedBorders.code = function (resolve) {
+        const l = modules.roundedBorders.options.amount;
         const t = `
 		#profile, #menu, #stats-hourly, #ether-resources-sidebar,`
             + `#gameframe-battle, #gameframe-content, #drop-statistics,`
@@ -611,10 +611,10 @@ function Define() {
         resolve(t);
     };
 
-    Modules.Background.Code = function (resolve) {
+    modules.background.code = function (resolve) {
         const t = `
 		body {
-			background: #171d1d url(` + Modules.Background.Options.Link + `) no-repeat scroll center center;
+			background: #171d1d url(` + modules.background.options.link + `) no-repeat scroll center center;
             background-attachment: fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -624,13 +624,13 @@ function Define() {
         resolve(t);
     };
 
-    Modules.Favicon.Code = function (resolve) {
-        const t = `<link rel="icon" href="` + Modules.Favicon.Options.Link + `"/>`;
+    modules.favicon.code = function (resolve) {
+        const t = `<link rel="icon" href="` + modules.favicon.options.Link + `"/>`;
         $("head").append(t);
         resolve();
     };
 
-    Modules.LegacySidebar.Code = function (resolve) {
+    modules.legacySidebar.code = function (resolve) {
         const t = `
 		#menu .frame {
 			display: none;
@@ -657,7 +657,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RemoveLogo.Code = function (resolve) {
+    modules.removeLogo.code = function (resolve) {
         const t = `
 		#content > div.wrapper > aside > * {
 			top: -50px;
@@ -674,7 +674,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.DungeonSidebar.Code = function (resolve) {
+    modules.dungeonSidebar.code = function (resolve) {
         const t = `
 		#gameframe-battle > ul > li:nth-child(4) {
 			display: none;
@@ -730,7 +730,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.AreasIncluded.Code = function (resolve) {
+    modules.areasIncluded.code = function (resolve) {
         const t = `
         #gameframe-battle > ul > li:nth-child(3) {
 			display: none;
@@ -831,7 +831,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RemoveBattleStats.Code = function (resolve) {
+    modules.removeBattleStats.code = function (resolve) {
         const t = `
 		.header-stats-user {
 			display: none;
@@ -839,7 +839,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RemoveTabs.Code = function (resolve) {
+    modules.removeTabs.code = function (resolve) {
         const t = `
 		#gameframe-battle > ul {
 			display: none;
@@ -847,12 +847,12 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RemoveTradeskillSelection.Code = function (resolve) {
+    modules.removeTradeskillSelection.code = function (resolve) {
         let t = `
 		#actioncontent > div:nth-child(2) {
             display: none !important;
         }`;
-        if (Modules.RemoveTradeskillSelection.Options.AddSpace === true) {
+        if (modules.removeTradeskillSelection.options.addSpace === true) {
             t = t + `
             #actioncontent {
                 margin-top: 15px;
@@ -861,18 +861,18 @@ function Define() {
         resolve(t);
     };
 
-    Modules.ExtraBottomLinks.Code = function (resolve) {
-        const k = Object.keys(Modules.ExtraBottomLinks.Options.Links);
+    modules.extraBottomLinks.code = function (resolve) {
+        const k = Object.keys(modules.extraBottomLinks.options.links);
         let e = $("#gameframe-menu #togglechat").parent();
         for (let i = 0; i < k.length; i++) {
             e.after("<li class=\"Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link\" style=\"vertical-align: top;\"><a href=\"" +
-                Modules.ExtraBottomLinks.Options.Links[k[i]].Link + "\" target=\"_blank\">" +
-                Modules.ExtraBottomLinks.Options.Links[k[i]].Name + "</a></li>");
+                modules.extraBottomLinks.options.links[k[i]].Link + "\" target=\"_blank\">" +
+                modules.extraBottomLinks.options.links[k[i]].name + "</a></li>");
         }
         resolve();
     };
 
-    Modules.ExtendedHeader.Code = function (resolve) {
+    modules.extendedHeader.code = function (resolve) {
         let t = `
         #header-content {
             width: calc(100% - 260px) !important
@@ -880,7 +880,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.RemoveGoldStat.Code = function (resolve) {
+    modules.RemoveGoldStat.code = function (resolve) {
         const t = `
         #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
         #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
@@ -893,7 +893,7 @@ function Define() {
         resolve(t);
     };
 
-    Modules.VersionCheck.Code = function (resolve) {
+    modules.versionCheck.code = function (resolve) {
         let t = `
         .elite-version-window {
             z-index: 999999999;
@@ -944,9 +944,9 @@ function Define() {
                 return false;
             }
         });
-        if (hasls || !Modules.VersionCheck.Options.DailyLimit) {
+        if (hasls || !modules.versionCheck.options.dailyLimit) {
             let lastCheck = new Date(localStorage.getItem("Last Elite UI Version Check"));
-            if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !Modules.VersionCheck.Options.DailyLimit) {
+            if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !modules.versionCheck.options.dailyLimit) {
                 new Promise(function (resolve) {
                     $.get("https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest", function (data) {
                         if (version.includes("-") && version.split("-")[0] === data.tag_name) {
