@@ -75,7 +75,7 @@ const isDebug = false;
     Modules.Edits.Options = {
 
         // Edits Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -85,7 +85,7 @@ const isDebug = false;
     Modules.Frameless.Options = {
 
         // Frameless Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -100,7 +100,7 @@ const isDebug = false;
 
         // Dual View Module, Line
         // How far down the frame (in pixels) the line between content and actions is.
-        Line: 220
+        Line: 220,
 
     };
 
@@ -115,7 +115,7 @@ const isDebug = false;
         // Rounded Borders Module, Rounded Amount
         // Changes how round the corners are.
         // Uses CSS values!
-        Amount: "16px"
+        Amount: "16px",
 
     };
 
@@ -131,7 +131,7 @@ const isDebug = false;
         // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
 
         // Background Module, Background Link
-        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
+        Link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
 
     };
 
@@ -143,7 +143,7 @@ const isDebug = false;
         Status: true,
 
         // Favicon Module, Favicon Link
-        Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
+        Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico",
 
     };
 
@@ -152,7 +152,7 @@ const isDebug = false;
     Modules.LegacySidebar.Options = {
 
         // Legacy Sidebar Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -170,7 +170,7 @@ const isDebug = false;
     Modules.DungeonSidebar.Options = {
 
         // Dungeon Sidebar Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -179,7 +179,7 @@ const isDebug = false;
     Modules.RemoveBattleStats.Options = {
 
         // Remove Battle Stats, Enable / Disable
-        Status: false
+        Status: false,
 
     };
 
@@ -188,7 +188,7 @@ const isDebug = false;
     Modules.AreasIncluded.Options = {
 
         // Areas Included Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -199,7 +199,7 @@ const isDebug = false;
     Modules.RemoveTabs.Options = {
 
         // Remove Tabs Module, Enable / Disable
-        Status: false
+        Status: false,
 
     };
 
@@ -214,7 +214,7 @@ const isDebug = false;
 
         // Adds a small amount of space above the action text.
         // Without this it will look awkward.
-        AddSpace: true
+        AddSpace: true,
 
     };
 
@@ -251,23 +251,23 @@ const isDebug = false;
                 // Old Google Sheets URL
                 // - "http://tiny.cc/KaruboROI"
 
-                Link: "http://pendcalc.karubo.de/"
+                Link: "http://pendcalc.karubo.de/",
 
             },
 
             // Puls3's Calculator Link
             Calcs: {
                 Name: "Puls3's Calcs",
-                Link: "https://xpuls3.github.io/calculators/"
+                Link: "https://xpuls3.github.io/calculators/",
             },
 
             // Impulsive Puls3's Updates Link
             ImpulsiveUpdate: {
                 Name: "Impulsive Updates",
-                Link: "https://xpuls3.github.io/blog/"
+                Link: "https://xpuls3.github.io/blog/",
             },
 
-        }
+        },
 
     };
 
@@ -276,7 +276,7 @@ const isDebug = false;
     Modules.ExtendedHeader.Options = {
 
         // Extended Header Module, Enable / Disable
-        Status: true
+        Status: true,
 
     };
 
@@ -285,7 +285,7 @@ const isDebug = false;
     Modules.RemoveGoldStat.Options = {
 
         // Remove Gold Stat Module, Enable / Disable
-        Status: false
+        Status: false,
 
     };
 
@@ -331,14 +331,14 @@ const isDebug = false;
             }
         }
         Promise.all(promiseList).then(function () {
-            if (isDebug) logDo('Script Completely Loaded', 0);
+            if (isDebug) logDo("Script Completely Loaded", 0);
         });
     }
 
     function applyStyle(module) {
-        let matches = $('.Elite-UI-Style[Elite-UI-Module=' + module.id + ']');
+        let matches = $(".Elite-UI-Style[Elite-UI-Module=" + module.id + "]");
         if (matches.length !== 0) matches.remove();
-        $("head").append('<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="' + module.id + '">' + module.Style + '</style>')
+        $("head").append("<style class=\"Pendorian-Elite-UI Elite-UI-Style\" Elite-UI-Module=\"" + module.id + "\">" + module.Style + "</style>")
     }
 
     function checkIsPath(x) {
@@ -350,75 +350,75 @@ const isDebug = false;
 function Register() {
     return {
         Recolor: {
-            Name: 'Recolor',
-            RunLogin: true
+            Name: "Recolor",
+            RunLogin: true,
         },
         Edits: {
-            Name: 'Edits',
-            RunLogin: false
+            Name: "Edits",
+            RunLogin: false,
         },
         Frameless: {
-            Name: 'Frameless Mode',
-            RunLogin: true
+            Name: "Frameless Mode",
+            RunLogin: true,
         },
         DualView: {
-            Name: 'DualView',
-            RunLogin: false
+            Name: "DualView",
+            RunLogin: false,
         },
         RoundedBorders: {
-            Name: 'Rounded Borders',
-            RunLogin: true
+            Name: "Rounded Borders",
+            RunLogin: true,
         },
         Background: {
-            Name: 'Background',
-            RunLogin: true
+            Name: "Background",
+            RunLogin: true,
         },
         Favicon: {
-            Name: 'Favicon',
-            RunLogin: true
+            Name: "Favicon",
+            RunLogin: true,
         },
         LegacySidebar: {
-            Name: 'Legacy Sidebar',
-            RunLogin: false
+            Name: "Legacy Sidebar",
+            RunLogin: false,
         },
         RemoveLogo: {
-            Name: 'Remove Logo',
-            RunLogin: false
+            Name: "Remove Logo",
+            RunLogin: false,
         },
         DungeonSidebar: {
-            Name: 'Dungeon Sidebar',
-            RunLogin: false
+            Name: "Dungeon Sidebar",
+            RunLogin: false,
         },
         AreasIncluded: {
-            Name: 'Areas Included',
-            RunLogin: false
+            Name: "Areas Included",
+            RunLogin: false,
         },
         RemoveBattleStats: {
-            Name: 'Remove Battle Stats',
-            RunLogin: false
+            Name: "Remove Battle Stats",
+            RunLogin: false,
         },
         RemoveTabs: {
-            Name: 'Remove Tabs',
-            RunLogin: false
+            Name: "Remove Tabs",
+            RunLogin: false,
         },
         RemoveTradeskillSelection: {
-            Name: 'Remove Tradeskill Selection',
-            RunLogin: false
+            Name: "Remove Tradeskill Selection",
+            RunLogin: false,
         },
         ExtraBottomLinks: {
-            Name: 'Extra Bottom Links',
-            RunLogin: false
+            Name: "Extra Bottom Links",
+            RunLogin: false,
         },
         ExtendedHeader: {
-            Name: 'Extended Header',
-            RunLogin: false
+            Name: "Extended Header",
+            RunLogin: false,
         },
         RemoveGoldStat: {
-            Name: 'Remove Gold Stat',
-            RunLogin: false
+            Name: "Remove Gold Stat",
+            RunLogin: false,
         },
         VersionCheck: {
-            Name: 'Version Check',
+            Name: "Version Check",
             RunLogin: false,
         },
     };
@@ -682,47 +682,47 @@ function Define() {
 		#dungeon-content, #dungeon-tools-content {
 			color: white;
 		}`;
-        $('#scraptown-button').parent().after('<li><a href="" id="elite-dungeon-button" class="Pendorian-Elite-UI"><i class="fas fa-dungeon"></i>Dungeons</a></li>');
+        $("#scraptown-button").parent().after("<li><a href=\"\" id=\"elite-dungeon-button\" class=\"Pendorian-Elite-UI\"><i class=\"fas fa-dungeon\"></i>Dungeons</a></li>");
 
         // Function Below Grabbed From Pendoria And Modified
         // Heavily modified, as this code is less than awesome.
-        $('#elite-dungeon-button').click(function (event) {
+        $("#elite-dungeon-button").click(function (event) {
             event.preventDefault();
-            ajaxPost('/action/dungeons', function (data) {
-                $('#gameframe-content').html(data).show();
-                $('#gameframe-battle').hide();
-                $('#dungeon-tools-content [tooltip-title]').each(function () {
+            ajaxPost("/action/dungeons", function (data) {
+                $("#gameframe-content").html(data).show();
+                $("#gameframe-battle").hide();
+                $("#dungeon-tools-content [tooltip-title]").each(function () {
                     $(this).qtip({
                         content: {
-                            title: $(this).attr('tooltip-title'),
-                            text: $(this).attr('tooltip-text')
+                            title: $(this).attr("tooltip-title"),
+                            text: $(this).attr("tooltip-text"),
                         },
-                        style: {classes: 'qtip-dark'},
+                        style: {classes: "qtip-dark"},
                         position: {
-                            target: 'mouse'
-                        }
+                            target: "mouse",
+                        },
                     });
                 });
-                ajaxPost('/dungeons/in-progress', function (inProgress) {
-                    $progressbarWrapper = $('#dungeon-progressbar-wrapper');
-                    $startButton = $('.dungeon-button-start');
+                ajaxPost("/dungeons/in-progress", function (inProgress) {
+                    $progressbarWrapper = $("#dungeon-progressbar-wrapper");
+                    $startButton = $(".dungeon-button-start");
                     if (inProgress) {
-                        $progressbarWrapper.attr('hidden', false);
-                        $startButton.attr('hidden', true);
+                        $progressbarWrapper.attr("hidden", false);
+                        $startButton.attr("hidden", true);
                         setDungeonDialogueText(dungeonTextInProgress);
                     } else {
-                        $progressbarWrapper.attr('hidden', true);
-                        $startButton.attr('hidden', false);
+                        $progressbarWrapper.attr("hidden", true);
+                        $startButton.attr("hidden", false);
                         setDungeonDialogueText(dungeonTextDone);
                     }
-                    $dungeonDialogue = $('#dungeon-dialogue');
-                    $dungeonDialogue.attr('hidden', false);
-                    $dungeonControls = $('.dungeon-controls');
-                    $dungeonControls.attr('hidden', false);
+                    $dungeonDialogue = $("#dungeon-dialogue");
+                    $dungeonDialogue.attr("hidden", false);
+                    $dungeonControls = $(".dungeon-controls");
+                    $dungeonControls.attr("hidden", false);
                     updateDungeonActivatorCount();
                     updateProfileDungeonActivatorCount();
                 });
-                ajaxPost('/dungeons/boosts', function (dungeonBoosts) {
+                ajaxPost("/dungeons/boosts", function (dungeonBoosts) {
                     dungeonTools.updateBoostPrices(dungeonBoosts);
                 });
             });
@@ -736,96 +736,96 @@ function Define() {
 			display: none;
 		}`;
         setTimeout(function () {
-            let $battleNav = $('#gameframe-battle .nav-tabs li');
-            $battleNav.off('click');
+            let $battleNav = $("#gameframe-battle .nav-tabs li");
+            $battleNav.off("click");
 
             // Function Below Grabbed From Pendoria And Modified
-            $battleNav.on('click', 'a', function (e) {
+            $battleNav.on("click", "a", function (e) {
                 let url;
-                if (e.currentTarget.textContent === 'Battle') {
-                    url = 'battle';
-                } else if (e.currentTarget.textContent === 'Tradeskill') {
-                    url = 'tradeskill';
-                } else if (e.currentTarget.textContent === 'Dungeons') {
+                if (e.currentTarget.textContent === "Battle") {
+                    url = "battle";
+                } else if (e.currentTarget.textContent === "Tradeskill") {
+                    url = "tradeskill";
+                } else if (e.currentTarget.textContent === "Dungeons") {
                     // Open dungeons instead
-                    url = 'dungeons';
-                } else if (e.currentTarget.textContent === 'Area') {
+                    url = "dungeons";
+                } else if (e.currentTarget.textContent === "Area") {
                     // Open dungeons instead
-                    url = 'area';
+                    url = "area";
                 }
-                ajaxPost('/action/' + url, function (data) {
-                    $('#actioncontent').html(data);
-                    if (url === 'dungeons') {
-                        ajaxPost('/action/dungeons', function (data) {
-                            $('#gameframe-battle').html(data).show();
-                            $('#dungeon-tools-content [tooltip-title]').each(function () {
+                ajaxPost("/action/" + url, function (data) {
+                    $("#actioncontent").html(data);
+                    if (url === "dungeons") {
+                        ajaxPost("/action/dungeons", function (data) {
+                            $("#gameframe-battle").html(data).show();
+                            $("#dungeon-tools-content [tooltip-title]").each(function () {
                                 $(this).qtip({
                                     content: {
-                                        title: $(this).attr('tooltip-title'),
-                                        text: $(this).attr('tooltip-text')
+                                        title: $(this).attr("tooltip-title"),
+                                        text: $(this).attr("tooltip-text"),
                                     },
-                                    style: {classes: 'qtip-dark'},
+                                    style: {classes: "qtip-dark"},
                                     position: {
-                                        target: 'mouse'
-                                    }
+                                        target: "mouse",
+                                    },
                                 });
                             });
-                            ajaxPost('/dungeons/in-progress',
+                            ajaxPost("/dungeons/in-progress",
                                 function (inProgress) {
-                                    $progressbarWrapper = $('#dungeon-progressbar-wrapper');
-                                    $startButton = $('.dungeon-button-start');
+                                    $progressbarWrapper = $("#dungeon-progressbar-wrapper");
+                                    $startButton = $(".dungeon-button-start");
                                     if (inProgress) {
-                                        $progressbarWrapper.attr('hidden', false);
-                                        $startButton.attr('hidden', true);
+                                        $progressbarWrapper.attr("hidden", false);
+                                        $startButton.attr("hidden", true);
                                         setDungeonDialogueText(dungeonTextInProgress);
                                     } else {
-                                        $progressbarWrapper.attr('hidden', true);
-                                        $startButton.attr('hidden', false);
+                                        $progressbarWrapper.attr("hidden", true);
+                                        $startButton.attr("hidden", false);
                                         setDungeonDialogueText(dungeonTextDone);
                                     }
-                                    $dungeonDialogue = $('#dungeon-dialogue');
-                                    $dungeonDialogue.attr('hidden', false);
-                                    $dungeonControls = $('.dungeon-controls');
-                                    $dungeonControls.attr('hidden', false);
+                                    $dungeonDialogue = $("#dungeon-dialogue");
+                                    $dungeonDialogue.attr("hidden", false);
+                                    $dungeonControls = $(".dungeon-controls");
+                                    $dungeonControls.attr("hidden", false);
                                     updateDungeonActivatorCount();
                                     updateProfileDungeonActivatorCount();
                                 });
-                            ajaxPost('/dungeons/boosts',
+                            ajaxPost("/dungeons/boosts",
                                 function (dungeonBoosts) {
                                     dungeonTools.updateBoostPrices(dungeonBoosts);
                                 });
                         });
                     }
-                    if (url === 'tradeskill') {
-                        $('#stats-hourly-tab-battle').attr('hidden', true);
-                        $('#stats-hourly-tab-tradeskill').attr('hidden', false);
+                    if (url === "tradeskill") {
+                        $("#stats-hourly-tab-battle").attr("hidden", true);
+                        $("#stats-hourly-tab-tradeskill").attr("hidden", false);
                     }
-                    if (url === 'battle') {
-                        $('#stats-hourly-tab-battle').attr('hidden', false);
-                        $('#stats-hourly-tab-tradeskill').attr('hidden', true);
-                        if (!$('#AreasIncluded').first.length) {
-                            $('#nofight').after('<div id=\'AreasIncluded\' class="Pendorian-Elite-UI"></div>');
-                            $('#gameframe-battle > ul > li:contains(\'Area\')').hide();
+                    if (url === "battle") {
+                        $("#stats-hourly-tab-battle").attr("hidden", false);
+                        $("#stats-hourly-tab-tradeskill").attr("hidden", true);
+                        if (!$("#AreasIncluded").first.length) {
+                            $("#nofight").after("<div id='AreasIncluded' class=\"Pendorian-Elite-UI\"></div>");
+                            $("#gameframe-battle > ul > li:contains('Area')").hide();
                         }
                         $.ajax({
-                            type: 'POST',
-                            url: '/action/area',
+                            type: "POST",
+                            url: "/action/area",
                             success: function (data) {
-                                $('#AreasIncluded').html(data.replace('<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>', ''));
-                            }
+                                $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                            },
                         });
                     }
                 });
             });
-            if (!$('#AreasIncluded').first.length) {
-                $('#nofight').after('<div id=\'AreasIncluded\'></div>');
+            if (!$("#AreasIncluded").first.length) {
+                $("#nofight").after("<div id='AreasIncluded'></div>");
             }
             $.ajax({
-                type: 'POST',
-                url: '/action/area',
+                type: "POST",
+                url: "/action/area",
                 success: function (data) {
-                    $('#AreasIncluded').html(data.replace('<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>', ""));
-                }
+                    $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                },
             });
         }, 10000);
         resolve(t);
@@ -863,12 +863,12 @@ function Define() {
 
     Modules.ExtraBottomLinks.Code = function (resolve) {
         const k = Object.keys(Modules.ExtraBottomLinks.Options.Links);
-        let e = $('#gameframe-menu #togglechat').parent();
+        let e = $("#gameframe-menu #togglechat").parent();
         for (let i = 0; i < k.length; i++) {
-            e.after('<li class="Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link" style="vertical-align: top;"><a href="' +
-                Modules.ExtraBottomLinks.Options.Links[k[i]].Link + '" target="_blank">' +
-                Modules.ExtraBottomLinks.Options.Links[k[i]].Name + '</a></li>');
-    }
+            e.after("<li class=\"Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link\" style=\"vertical-align: top;\"><a href=\"" +
+                Modules.ExtraBottomLinks.Options.Links[k[i]].Link + "\" target=\"_blank\">" +
+                Modules.ExtraBottomLinks.Options.Links[k[i]].Name + "</a></li>");
+        }
         resolve();
     };
 
@@ -935,7 +935,7 @@ function Define() {
             border-image-repeat: round !important;
         }`;
         let hasls = (function () {
-            let test = 'test';
+            let test = "test";
             try {
                 localStorage.setItem(test, test);
                 localStorage.removeItem(test);
@@ -948,7 +948,7 @@ function Define() {
             let lastCheck = new Date(localStorage.getItem("Last Elite UI Version Check"));
             if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !Modules.VersionCheck.Options.DailyLimit) {
                 new Promise(function (resolve) {
-                    $.get('https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest', function (data) {
+                    $.get("https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest", function (data) {
                         if (version.includes("-") && version.split("-")[0] === data.tag_name) {
                             resolve(data.tag_name);
                         } else if (version.split("-")[0] !== data.tag_name) {
@@ -961,25 +961,25 @@ function Define() {
                     if (newVer !== false) {
                         logDo("Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!", 1);
 
-                        const eliteVersionWindowBackground = document.createElement('div');
-                        eliteVersionWindowBackground.setAttribute('class', 'elite-version-window');
-                        eliteVersionWindowBackground.setAttribute('id', 'elite-version-window');
+                        const eliteVersionWindowBackground = document.createElement("div");
+                        eliteVersionWindowBackground.setAttribute("class", "elite-version-window");
+                        eliteVersionWindowBackground.setAttribute("id", "elite-version-window");
 
-                        const eliteVersionWindowContent = document.createElement('div');
-                        eliteVersionWindowContent.setAttribute('class', 'elite-version-content elite-version-border');
+                        const eliteVersionWindowContent = document.createElement("div");
+                        eliteVersionWindowContent.setAttribute("class", "elite-version-content elite-version-border");
                         eliteVersionWindowContent.innerHTML = "<h1>Outdated Elite UI Version!</h1><p>Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!</p>";
 
-                        const eliteVersionDownloadButton = document.createElement('button');
+                        const eliteVersionDownloadButton = document.createElement("button");
                         eliteVersionDownloadButton.innerText = "Download";
-                        eliteVersionDownloadButton.setAttribute('onclick', "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js', '_blank');");
+                        eliteVersionDownloadButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js', '_blank');");
 
-                        const eliteVersionNotesButton = document.createElement('button');
+                        const eliteVersionNotesButton = document.createElement("button");
                         eliteVersionNotesButton.innerText = "Release Notes";
-                        eliteVersionNotesButton.setAttribute('onclick', "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/releases/latest', '_blank');");
+                        eliteVersionNotesButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/releases/latest', '_blank');");
 
-                        const eliteVersionCloseButton = document.createElement('button');
+                        const eliteVersionCloseButton = document.createElement("button");
                         eliteVersionCloseButton.innerText = "Close";
-                        eliteVersionCloseButton.setAttribute('onclick', '$("#elite-version-window").remove();');
+                        eliteVersionCloseButton.setAttribute("onclick", "$(\"#elite-version-window\").remove();");
 
                         eliteVersionWindowContent.appendChild(eliteVersionDownloadButton);
                         eliteVersionWindowContent.appendChild(eliteVersionNotesButton);
@@ -998,14 +998,14 @@ function Define() {
 
 function logDo(i, t) {
     const logType = {
-        0: ['OKAY', 'color: rgb(0,148,255);'],
-        1: ['ERROR', 'color:red;']
+        0: ["OKAY", "color: rgb(0,148,255);"],
+        1: ["ERROR", "color:red;"],
     };
     let logArray = [
-        '%c[%cElite UI%c] [%c' + logType[t][0] + '%c] ' + i,
-        'color: none;', 'color: rgb(0,148,255);',
-        'color: none;', logType[t][1],
-        'color: none;'
+        "%c[%cElite UI%c] [%c" + logType[t][0] + "%c] " + i,
+        "color: none;", "color: rgb(0,148,255);",
+        "color: none;", logType[t][1],
+        "color: none;",
     ];
     console.log.apply(null, logArray);
 }
