@@ -98,21 +98,6 @@ function processOptions () {
 
 }
 
-function finalize () {
-    registry = JSON.stringify(registry, null, 4).replace(/\n/g, "\n    ");
-    codeText = String(codeText).replace(/\n/g, "\n    ");
-    optionsText = String(optionsText).replace(/\n/g, "\n    ");
-}
-
-function save () {
-    fs.readFile(__dirname + "/src/userscript/script.js", "utf8", function (err, data) {
-        data = applyTemplate(data);
-        fs.writeFile(__dirname + "/script.user.js", data, function () {
-            process.exit();
-        });
-    });
-}
-
 function loadIncludes () {
     includes.meta = fs.readFileSync(__dirname + "/src/userscript/meta.txt", "utf8").trim();
     includes.header = fs.readFileSync(__dirname + "/src/userscript/header.js", "utf8").trim();
@@ -141,6 +126,12 @@ function loadModules () {
     modules.push(require("./src/modules/versionCheck"));
 }
 
+function finalize () {
+    registry = JSON.stringify(registry, null, 4).replace(/\n/g, "\n    ");
+    codeText = String(codeText).replace(/\n/g, "\n    ");
+    optionsText = String(optionsText).replace(/\n/g, "\n    ");
+}
+
 function applyTemplate (data) {
 
     data = String(data);
@@ -159,4 +150,13 @@ function applyTemplate (data) {
     data = data.replace(/^[\n]+\n/gm, "\n");
 
     return data;
+}
+
+function save () {
+    fs.readFile(__dirname + "/src/userscript/script.js", "utf8", function (err, data) {
+        data = applyTemplate(data);
+        fs.writeFile(__dirname + "/script.user.js", data, function () {
+            process.exit();
+        });
+    });
 }
