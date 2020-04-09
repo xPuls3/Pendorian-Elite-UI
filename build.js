@@ -148,6 +148,8 @@ function applyTemplate (data) {
 
     data = data.replace(/[^\S\n]+\n/gm, "\n");
     data = data.replace(/^[\n]+\n/gm, "\n");
+    data = data.replace(/\r/g, "\r\n");
+    data = data.replace(/\n/g, "\r\n");
 
     return data;
 }
