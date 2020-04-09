@@ -281,7 +281,7 @@ const isDebug = false;
                                 modules[k[i]].code(resolve);
                             }).then(function (result) {
                                 if (result) {
-                                    modules[k[i]].Style = result;
+                                    modules[k[i]].style = result;
                                     applyStyle(modules[k[i]]);
                                 }
                                 if (isDebug) {
@@ -305,7 +305,7 @@ const isDebug = false;
     function applyStyle (module) {
         let matches = $(`.Elite-UI-Style[Elite-UI-Module="${module.id}"]`);
         if (matches.length !== 0) matches.remove();
-        $("head").append(`<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="${module.id}">${module.Style}</style>`);
+        $("head").append(`<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="${module.id}">${module.style}</style>`);
     }
 
     function checkIsPath (x) {
