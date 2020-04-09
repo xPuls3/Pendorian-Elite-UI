@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name Pendorian Elite UI
+// @namespace http://pendoria.net/
+// @version /* Elite Write Version */
+// @author Puls3
+// @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
+// @homepage https://xpuls3.github.io/Pendorian-Elite-UI
+// @supportURL https://github.com/xPuls3/Pendorian-Elite-UI/issues
+// @downloadURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @updateURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
+// @icon https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/master/favicon.ico
+// @grant none
+// @run-at document-end
+// @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
+// ==/UserScript==
+
+// Pendorian Elite UI is only officially distributed on GitHub!
+// - https://github.com/xPuls3/Pendorian-Elite-UI/
+
+// Pendorian Elite UI also has an official website!
+// - https://xpuls3.github.io/Pendorian-Elite-UI/
+
+// This script was created by Puls3!
+// - Puls3 on Pendoria

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 2.6
+// @version 3.0-beta
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -33,30 +33,18 @@ define();
 const isDebug = false;
 
 (function () {
-
-    // Version Check Module
-    modules.versionCheck.options = {
-
-        // Version Check Module, Enable / Disable
-        status: true,
-
-        // Version Check Module, Only check once every 24 hours
-        dailyLimit: true,
-
-    };
-
+    
     // Recolor Module
-    // Changes the color of almost everything.
+    // Changes the color of almost everything
     modules.recolor.options = {
-
-        // Recolor Module, Enable / Disable
+        
+        // Enable / Disable
         status: true,
-
-        // Recolor Module, Swap Old Username Color Titles
+        
         // Changes cyan titles to match the new chat username color
         titleSwap: true,
-
-        // Recolor Module, Colors
+        
+        // Colors
         color: "rgb(0, 153, 255)",
         darkColor: "rgb(0, 123, 235)",
         buttonColor: "rgba(0, 153, 255, 0.5)",
@@ -65,205 +53,209 @@ const isDebug = false;
         profileLinkColor: "rgb(0, 123, 235)",
         mentionColor: "rgb(0, 219, 255)",
         mentionTabColor: "rgb(0, 153, 255)",
-        chatUsernameColor: "rgb(0, 153, 255)",
-
+        chatUsernameColor: "rgb(0, 153, 255)"
+        
     };
-
-    // Edits Module
-    // Tiny edits that used to be included with the recolor.
-    // Currently includes only removing the annoying text from the dungeons page. (Sorry Xortrox!)
-    modules.edits.options = {
-
-        // Edits Module, Enable / Disable
-        status: true,
-
-    };
-
-    // Frameless Mode Module
-    // Removes all of the frames.
-    // Also adjusts sizes to look good without frames.
-    modules.frameless.options = {
-
-        // Frameless Module, Enable / Disable
-        status: true,
-
-    };
-
-    // Dual View Module
-    // Forces the actions page to always show and shortens it.
-    // Forces the content to always show below the actions page.
-    // Requires Dungeon Sidebar to work correctly!
-    modules.dualView.options = {
-
-        // Dual View Module, Enable / Disable
-        status: false,
-
-        // Dual View Module, Line
-        // How far down the frame (in pixels) the line between content and actions is.
-        line: 220,
-
-    };
-
-    // Rounded Borders Module
-    // Makes most of the game's main area corners round.
-    // Requires the Frameless Mode Module.
-    modules.roundedBorders.options = {
-
-        // Rounded Borders Module, Enable / Disable
-        status: false,
-
-        // Rounded Borders Module, Rounded Amount
-        // Changes how round the corners are.
-        // Uses CSS values!
-        amount: "16px",
-
-    };
-
+    
     // Background Module
-    // Changes the background.
+    // Changes the background to the link below
     modules.background.options = {
-
-        // Background Module, Enable / Disable
+        
+        // Enable / Disable
         status: true,
-
+        
         // Standard Image: 'Stellar Collision' by KuldarLeement
         // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
         // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
-
-        // Background Module, Background Link
-        link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg",
-
+        
+        // Background link
+        link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
+        
     };
-
+    
     // Favicon Module
-    // Changes the favicon.
+    // Changes the favicon to the link below
     modules.favicon.options = {
-
-        // Favicon Module, Enable / Disable
+        
+        // Enable / Disable
         status: true,
-
-        // Favicon Module, Favicon Link
-        Link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico",
-
+        
+        // Favicon link
+        link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
+        
     };
-
-    // Legacy Sidebar Module
-    // Makes the sidebar look almost like the original sidebar designed by Zampa.
-    modules.legacySidebar.options = {
-
-        // Legacy Sidebar Module, Enable / Disable
-        status: true,
-
+    
+    // Edits Module
+    // Changes that used to be included with the recolor
+    modules.edits.options = {
+        
+        // Enable / Disable
+        status: true
+        
     };
-
-    // Remove Logo Module
-    // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter.
-    modules.removeLogo.options = {
-
-        // Remove Logo Module, Enable / Disable
-        status: true,
-
+    
+    // Frameless Mode Module
+    // Removes all of the frames
+    modules.frameless.options = {
+        
+        // Enable / Disable
+        status: true
+        
     };
-
+    
     // Dungeon Sidebar Module
-    // Removes the Dungeon tab and adds a link on the sidebar.
+    // Removes the Dungeon tab and adds a link on the sidebar
     modules.dungeonSidebar.options = {
-
-        // Dungeon Sidebar Module, Enable / Disable
-        status: true,
-
+        
+        // Enable / Disable
+        status: true
+        
     };
-
-    // Remove Battle Stats Module
-    // Removes the battle stats in the header.
-    modules.removeBattleStats.options = {
-
-        // Remove Battle Stats, Enable / Disable
+    
+    // Dual View Module
+    // Forces both the action and content pages to always show next to each other vertically
+    // Requires Dungeon Sidebar to work correctly
+    modules.dualView.options = {
+        
+        // Enable / Disable
         status: false,
-
+        
+        // How far down the frame (in pixels) the line between content and actions is
+        line: 220
+        
     };
-
-    // Areas Included Module
-    // Removes the Areas tab and adds the content to the battle tab.
-    modules.areasIncluded.options = {
-
-        // Areas Included Module, Enable / Disable
-        status: true,
-
+    
+    // Legacy Sidebar Module
+    // Makes the sidebar look almost like the original sidebar designed by Zampa
+    modules.legacySidebar.options = {
+        
+        // Enable / Disable
+        status: true
+        
     };
-
-    // Remove Tabs Module
-    // Removes the tabs on the actions page.
-    // Requires Dungeon Sidebar to be active!
-    // Requires Areas Included to be active!
-    modules.removeTabs.options = {
-
-        // Remove Tabs Module, Enable / Disable
+    
+    // Rounded Borders Module
+    // Makes most of the game's main area corners round.
+    // Requires Frameless Mode to work correctly
+    modules.roundedBorders.options = {
+        
+        // Enable / Disable
         status: false,
-
+        
+        // Changes how round the corners are with CSS values
+        amount: "16px"
+        
     };
-
-    // Remove Tradeskill Selection Module
-    // Removes the Tradeskill Selection dropdown next to the work button.
-    // Removes the work button.
-    // Ensure that you are already doing the TS that you want to continue doing!
-    modules.removeTradeskillSelection.options = {
-
-        // Remove Tradeskill Selection Module, Enable / Disable
-        status: false,
-
-        // Adds a small amount of space above the action text.
-        // Without this it will look awkward.
-        addSpace: true,
-
-    };
-
-    // Extra Bottom Links Module
-    // Adds more links to the bottom of the screen
-    modules.extraBottomLinks.options = {
-
-        // Extra Bottom Links Module, Enable / Disable
-        status: true,
-
-        // Add links option below.
-        links: [
-
-            // Any suggestions of default links to add would be appreciated!
-
-            // Example Link Below
-            // ["Example", "http://example.com/"],
-
-            // Karubo's ROI Calculator Link
-            ["Karubo's ROI", "http://pendcalc.karubo.de/"],
-
-            // Puls3's Calculator Link
-            ["Puls3's Calcs", "https://xpuls3.github.io/calculators/"],
-
-            // Impulsive Puls3's Updates Link
-            ["Impulsive Updates", "https://xpuls3.github.io/blog/"],
-
-        ],
-
-    };
-
+    
     // Extended Header Module
-    // Extends the header above chat in side-by-side mode.
+    // Extends the header above chat in side-by-side mode
     modules.extendedHeader.options = {
-
-        // Extended Header Module, Enable / Disable
-        status: true,
-
+        
+        // Enable / Disable
+        status: true
+        
     };
-
-    // Remove Gold Stat Module
+    
+    // Areas Included Module
+    // Removes the Areas tab and adds the content to the battle tab
+    modules.areasIncluded.options = {
+        
+        // Enable / Disable
+        status: true
+        
+    };
+    
+    // Extra Footer Links Module
+    // Adds more links to the bottom of the screen
+    modules.extraFooterLinks.options = {
+        
+        // Enable / Disable
+        status: true,
+        
+        // Add more links below
+        // Use the existing ones as examples
+        links: [
+            [
+                "Karubo's ROI",
+                "http://pendcalc.karubo.de/"
+            ],
+            [
+                "Puls3's Calcs",
+                "https://xpuls3.github.io/calculators/"
+            ],
+            [
+                "Impulsive Updates",
+                "https://xpuls3.github.io/blog/"
+            ]
+        ]
+        
+    };
+    
+    // Remove Battle Stats Module
+    // Removes the battle stats in the header
+    modules.removeBattleStats.options = {
+        
+        // Enable / Disable
+        status: false
+        
+    };
+    
+    // Remove Gold & Stat Module
     // Removes Gold Boost & Stat Drop Boost from Rhodium Boosts
     modules.removeGoldStat.options = {
-
-        // Remove Gold Stat Module, Enable / Disable
-        status: false,
-
+        
+        // Enable / Disable
+        status: false
+        
     };
-
+    
+    // Remove Logo Module
+    // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter
+    modules.removeLogo.options = {
+        
+        // Enable / Disable
+        status: true
+        
+    };
+    
+    // Remove Tabs Module
+    // Removes the tabs on the actions page
+    // Requires Dungeon Sidebar to work correctly
+    // Requires Areas Included to work correctly
+    modules.removeTabs.options = {
+        
+        // Enable / Disable
+        status: false
+        
+    };
+    
+    // Remove Tradeskill Selection Module
+    // Removes the Tradeskill Selection dropdown and the work button
+    // Ensure that you are already doing the TS that you want to continue doing
+    // Click the action bar to refresh after turning this on
+    modules.removeTradeskillSelection.options = {
+        
+        // Enable / Disable
+        status: false,
+        
+        // Adds a small amount of space above the action text
+        // Without this it will look awkward
+        addSpace: true
+        
+    };
+    
+    // Version Check Module
+    // Checks for updates
+    modules.versionCheck.options = {
+        
+        // Enable / Disable
+        status: true,
+        
+        // Only check once every 24 hours
+        dailyLimit: true
+        
+    };
+    
 })();
 
 // [Functions]
@@ -273,7 +265,7 @@ const isDebug = false;
     origin();
 
     function origin() {
-        logDo("Initiating Pendorian Elite UI v" + version, 0);
+        logDo(`Initiating Pendorian Elite UI v${version}`, 0);
         const k = Object.keys(modules);
         let promiseList = [];
         let isGame = checkIsPath("/game");
@@ -293,27 +285,27 @@ const isDebug = false;
                                     applyStyle(modules[k[i]]);
                                 }
                                 if (isDebug) {
-                                    logDo(modules[k[i]].name + " Module Enabled", 0);
+                                    logDo(`${modules[k[i]].name} Module enabled`, 0);
                                 }
                             }));
                         } else {
-                            logDo(modules[k[i]].name + " Module does not contain code", 1);
+                            logDo(`${modules[k[i]].name} Module does not contain code`, 1);
                         }
                     }
                 } else {
-                    logDo(modules[k[i]].name + " Module does not contain options", 1);
+                    logDo(`${modules[k[i]].name} Module does not contain options`, 1);
                 }
             }
         }
         Promise.all(promiseList).then(function () {
-            if (isDebug) logDo("Script Completely Loaded", 0);
+            if (isDebug) logDo("Script completely loaded", 0);
         });
     }
 
     function applyStyle(module) {
-        let matches = $(".Elite-UI-Style[Elite-UI-Module=" + module.id + "]");
+        let matches = $(`.Elite-UI-Style[Elite-UI-Module="${module.id}"]`);
         if (matches.length !== 0) matches.remove();
-        $("head").append("<style class=\"Pendorian-Elite-UI Elite-UI-Style\" Elite-UI-Module=\"" + module.id + "\">" + module.Style + "</style>")
+        $("head").append(`<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="${module.id}">${module.Style}</style>`);
     }
 
     function checkIsPath(x) {
@@ -324,341 +316,251 @@ const isDebug = false;
 
 function register() {
     return {
-        recolor: {
-            name: "Recolor",
-            runLogin: true,
+        "recolor": {
+            "name": "Recolor",
+            "runLogin": true
         },
-        edits: {
-            name: "Edits",
-            runLogin: false,
+        "background": {
+            "name": "Background",
+            "runLogin": true
         },
-        frameless: {
-            name: "Frameless Mode",
-            runLogin: true,
+        "favicon": {
+            "name": "Favicon",
+            "runLogin": true
         },
-        dualView: {
-            name: "DualView",
-            runLogin: false,
+        "edits": {
+            "name": "Edits"
         },
-        roundedBorders: {
-            name: "Rounded Borders",
-            runLogin: true,
+        "frameless": {
+            "name": "Frameless Mode",
+            "runLogin": true
         },
-        background: {
-            name: "Background",
-            runLogin: true,
+        "dungeonSidebar": {
+            "name": "Dungeon Sidebar"
         },
-        favicon: {
-            name: "Favicon",
-            runLogin: true,
+        "dualView": {
+            "name": "Dual View"
         },
-        legacySidebar: {
-            name: "Legacy Sidebar",
-            runLogin: false,
+        "legacySidebar": {
+            "name": "Legacy Sidebar"
         },
-        removeLogo: {
-            name: "Remove Logo",
-            runLogin: false,
+        "roundedBorders": {
+            "name": "Rounded Borders",
+            "runLogin": true
         },
-        dungeonSidebar: {
-            name: "Dungeon Sidebar",
-            runLogin: false,
+        "extendedHeader": {
+            "name": "Extended Header"
         },
-        areasIncluded: {
-            name: "Areas Included",
-            runLogin: false,
+        "areasIncluded": {
+            "name": "Areas Included"
         },
-        removeBattleStats: {
-            name: "Remove Battle Stats",
-            runLogin: false,
+        "extraFooterLinks": {
+            "name": "Extra Footer Links"
         },
-        removeTabs: {
-            name: "Remove Tabs",
-            runLogin: false,
+        "removeBattleStats": {
+            "name": "Remove Battle Stats"
         },
-        removeTradeskillSelection: {
-            name: "Remove Tradeskill Selection",
-            runLogin: false,
+        "removeGoldStat": {
+            "name": "Remove Gold & Stat"
         },
-        extraBottomLinks: {
-            name: "Extra Bottom Links",
-            runLogin: false,
+        "removeLogo": {
+            "name": "Remove Logo"
         },
-        extendedHeader: {
-            name: "Extended Header",
-            runLogin: false,
+        "removeTabs": {
+            "name": "Remove Tabs"
         },
-        removeGoldStat: {
-            name: "Remove Gold Stat",
-            runLogin: false,
+        "removeTradeskillSelection": {
+            "name": "Remove Tradeskill Selection"
         },
-        versionCheck: {
-            name: "Version Check",
-            runLogin: false,
-        },
+        "versionCheck": {
+            "name": "Version Check",
+            "runLogin": true
+        }
     };
 }
 
 function define() {
-
+    
     modules.recolor.code = function (resolve) {
         const t = `
-        html {
-            --Elite-Color: ` + modules.recolor.options.color + `;
-            --Elite-Dark-Color: ` + modules.recolor.options.darkColor + `;
-            --Elite-Mention-Color: ` + modules.recolor.options.mentionColor + `;
-            --Elite-Mention-Tab-Color: ` + modules.recolor.options.mentionTabColor + `;
-            --Elite-Button-Color: ` + modules.recolor.options.buttonColor + `;
-            --Elite-Button-Hover-Color: ` + modules.recolor.options.buttonHoverColor + `;
-            --Elite-Profile-Link-Color: ` + modules.recolor.options.profileLinkColor + `;
-            --Elite-Progress-Background-Color: ` + modules.recolor.options.progressBackgroundColor + `;
-            --Elite-Chat-Color: ` + modules.recolor.options.chatUsernameColor + `;
-        }
-		
-		/* Chat Color CSS */
-		
-            .chat-username {
-                color: var(--Elite-Chat-Color) !important;
+            html {
+                --Elite-Color: ${modules.recolor.options.color};
+                --Elite-Dark-Color: ${modules.recolor.options.darkColor};
+                --Elite-Mention-Color: ${modules.recolor.options.mentionColor};
+                --Elite-Mention-Tab-Color: ${modules.recolor.options.mentionTabColor};
+                --Elite-Button-Color: ${modules.recolor.options.buttonColor};
+                --Elite-Button-Hover-Color: ${modules.recolor.options.buttonHoverColor};
+                --Elite-Profile-Link-Color: ${modules.recolor.options.profileLinkColor};
+                --Elite-Progress-Background-Color: ${modules.recolor.options.progressBackgroundColor};
+                --Elite-Chat-Color: ${modules.recolor.options.chatUsernameColor};
             }
-            
-		    #chat-messages > ul > li > font[color="#00ffff"] {
-		        color: var(--Elite-Chat-Color) !important;
-		    }
-            
-            .chat-local-error, #chat-messages ul li span[style*="color: #ea907b;"] {
-                color: var(--Elite-Color) !important;
-            }
-            
-            .username-hilighted {
-                color: var(--Elite-Mention-Color) !important;
-            }
-            
-            .chat-hilighted {
-                color: var(--Elite-Mention-Tab-Color) !important;
-            }
-		
-		/* UI CSS Below */
-		
-            #invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event[style="color:red;"], #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
-                color: var(--Elite-Color) !important;
-            }
-            #header-stats, #quest_done, #quest_prog {
-                color: var(--Elite-Color);
-            }
-            .green, #expwidth, #building-progress, #profile-scraptown-building-progress, #profile-encampment-building-progress, #chat-composer input[type="submit"], .toast-success {
-                background-color: var(--Elite-Color) !important;
-            }
-            button {
-                background: var(--Elite-Button-Color) !important;
-            }
-            button:hover {
-                background: var(--Elite-Button-Hover-Color) !important;
-            }
-            .item-rarity-runic {
-                color: var(--Elite-Color) !important;
-                text-shadow: 0 0 1px blue !important;
-            }
-            .display-item [style*="color: rgb(29, 166, 87);"], .display-item [style*="color: green;"], #rerollCost, #rerollCost + span[style="color: #1da657;"] {
-                color: var(--Elite-Color) !important;
-            }
-            .display-item [style*="color: #98bda1; padding-top: 5px;"], #lockedStatsForm span[style="color: green;"], #lockedStatsForm div[style="color: #98bda1; padding-top: 5px;"]{
-                color: var(--Elite-Dark-Color) !important;
-            }
-            ::selection {
-                color: white;
-                background: var(--Elite-Color);
-            }
-            .guild-name {
-                font-weight: bold;
-                color: var(--Elite-Profile-Link-Color);
-            }
-            .chat-command {
-                color: var(--Elite-Color);
-            }
-            progress {
-                color: var(--Elite-Color);
-            }
-            progress::-webkit-progress-value {
-                background: var(--Elite-Color);
-            }
-            progress::-moz-progress-bar {
-                background: var(--Elite-Color);
-            }
-            progress::-webkit-progress-bar {
-                background: var(--Elite-Color);
-            }
-            #progressbar-wrapper {
-                background: var(--Elite-Progress-Background-Color);
-            }
-            #exp {
-                background: var(--Elite-Progress-Background-Color) !important;
-            }
-            .tab-game-content [style*="width: 100%; border-radius: 10px; overflow: hidden; background-color: #31453a;"] {
-                background: var(--Elite-Progress-Background-Color) !important;
-            }
-            .terms-section-header, .question {
-                color: var(--Elite-Color) !important;
-            }
-            
-            #dungeon-progressbar-wrapper {
-                background-color: var(--Elite-Progress-Background-Color);
-            }
-            #dungeon-progressbar-wrapper .progressbar, #encampment-building-progress  {
-                background-color: var(--Elite-Color) !important;
-            }
-            
-            [data-player-id*="334"] .chat-username {
-                color: rgb(0, 153, 255) !important;
-            }
-            
-            #quint span, .actionexperience, .actionexperience span, #double_tradeskill span, #guild_amount, #guild_currency, #gainedtype, #gainedres, #actionencampmentax {
-                color: var(--Elite-Color) !important;
-            }
-            
-            .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
-                color: var(--Elite-Color) !important;
-            }`;
+    		
+    		/* Chat Color CSS */
+    		
+                .chat-username {
+                    color: var(--Elite-Chat-Color) !important;
+                }
+                
+    		    #chat-messages > ul > li > font[color="#00ffff"] {
+    		        color: var(--Elite-Chat-Color) !important;
+    		    }
+                
+                .chat-local-error, #chat-messages ul li span[style*="color: #ea907b;"] {
+                    color: var(--Elite-Color) !important;
+                }
+                
+                .username-hilighted {
+                    color: var(--Elite-Mention-Color) !important;
+                }
+                
+                .chat-hilighted {
+                    color: var(--Elite-Mention-Tab-Color) !important;
+                }
+    		
+    		/* UI CSS Below */
+    		
+                #invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event[style="color:red;"], #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
+                    color: var(--Elite-Color) !important;
+                }
+                #header-stats, #quest_done, #quest_prog {
+                    color: var(--Elite-Color);
+                }
+                .green, #expwidth, #building-progress, #profile-scraptown-building-progress, #profile-encampment-building-progress, #chat-composer input[type="submit"], .toast-success {
+                    background-color: var(--Elite-Color) !important;
+                }
+                button {
+                    background: var(--Elite-Button-Color) !important;
+                }
+                button:hover {
+                    background: var(--Elite-Button-Hover-Color) !important;
+                }
+                .item-rarity-runic {
+                    color: var(--Elite-Color) !important;
+                    text-shadow: 0 0 1px blue !important;
+                }
+                .display-item [style*="color: rgb(29, 166, 87);"], .display-item [style*="color: green;"], #rerollCost, #rerollCost + span[style="color: #1da657;"] {
+                    color: var(--Elite-Color) !important;
+                }
+                .display-item [style*="color: #98bda1; padding-top: 5px;"], #lockedStatsForm span[style="color: green;"], #lockedStatsForm div[style="color: #98bda1; padding-top: 5px;"]{
+                    color: var(--Elite-Dark-Color) !important;
+                }
+                ::selection {
+                    color: white;
+                    background: var(--Elite-Color);
+                }
+                .guild-name {
+                    font-weight: bold;
+                    color: var(--Elite-Profile-Link-Color);
+                }
+                .chat-command {
+                    color: var(--Elite-Color);
+                }
+                progress {
+                    color: var(--Elite-Color);
+                }
+                progress::-webkit-progress-value {
+                    background: var(--Elite-Color);
+                }
+                progress::-moz-progress-bar {
+                    background: var(--Elite-Color);
+                }
+                progress::-webkit-progress-bar {
+                    background: var(--Elite-Color);
+                }
+                #progressbar-wrapper {
+                    background: var(--Elite-Progress-Background-Color);
+                }
+                #exp {
+                    background: var(--Elite-Progress-Background-Color) !important;
+                }
+                .tab-game-content [style*="width: 100%; border-radius: 10px; overflow: hidden; background-color: #31453a;"] {
+                    background: var(--Elite-Progress-Background-Color) !important;
+                }
+                .terms-section-header, .question {
+                    color: var(--Elite-Color) !important;
+                }
+                
+                #dungeon-progressbar-wrapper {
+                    background-color: var(--Elite-Progress-Background-Color);
+                }
+                #dungeon-progressbar-wrapper .progressbar, #encampment-building-progress  {
+                    background-color: var(--Elite-Color) !important;
+                }
+                
+                [data-player-id*="334"] .chat-username {
+                    color: rgb(0, 153, 255) !important;
+                }
+                
+                #quint span, .actionexperience, .actionexperience span, #double_tradeskill span, #guild_amount, #guild_currency, #gainedtype, #gainedres, #actionencampmentax {
+                    color: var(--Elite-Color) !important;
+                }
+                
+                .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
+                    color: var(--Elite-Color) !important;
+                }`;
         resolve(t);
     };
-
-    modules.edits.code = function (resolve) {
-        const t = `
-		#dungeon-dialogue {
-			display: none;
-		}`;
-        resolve(t);
-    };
-
-    modules.frameless.code = function (resolve) {
-        const t = `
-        #menu, #profile, #chat, #charity, #stats-hourly, #gameframe, #drop-statistics {
-          border: none !important;
-        }
-		#gameframe-status-wrapper:after, #progressbar-wrapper::after {
-			background: none;
-		}
-		#progressbar-wrapper {
-			bottom: 0px;
-		}
-		#progressbar-wrapper .progressbar {
-			top: 0px;
-		}
-		#gameframe-status-wrapper {
-			line-height: 15px;
-			top: 0px;
-			left: 0px;
-			right: 0px;
-		}`;
-        resolve(t);
-    };
-
-    modules.dualView.code = function (resolve) {
-        const t = `
-		html {
-			--DualViewLine: ` + modules.dualView.options.line + `px;
-		}
-		#gameframe-battle {
-		  display: block !important;
-		  height: var(--DualViewLine);
-		}
-		#gameframe-content {
-		  display: block !important;
-		  height: calc(100% - var(--DualViewLine) - 80px);
-		  top: calc(70px + var(--DualViewLine));
-		}
-		#menu ul li:first-child {
-		  display: none !important;
-		}`;
-        resolve(t);
-    };
-
-    modules.roundedBorders.code = function (resolve) {
-        const l = modules.roundedBorders.options.amount;
-        const t = `
-		#profile, #menu, #stats-hourly, #ether-resources-sidebar,`
-            + `#gameframe-battle, #gameframe-content, #drop-statistics,`
-            + `#gameframe-status-wrapper, #chat, #chat-form {
-			border-radius: ` + l + ` !important;
-		}
-		.nav-tabs > li > a {
-			border-radius: ` + l + ` ` + l + `0px 0px !important;
-		}`;
-        resolve(t);
-    };
-
+    
     modules.background.code = function (resolve) {
         const t = `
-		body {
-			background: #171d1d url(` + modules.background.options.link + `) no-repeat scroll center center;
-            background-attachment: fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-		}`;
+    		body {
+    			background: #171d1d url(${modules.background.options.link}) no-repeat scroll center center;
+                background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+    		}`;
         resolve(t);
     };
-
+    
     modules.favicon.code = function (resolve) {
-        const t = `<link rel="icon" href="` + modules.favicon.options.Link + `"/>`;
+        const t = `<link rel="icon" href="${modules.favicon.options.link}"/>`;
         $("head").append(t);
         resolve();
     };
-
-    modules.legacySidebar.code = function (resolve) {
+    
+    modules.edits.code = function (resolve) {
         const t = `
-		#menu .frame {
-			display: none;
-			width: 0px;
-		}
-		#menu {
-			padding: 0px;
-			background: none !important;
-			height: auto !important;
-			overflow: hidden;
-		}
-		#menu li a {
-			font-family: "Open Sans", helvetica, arial;
-			color: #969696;
-			padding: 5px 0;
-			text-decoration: none;
-			font-size: 15px;
-			padding-left: 15px;
-		}
-		#menu li.active a, #menu li:hover a{
-			color: #FFFFFF;
-			text-decoration: none !important;
-		}`;
+    		#dungeon-dialogue {
+    			display: none;
+    		}`;
         resolve(t);
     };
-
-    modules.removeLogo.code = function (resolve) {
+    
+    modules.frameless.code = function (resolve) {
         const t = `
-		#content > div.wrapper > aside > * {
-			top: -50px;
-		}
-		#logo {
-			display: none;
-		}
-		#content > .wrapper:first-child > header:first-child {
-			pointer-events: none;
-		}
-		#header-stats {
-			pointer-events: auto;
-		}`;
+            #menu, #profile, #chat, #charity, #stats-hourly, #gameframe, #drop-statistics {
+              border: none !important;
+            }
+    		#gameframe-status-wrapper:after, #progressbar-wrapper::after {
+    			background: none;
+    		}
+    		#progressbar-wrapper {
+    			bottom: 0px;
+    		}
+    		#progressbar-wrapper .progressbar {
+    			top: 0px;
+    		}
+    		#gameframe-status-wrapper {
+    			line-height: 15px;
+    			top: 0px;
+    			left: 0px;
+    			right: 0px;
+    		}`;
         resolve(t);
     };
-
+    
     modules.dungeonSidebar.code = function (resolve) {
         const t = `
-		#gameframe-battle > ul > li:nth-child(4) {
-			display: none;
-		}
-		#dungeon-content, #dungeon-tools-content {
-			color: white;
-		}`;
-        $("#scraptown-button").parent().after("<li><a href=\"\" id=\"elite-dungeon-button\" class=\"Pendorian-Elite-UI\"><i class=\"fas fa-dungeon\"></i>Dungeons</a></li>");
-
+    		#gameframe-battle > ul > li:nth-child(4) {
+    			display: none;
+    		}
+    		#dungeon-content, #dungeon-tools-content {
+    			color: white;
+    		}`;
+        $("#scraptown-button").parent().after(`<li><a href="" id="elite-dungeon-button" class="Pendorian-Elite-UI"><i class="fas fa-dungeon"></i>Dungeons</a></li>`);
+    
         // Function Below Grabbed From Pendoria And Modified
         // Heavily modified, as this code is less than awesome.
         $("#elite-dungeon-button").click(function (event) {
@@ -704,16 +606,85 @@ function define() {
         });
         resolve(t);
     };
-
+    
+    modules.dualView.code = function (resolve) {
+        const t = `
+    		html {
+    			--DualViewLine: ${modules.dualView.options.line}px;
+    		}
+    		#gameframe-battle {
+    		  display: block !important;
+    		  height: var(--DualViewLine);
+    		}
+    		#gameframe-content {
+    		  display: block !important;
+    		  height: calc(100% - var(--DualViewLine) - 80px);
+    		  top: calc(70px + var(--DualViewLine));
+    		}
+    		#menu ul li:first-child {
+    		  display: none !important;
+    		}`;
+        resolve(t);
+    };
+    
+    modules.legacySidebar.code = function (resolve) {
+        const t = `
+    		#menu .frame {
+    			display: none;
+    			width: 0px;
+    		}
+    		#menu {
+    			padding: 0px;
+    			background: none !important;
+    			height: auto !important;
+    			overflow: hidden;
+    		}
+    		#menu li a {
+    			font-family: "Open Sans", helvetica, arial;
+    			color: #969696;
+    			padding: 5px 0;
+    			text-decoration: none;
+    			font-size: 15px;
+    			padding-left: 15px;
+    		}
+    		#menu li.active a, #menu li:hover a{
+    			color: #FFFFFF;
+    			text-decoration: none !important;
+    		}`;
+        resolve(t);
+    };
+    
+    modules.roundedBorders.code = function (resolve) {
+        const l = modules.roundedBorders.options.amount;
+        const t = `
+    		#profile, #menu, #stats-hourly, #ether-resources-sidebar,
+                #gameframe-battle, #gameframe-content, #drop-statistics,
+                #gameframe-status-wrapper, #chat, #chat-form {
+    			border-radius: ${l} !important;
+    		}
+    		.nav-tabs > li > a {
+    			border-radius: ${l} ${l} 0px 0px !important;
+    		}`;
+        resolve(t);
+    };
+    
+    modules.extendedHeader.code = function (resolve) {
+        let t = `
+            #header-content {
+                width: calc(100% - 260px) !important
+            }`;
+        resolve(t);
+    };
+    
     modules.areasIncluded.code = function (resolve) {
         const t = `
-        #gameframe-battle > ul > li:nth-child(3) {
-			display: none;
-		}`;
+            #gameframe-battle > ul > li:nth-child(3) {
+    			display: none;
+    		}`;
         setTimeout(function () {
             let $battleNav = $("#gameframe-battle .nav-tabs li");
             $battleNav.off("click");
-
+    
             // Function Below Grabbed From Pendoria And Modified
             $battleNav.on("click", "a", function (e) {
                 let url;
@@ -786,7 +757,7 @@ function define() {
                             type: "POST",
                             url: "/action/area",
                             success: function (data) {
-                                $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                                $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
                             },
                         });
                     }
@@ -799,114 +770,123 @@ function define() {
                 type: "POST",
                 url: "/action/area",
                 success: function (data) {
-                    $("#AreasIncluded").html(data.replace("<div style=\"text-align: center; margin-top: 10px; margin-bottom: 15px;\">Exploring the lands? Watch out for strangers.</div>", ""));
+                    $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
                 },
             });
         }, 10000);
         resolve(t);
     };
-
-    modules.removeBattleStats.code = function (resolve) {
-        const t = `
-		.header-stats-user {
-			display: none;
-		}`;
-        resolve(t);
-    };
-
-    modules.removeTabs.code = function (resolve) {
-        const t = `
-		#gameframe-battle > ul {
-			display: none;
-		}`;
-        resolve(t);
-    };
-
-    modules.removeTradeskillSelection.code = function (resolve) {
-        let t = `
-		#actioncontent > div:nth-child(2) {
-            display: none !important;
-        }`;
-        if (modules.removeTradeskillSelection.options.addSpace === true) {
-            t = t + `
-            #actioncontent {
-                margin-top: 15px;
-            }`;
-        }
-        resolve(t);
-    };
-
-    modules.extraBottomLinks.code = function (resolve) {
-        const links = modules.extraBottomLinks.options.links;
+    
+    modules.extraFooterLinks.code = function (resolve) {
+        const links = modules.extraFooterLinks.options.links;
         let e = $("#gameframe-menu #togglechat").parent();
         for (let i = 0; i < links.length; i++) {
-            e.after(`<li class="Pendorian-Elite-UI Elite-UI-Extra-Bottom-Link" style="vertical-align: top;"><a href="${links[i][1]}" target="_blank">${links[i][0]}</a></li>`);
+            e.after(`<li class="Pendorian-Elite-UI Elite-UI-Extra-Footer-Link" style="vertical-align: top;"><a href="${links[i][1]}" target="_blank">${links[i][0]}</a></li>`);
         }
         resolve();
     };
-
-    modules.extendedHeader.code = function (resolve) {
-        let t = `
-        #header-content {
-            width: calc(100% - 260px) !important
-        }`;
-        resolve(t);
-    };
-
-    modules.removeGoldStat.code = function (resolve) {
+    
+    modules.removeBattleStats.code = function (resolve) {
         const t = `
-        #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
-        #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
-		#rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(1),
-        #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(3),
-        #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(2),
-		#rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(1) {
-			display: none;
-		}`;
+            #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
+            #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
+    		#rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(1),
+            #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(3),
+            #rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(2),
+    		#rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(1) {
+    			display: none;
+    		}`;
         resolve(t);
     };
-
+    
+    modules.removeGoldStat.code = function (resolve) {
+        let t = `
+            #header-content {
+                width: calc(100% - 260px) !important
+            }`;
+        resolve(t);
+    };
+    
+    modules.removeLogo.code = function (resolve) {
+        const t = `
+    		#content > div.wrapper > aside > * {
+    			top: -50px;
+    		}
+    		#logo {
+    			display: none;
+    		}
+    		#content > .wrapper:first-child > header:first-child {
+    			pointer-events: none;
+    		}
+    		#header-stats {
+    			pointer-events: auto;
+    		}`;
+        resolve(t);
+    };
+    
+    modules.removeTabs.code = function (resolve) {
+        const t = `
+    		#gameframe-battle > ul {
+    			display: none;
+    		}`;
+        resolve(t);
+    };
+    
+    modules.removeTradeskillSelection.code = function (resolve) {
+        let t = `
+    		#actioncontent > div:nth-child(2) {
+                display: none !important;
+            }`;
+        if (modules.removeTradeskillSelection.options.addSpace === true) {
+            t = t + `
+                #actioncontent {
+                    margin-top: 15px;
+                }`;
+        }
+        resolve(t);
+    };
+    
     modules.versionCheck.code = function (resolve) {
         let t = `
-        .elite-version-window {
-            z-index: 999999999;
-            width: 100vw;
-            height: 100vh;
-            max-width: max-content;
-            background: rgba(0, 0, 0, 0.70);
-        }
-        
-        .elite-version-window h1 {
-            text-align: center;
-            padding-top: 10px;
-        }
-        
-        .elite-version-window button {
-            text-align: center;
-            margin-right: 10px;
-        }
-        
-        .elite-version-content {
-            width: 30%;
-            min-width: max-content;
-            height: 135px;
-            background: black;
-            color: white;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            position: absolute;
-            padding: 0px 50px 0px;
-        }
-        
-        .elite-version-border {
-            border: 10px solid transparent !important;
-            border-image-source: url(/images/frame.png) !important;
-            border-image-slice: 10 8 !important;
-            border-image-repeat: round !important;
-        }`;
+            .elite-version-window {
+                z-index: 999999999;
+                width: 100vw;
+                height: 100vh;
+                max-width: max-content;
+                background: rgba(0, 0, 0, 0.70);
+            }
+            
+            .elite-version-window h1 {
+                text-align: center;
+                padding-top: 10px;
+            }
+            
+            .elite-version-window button {
+                text-align: center;
+                margin-right: 10px;
+            }
+            
+            .elite-version-content {
+                width: 30%;
+                min-width: max-content;
+                height: 135px;
+                background: black;
+                color: white;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                position: absolute;
+                padding: 0px 50px 0px;
+            }
+            
+            .elite-version-border {
+                border: 10px solid transparent !important;
+                border-image-source: url(/images/frame.png) !important;
+                border-image-slice: 10 8 !important;
+                border-image-repeat: round !important;
+            }`;
         let hasls = (function () {
             let test = "test";
             try {
@@ -920,6 +900,7 @@ function define() {
         if (hasls || !modules.versionCheck.options.dailyLimit) {
             let lastCheck = new Date(localStorage.getItem("Last Elite UI Version Check"));
             if ((new Date().getTime() - lastCheck.getTime()) > (60 * 60 * 24 * 1000) || !modules.versionCheck.options.dailyLimit) {
+                localStorage.setItem("Last Elite UI Version Check", String(new Date()));
                 new Promise(function (resolve) {
                     $.get("https://api.github.com/repos/xpuls3/Pendorian-Elite-UI/releases/latest", function (data) {
                         if (version.includes("-") && version.split("-")[0] === data.tag_name) {
@@ -932,28 +913,28 @@ function define() {
                     });
                 }).then(function (newVer) {
                     if (newVer !== false) {
-                        logDo("Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!", 1);
-
+                        logDo(`Pendorian Elite UI v${newVer} has been released, you are currently running outdated version ${version}`, 1);
+    
                         const eliteVersionWindowBackground = document.createElement("div");
                         eliteVersionWindowBackground.setAttribute("class", "elite-version-window");
                         eliteVersionWindowBackground.setAttribute("id", "elite-version-window");
-
+    
                         const eliteVersionWindowContent = document.createElement("div");
                         eliteVersionWindowContent.setAttribute("class", "elite-version-content elite-version-border");
-                        eliteVersionWindowContent.innerHTML = "<h1>Outdated Elite UI Version!</h1><p>Pendorian Elite UI v" + newVer + " has been released, you are currently running outdated version " + version + "!</p>";
-
+                        eliteVersionWindowContent.innerHTML = `<h1>Outdated Elite UI Version!</h1><p>Pendorian Elite UI v${newVer} has been released, you are currently running outdated version ${version}!</p>`;
+    
                         const eliteVersionDownloadButton = document.createElement("button");
                         eliteVersionDownloadButton.innerText = "Download";
                         eliteVersionDownloadButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js', '_blank');");
-
+    
                         const eliteVersionNotesButton = document.createElement("button");
                         eliteVersionNotesButton.innerText = "Release Notes";
                         eliteVersionNotesButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/releases/latest', '_blank');");
-
+    
                         const eliteVersionCloseButton = document.createElement("button");
                         eliteVersionCloseButton.innerText = "Close";
-                        eliteVersionCloseButton.setAttribute("onclick", "$(\"#elite-version-window\").remove();");
-
+                        eliteVersionCloseButton.setAttribute("onclick", `$("#elite-version-window").remove();`);
+    
                         eliteVersionWindowContent.appendChild(eliteVersionDownloadButton);
                         eliteVersionWindowContent.appendChild(eliteVersionNotesButton);
                         eliteVersionWindowContent.appendChild(eliteVersionCloseButton);
@@ -961,12 +942,11 @@ function define() {
                         document.body.appendChild(eliteVersionWindowBackground);
                     }
                 });
-                localStorage.setItem("Last Elite UI Version Check", String(new Date()));
             }
         }
         resolve(t);
     };
-
+    
 }
 
 function logDo(i, t) {
@@ -974,11 +954,6 @@ function logDo(i, t) {
         0: ["OKAY", "color: rgb(0,148,255);"],
         1: ["ERROR", "color:red;"],
     };
-    let logArray = [
-        "%c[%cElite UI%c] [%c" + logType[t][0] + "%c] " + i,
-        "color: none;", "color: rgb(0,148,255);",
-        "color: none;", logType[t][1],
-        "color: none;",
-    ];
+    let logArray = [`%c[%cElite UI%c] [%c${logType[t][0]}%c] ${i}`, "color: none;", "color: rgb(0,148,255);", "color: none;", logType[t][1], "color: none;"];
     console.log.apply(null, logArray);
 }
