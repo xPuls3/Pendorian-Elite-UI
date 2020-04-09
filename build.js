@@ -19,7 +19,6 @@ processOptions();
 finalize();
 save();
 
-
 function processModules () {
     modules.forEach(function (item) {
         listing[item.id] = item;
@@ -159,6 +158,7 @@ function applyTemplate (data) {
     data = data.replace(/\/\*\sElite\sWrite\sVersion\s\*\//gm, `${scriptVersion}`);
 
     data = data.replace(/[^\S\n]+\n/gm, "\n");
+    data = data.replace(/^[\n]+\n/gm, "\n");
 
     return data;
 }
