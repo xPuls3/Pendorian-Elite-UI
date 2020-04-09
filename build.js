@@ -158,7 +158,7 @@ function applyTemplate (data) {
 
     data = data.replace(/\/\*\sElite\sWrite\sVersion\s\*\//gm, `${scriptVersion}`);
 
-    data = data.replace(/^[^\S\r\n]+\n/gm, "\n");
+    data = data.replace(/[^\S\n]+\n/gm, "\n");
 
     return data;
 }

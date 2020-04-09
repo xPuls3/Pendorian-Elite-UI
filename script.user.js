@@ -255,7 +255,7 @@ const isDebug = false;
         dailyLimit: true
 
     };
-    
+
 })();
 
 // [Functions]
@@ -394,31 +394,31 @@ function define () {
                 --Elite-Progress-Background-Color: ${modules.recolor.options.progressBackgroundColor};
                 --Elite-Chat-Color: ${modules.recolor.options.chatUsernameColor};
             }
-    		
+
     		/* Chat Color CSS */
-    		
+
                 .chat-username {
                     color: var(--Elite-Chat-Color) !important;
                 }
-                
+
     		    #chat-messages > ul > li > font[color="#00ffff"] {
     		        color: var(--Elite-Chat-Color) !important;
     		    }
-                
+
                 .chat-local-error, #chat-messages ul li span[style*="color: #ea907b;"] {
                     color: var(--Elite-Color) !important;
                 }
-                
+
                 .username-hilighted {
                     color: var(--Elite-Mention-Color) !important;
                 }
-                
+
                 .chat-hilighted {
                     color: var(--Elite-Mention-Tab-Color) !important;
                 }
-    		
+
     		/* UI CSS Below */
-    		
+
                 #invinfo, #scraptowninfo, #invasioninfo, .activity-log-username, .guild-section [style*="color: rgb(29, 166, 87);"], .guild-section [style*="color: #1da657;"], #event[style="color:red;"], #mailcount, #action-info, a[style="color: rgb(255, 0, 0);"] {
                     color: var(--Elite-Color) !important;
                 }
@@ -479,22 +479,22 @@ function define () {
                 .terms-section-header, .question {
                     color: var(--Elite-Color) !important;
                 }
-                
+
                 #dungeon-progressbar-wrapper {
                     background-color: var(--Elite-Progress-Background-Color);
                 }
                 #dungeon-progressbar-wrapper .progressbar, #encampment-building-progress  {
                     background-color: var(--Elite-Color) !important;
                 }
-                
+
                 [data-player-id*="334"] .chat-username {
                     color: rgb(0, 153, 255) !important;
                 }
-                
+
                 #quint span, .actionexperience, .actionexperience span, #double_tradeskill span, #guild_amount, #guild_currency, #gainedtype, #gainedres, #actionencampmentax {
                     color: var(--Elite-Color) !important;
                 }
-                
+
                 .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
                     color: var(--Elite-Color) !important;
                 }`;
@@ -560,7 +560,7 @@ function define () {
     			color: white;
     		}`;
         $("#scraptown-button").parent().after(`<li><a href="" id="elite-dungeon-button" class="Pendorian-Elite-UI"><i class="fas fa-dungeon"></i>Dungeons</a></li>`);
-    
+
         // Function Below Grabbed From Pendoria And Modified
         // Heavily modified, as this code is less than awesome.
         $("#elite-dungeon-button").click(function (event) {
@@ -684,7 +684,7 @@ function define () {
         setTimeout(function () {
             let $battleNav = $("#gameframe-battle .nav-tabs li");
             $battleNav.off("click");
-    
+
             // Function Below Grabbed From Pendoria And Modified
             $battleNav.on("click", "a", function (e) {
                 let url;
@@ -855,17 +855,17 @@ function define () {
                 max-width: max-content;
                 background: rgba(0, 0, 0, 0.70);
             }
-            
+
             .elite-version-window h1 {
                 text-align: center;
                 padding-top: 10px;
             }
-            
+
             .elite-version-window button {
                 text-align: center;
                 margin-right: 10px;
             }
-            
+
             .elite-version-content {
                 width: 30%;
                 min-width: max-content;
@@ -880,7 +880,7 @@ function define () {
                 position: absolute;
                 padding: 0px 50px 0px;
             }
-            
+
             .elite-version-border {
                 border: 10px solid transparent !important;
                 border-image-source: url(/images/frame.png) !important;
@@ -914,27 +914,27 @@ function define () {
                 }).then(function (newVer) {
                     if (newVer !== false) {
                         logDo(`Pendorian Elite UI v${newVer} has been released, you are currently running outdated version ${version}`, 1);
-    
+
                         const eliteVersionWindowBackground = document.createElement("div");
                         eliteVersionWindowBackground.setAttribute("class", "elite-version-window");
                         eliteVersionWindowBackground.setAttribute("id", "elite-version-window");
-    
+
                         const eliteVersionWindowContent = document.createElement("div");
                         eliteVersionWindowContent.setAttribute("class", "elite-version-content elite-version-border");
                         eliteVersionWindowContent.innerHTML = `<h1>Outdated Elite UI Version!</h1><p>Pendorian Elite UI v${newVer} has been released, you are currently running outdated version ${version}!</p>`;
-    
+
                         const eliteVersionDownloadButton = document.createElement("button");
                         eliteVersionDownloadButton.innerText = "Download";
                         eliteVersionDownloadButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js', '_blank');");
-    
+
                         const eliteVersionNotesButton = document.createElement("button");
                         eliteVersionNotesButton.innerText = "Release Notes";
                         eliteVersionNotesButton.setAttribute("onclick", "window.open('https://github.com/xPuls3/Pendorian-Elite-UI/releases/latest', '_blank');");
-    
+
                         const eliteVersionCloseButton = document.createElement("button");
                         eliteVersionCloseButton.innerText = "Close";
                         eliteVersionCloseButton.setAttribute("onclick", `$("#elite-version-window").remove();`);
-    
+
                         eliteVersionWindowContent.appendChild(eliteVersionDownloadButton);
                         eliteVersionWindowContent.appendChild(eliteVersionNotesButton);
                         eliteVersionWindowContent.appendChild(eliteVersionCloseButton);
@@ -946,7 +946,7 @@ function define () {
         }
         resolve(t);
     };
-    
+
 }
 
 function logDo (i, t) {
