@@ -33,17 +33,17 @@ define();
 const isDebug = false;
 
 (function () {
-    
+
     // Recolor Module
     // Changes the color of almost everything
     modules.recolor.options = {
-        
+
         // Enable / Disable
         status: true,
-        
+
         // Changes cyan titles to match the new chat username color
         titleSwap: true,
-        
+
         // Colors
         color: "rgb(0, 153, 255)",
         darkColor: "rgb(0, 123, 235)",
@@ -54,124 +54,124 @@ const isDebug = false;
         mentionColor: "rgb(0, 219, 255)",
         mentionTabColor: "rgb(0, 153, 255)",
         chatUsernameColor: "rgb(0, 153, 255)"
-        
+
     };
-    
+
     // Background Module
     // Changes the background to the link below
     modules.background.options = {
-        
+
         // Enable / Disable
         status: true,
-        
+
         // Standard Image: 'Stellar Collision' by KuldarLeement
         // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
         // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
-        
+
         // Background link
         link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
-        
+
     };
-    
+
     // Favicon Module
     // Changes the favicon to the link below
     modules.favicon.options = {
-        
+
         // Enable / Disable
         status: true,
-        
+
         // Favicon link
         link: "https://raw.githubusercontent.com/xpuls3/Pendorian-Elite-UI/master/favicon.ico"
-        
+
     };
-    
+
     // Edits Module
     // Changes that used to be included with the recolor
     modules.edits.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Frameless Mode Module
     // Removes all of the frames
     modules.frameless.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Dungeon Sidebar Module
     // Removes the Dungeon tab and adds a link on the sidebar
     modules.dungeonSidebar.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Dual View Module
     // Forces both the action and content pages to always show next to each other vertically
     // Requires Dungeon Sidebar to work correctly
     modules.dualView.options = {
-        
+
         // Enable / Disable
         status: false,
-        
+
         // How far down the frame (in pixels) the line between content and actions is
         line: 220
-        
+
     };
-    
+
     // Legacy Sidebar Module
     // Makes the sidebar look almost like the original sidebar designed by Zampa
     modules.legacySidebar.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Rounded Borders Module
     // Makes most of the game's main area corners round.
     // Requires Frameless Mode to work correctly
     modules.roundedBorders.options = {
-        
+
         // Enable / Disable
         status: false,
-        
+
         // Changes how round the corners are with CSS values
         amount: "16px"
-        
+
     };
-    
+
     // Extended Header Module
     // Extends the header above chat in side-by-side mode
     modules.extendedHeader.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Areas Included Module
     // Removes the Areas tab and adds the content to the battle tab
     modules.areasIncluded.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Extra Footer Links Module
     // Adds more links to the bottom of the screen
     modules.extraFooterLinks.options = {
-        
+
         // Enable / Disable
         status: true,
-        
+
         // Add more links below
         // Use the existing ones as examples
         links: [
@@ -188,72 +188,72 @@ const isDebug = false;
                 "https://xpuls3.github.io/blog/"
             ]
         ]
-        
+
     };
-    
+
     // Remove Battle Stats Module
     // Removes the battle stats in the header
     modules.removeBattleStats.options = {
-        
+
         // Enable / Disable
         status: false
-        
+
     };
-    
+
     // Remove Gold & Stat Module
     // Removes Gold Boost & Stat Drop Boost from Rhodium Boosts
     modules.removeGoldStat.options = {
-        
+
         // Enable / Disable
         status: false
-        
+
     };
-    
+
     // Remove Logo Module
     // Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter
     modules.removeLogo.options = {
-        
+
         // Enable / Disable
         status: true
-        
+
     };
-    
+
     // Remove Tabs Module
     // Removes the tabs on the actions page
     // Requires Dungeon Sidebar to work correctly
     // Requires Areas Included to work correctly
     modules.removeTabs.options = {
-        
+
         // Enable / Disable
         status: false
-        
+
     };
-    
+
     // Remove Tradeskill Selection Module
     // Removes the Tradeskill Selection dropdown and the work button
     // Ensure that you are already doing the TS that you want to continue doing
     // Click the action bar to refresh after turning this on
     modules.removeTradeskillSelection.options = {
-        
+
         // Enable / Disable
         status: false,
-        
+
         // Adds a small amount of space above the action text
         // Without this it will look awkward
         addSpace: true
-        
+
     };
-    
+
     // Version Check Module
     // Checks for updates
     modules.versionCheck.options = {
-        
+
         // Enable / Disable
         status: true,
-        
+
         // Only check once every 24 hours
         dailyLimit: true
-        
+
     };
     
 })();
@@ -264,7 +264,7 @@ const isDebug = false;
 
     origin();
 
-    function origin() {
+    function origin () {
         logDo(`Initiating Pendorian Elite UI v${version}`, 0);
         const k = Object.keys(modules);
         let promiseList = [];
@@ -302,19 +302,19 @@ const isDebug = false;
         });
     }
 
-    function applyStyle(module) {
+    function applyStyle (module) {
         let matches = $(`.Elite-UI-Style[Elite-UI-Module="${module.id}"]`);
         if (matches.length !== 0) matches.remove();
         $("head").append(`<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="${module.id}">${module.Style}</style>`);
     }
 
-    function checkIsPath(x) {
+    function checkIsPath (x) {
         return (window.location.pathname === x);
     }
 
 })();
 
-function register() {
+function register () {
     return {
         "recolor": {
             "name": "Recolor",
@@ -379,8 +379,8 @@ function register() {
     };
 }
 
-function define() {
-    
+function define () {
+
     modules.recolor.code = function (resolve) {
         const t = `
             html {
@@ -500,7 +500,7 @@ function define() {
                 }`;
         resolve(t);
     };
-    
+
     modules.background.code = function (resolve) {
         const t = `
     		body {
@@ -513,13 +513,13 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.favicon.code = function (resolve) {
         const t = `<link rel="icon" href="${modules.favicon.options.link}"/>`;
         $("head").append(t);
         resolve();
     };
-    
+
     modules.edits.code = function (resolve) {
         const t = `
     		#dungeon-dialogue {
@@ -527,7 +527,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.frameless.code = function (resolve) {
         const t = `
             #menu, #profile, #chat, #charity, #stats-hourly, #gameframe, #drop-statistics {
@@ -550,7 +550,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.dungeonSidebar.code = function (resolve) {
         const t = `
     		#gameframe-battle > ul > li:nth-child(4) {
@@ -572,12 +572,12 @@ function define() {
                     $(this).qtip({
                         content: {
                             title: $(this).attr("tooltip-title"),
-                            text: $(this).attr("tooltip-text"),
+                            text: $(this).attr("tooltip-text")
                         },
-                        style: {classes: "qtip-dark"},
+                        style: { classes: "qtip-dark" },
                         position: {
-                            target: "mouse",
-                        },
+                            target: "mouse"
+                        }
                     });
                 });
                 ajaxPost("/dungeons/in-progress", function (inProgress) {
@@ -606,7 +606,7 @@ function define() {
         });
         resolve(t);
     };
-    
+
     modules.dualView.code = function (resolve) {
         const t = `
     		html {
@@ -626,7 +626,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.legacySidebar.code = function (resolve) {
         const t = `
     		#menu .frame {
@@ -653,7 +653,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.roundedBorders.code = function (resolve) {
         const l = modules.roundedBorders.options.amount;
         const t = `
@@ -667,7 +667,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.extendedHeader.code = function (resolve) {
         let t = `
             #header-content {
@@ -675,7 +675,7 @@ function define() {
             }`;
         resolve(t);
     };
-    
+
     modules.areasIncluded.code = function (resolve) {
         const t = `
             #gameframe-battle > ul > li:nth-child(3) {
@@ -708,12 +708,12 @@ function define() {
                                 $(this).qtip({
                                     content: {
                                         title: $(this).attr("tooltip-title"),
-                                        text: $(this).attr("tooltip-text"),
+                                        text: $(this).attr("tooltip-text")
                                     },
-                                    style: {classes: "qtip-dark"},
+                                    style: { classes: "qtip-dark" },
                                     position: {
-                                        target: "mouse",
-                                    },
+                                        target: "mouse"
+                                    }
                                 });
                             });
                             ajaxPost("/dungeons/in-progress",
@@ -758,7 +758,7 @@ function define() {
                             url: "/action/area",
                             success: function (data) {
                                 $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
-                            },
+                            }
                         });
                     }
                 });
@@ -771,12 +771,12 @@ function define() {
                 url: "/action/area",
                 success: function (data) {
                     $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
-                },
+                }
             });
         }, 10000);
         resolve(t);
     };
-    
+
     modules.extraFooterLinks.code = function (resolve) {
         const links = modules.extraFooterLinks.options.links;
         let e = $("#gameframe-menu #togglechat").parent();
@@ -785,7 +785,7 @@ function define() {
         }
         resolve();
     };
-    
+
     modules.removeBattleStats.code = function (resolve) {
         const t = `
             #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
@@ -798,7 +798,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.removeGoldStat.code = function (resolve) {
         let t = `
             #header-content {
@@ -806,7 +806,7 @@ function define() {
             }`;
         resolve(t);
     };
-    
+
     modules.removeLogo.code = function (resolve) {
         const t = `
     		#content > div.wrapper > aside > * {
@@ -823,7 +823,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.removeTabs.code = function (resolve) {
         const t = `
     		#gameframe-battle > ul {
@@ -831,7 +831,7 @@ function define() {
     		}`;
         resolve(t);
     };
-    
+
     modules.removeTradeskillSelection.code = function (resolve) {
         let t = `
     		#actioncontent > div:nth-child(2) {
@@ -845,7 +845,7 @@ function define() {
         }
         resolve(t);
     };
-    
+
     modules.versionCheck.code = function (resolve) {
         let t = `
             .elite-version-window {
@@ -949,10 +949,10 @@ function define() {
     
 }
 
-function logDo(i, t) {
+function logDo (i, t) {
     const logType = {
         0: ["OKAY", "color: rgb(0,148,255);"],
-        1: ["ERROR", "color:red;"],
+        1: ["ERROR", "color:red;"]
     };
     let logArray = [`%c[%cElite UI%c] [%c${logType[t][0]}%c] ${i}`, "color: none;", "color: rgb(0,148,255);", "color: none;", logType[t][1], "color: none;"];
     console.log.apply(null, logArray);
