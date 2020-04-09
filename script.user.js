@@ -23,7 +23,7 @@
 // This script was created by Puls3!
 // - Puls3 on Pendoria
 
-const version = GM_info.script.version;
+const version = "3.0-beta";
 let modules = register();
 define();
 

@@ -1,4 +1,4 @@
-const version = GM_info.script.version;
+const version = "/* Elite Write Version */";
 let modules = register();
 define();
 
