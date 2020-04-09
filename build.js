@@ -29,13 +29,13 @@ function processModules () {
 }
 
 function processCode () {
-    for (let property in code) {
-        codeText = `${codeText}\nmodules.${property}.code = ${code[property]};\n`;
-    }
+    Object.keys(code).forEach(function (property) {
+        codeText = `${codeText}\n` + `modules.${property}.code = ${code[property]};\n`;
+    });
 }
 
 function processOptions () {
-    for (let property1 in options) {
+    Object.keys(options).forEach(function (property1) {
         let tempText1 = `// ${registry[property1].name} Module`;
 
         if (listing[property1].description) {
@@ -50,13 +50,10 @@ function processOptions () {
 
         }
 
-        tempText1 = `${tempText1}\nmodules.${property1}.options = {`;
+        tempText1 = `${tempText1}\n` + `modules.${property1}.options = {`;
         let tempText2 = "";
 
-        let amount = 0;
-        for (let property2 in options[property1]) {
-
-            amount++;
+        Object.keys(options[property1]).forEach(function (property2, index) {
 
             if (options[property1][property2].description) {
                 if (Array.isArray(options[property1][property2].description)) {
@@ -85,19 +82,20 @@ function processOptions () {
 
             tempText2 = `${tempText2}\n${property2}: ${tempOption}`;
 
-            if (amount < Object.keys(options[property1]).length) {
+            if (index+1 < Object.keys(options[property1]).length) {
                 tempText2 = `${tempText2},`;
             } else {
                 tempText2 = `${tempText2}\n`;
             }
 
-        }
+        });
 
         tempText2 = tempText2.replace(/\n/g, "\n    ");
         tempText2 = `${tempText1}${tempText2}\n};`;
         optionsText = `${optionsText}\n${tempText2}\n`;
 
-    }
+    });
+
 }
 
 function finalize () {
