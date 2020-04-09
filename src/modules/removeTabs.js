@@ -8,15 +8,15 @@ local.description = [
 ];
 
 local.register = {
-    name: "Remove Tabs",
+    name: "Remove Tabs"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
-    },
+        value: false
+    }
 
 };
 

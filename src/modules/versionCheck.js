@@ -5,20 +5,20 @@ local.description = "Checks for updates";
 
 local.register = {
     name: "Version Check",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
+        value: true
     },
 
     dailyLimit: {
         description: "Only check once every 24 hours",
-        value: true,
-    },
+        value: true
+    }
 
 };
 

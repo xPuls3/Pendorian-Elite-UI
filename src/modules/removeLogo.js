@@ -4,15 +4,15 @@ local.id = "removeLogo";
 local.description = "Removes the 'Pendoria Logo' and moves the left side upwards to reduce clutter";
 
 local.register = {
-    name: "Remove Logo",
+    name: "Remove Logo"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 

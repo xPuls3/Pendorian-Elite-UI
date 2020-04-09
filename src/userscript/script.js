@@ -10,11 +10,11 @@
 
 /* Elite Include Origin */
 
-function register() {
+function register () {
     /* Elite Include Registry */
 }
 
-function define() {
+function define () {
     /* Elite Include Code */
 }
 

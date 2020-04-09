@@ -4,15 +4,15 @@ local.id = "dungeonSidebar";
 local.description = "Removes the Dungeon tab and adds a link on the sidebar";
 
 local.register = {
-    name: "Dungeon Sidebar",
+    name: "Dungeon Sidebar"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 
@@ -37,12 +37,12 @@ local.code = function (resolve) {
                 $(this).qtip({
                     content: {
                         title: $(this).attr("tooltip-title"),
-                        text: $(this).attr("tooltip-text"),
+                        text: $(this).attr("tooltip-text")
                     },
-                    style: {classes: "qtip-dark"},
+                    style: { classes: "qtip-dark" },
                     position: {
-                        target: "mouse",
-                    },
+                        target: "mouse"
+                    }
                 });
             });
             ajaxPost("/dungeons/in-progress", function (inProgress) {

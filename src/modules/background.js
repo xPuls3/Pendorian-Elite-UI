@@ -5,14 +5,14 @@ local.description = "Changes the background to the link below";
 
 local.register = {
     name: "Background",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
+        value: true
     },
 
     link: {

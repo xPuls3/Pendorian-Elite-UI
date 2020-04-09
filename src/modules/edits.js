@@ -4,15 +4,15 @@ local.id = "edits";
 local.description = "Changes that used to be included with the recolor";
 
 local.register = {
-    name: "Edits",
+    name: "Edits"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 

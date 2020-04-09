@@ -4,15 +4,15 @@ local.id = "areasIncluded";
 local.description = "Removes the Areas tab and adds the content to the battle tab";
 
 local.register = {
-    name: "Areas Included",
+    name: "Areas Included"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 
@@ -48,12 +48,12 @@ local.code = function (resolve) {
                             $(this).qtip({
                                 content: {
                                     title: $(this).attr("tooltip-title"),
-                                    text: $(this).attr("tooltip-text"),
+                                    text: $(this).attr("tooltip-text")
                                 },
-                                style: {classes: "qtip-dark"},
+                                style: { classes: "qtip-dark" },
                                 position: {
-                                    target: "mouse",
-                                },
+                                    target: "mouse"
+                                }
                             });
                         });
                         ajaxPost("/dungeons/in-progress",
@@ -98,7 +98,7 @@ local.code = function (resolve) {
                         url: "/action/area",
                         success: function (data) {
                             $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
-                        },
+                        }
                     });
                 }
             });
@@ -111,7 +111,7 @@ local.code = function (resolve) {
             url: "/action/area",
             success: function (data) {
                 $("#AreasIncluded").html(data.replace(`<div style="text-align: center; margin-top: 10px; margin-bottom: 15px;">Exploring the lands? Watch out for strangers.</div>`, ""));
-            },
+            }
         });
     }, 10000);
     resolve(t);

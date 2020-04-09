@@ -4,15 +4,15 @@ local.id = "removeGoldStat";
 local.description = "Removes Gold Boost & Stat Drop Boost from Rhodium Boosts";
 
 local.register = {
-    name: "Remove Gold & Stat",
+    name: "Remove Gold & Stat"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
-    },
+        value: false
+    }
 
 };
 

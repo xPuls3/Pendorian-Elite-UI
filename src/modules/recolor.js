@@ -5,24 +5,24 @@ local.description = "Changes the color of almost everything";
 
 local.register = {
     name: "Recolor",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
+        value: true
     },
 
     titleSwap: {
         description: "Changes cyan titles to match the new chat username color",
-        value: true,
+        value: true
     },
 
     color: {
         description: "Colors",
-        value: "rgb(0, 153, 255)",
+        value: "rgb(0, 153, 255)"
     },
 
     darkColor: "rgb(0, 123, 235)",
@@ -32,7 +32,7 @@ local.options = {
     profileLinkColor: "rgb(0, 123, 235)",
     mentionColor: "rgb(0, 219, 255)",
     mentionTabColor: "rgb(0, 153, 255)",
-    chatUsernameColor: "rgb(0, 153, 255)",
+    chatUsernameColor: "rgb(0, 153, 255)"
 
 };
 

@@ -7,20 +7,20 @@ local.description = [
 ];
 
 local.register = {
-    name: "Dual View",
+    name: "Dual View"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
+        value: false
     },
 
     line: {
         description: "How far down the frame (in pixels) the line between content and actions is",
         value: 220
-    },
+    }
 
 };
 

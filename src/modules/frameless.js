@@ -5,15 +5,15 @@ local.description = "Removes all of the frames";
 
 local.register = {
     name: "Frameless Mode",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 

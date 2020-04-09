@@ -5,14 +5,14 @@ local.description = "Changes the favicon to the link below";
 
 local.register = {
     name: "Favicon",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
+        value: true
     },
 
     link: {

@@ -2,7 +2,7 @@
 
     origin();
 
-    function origin() {
+    function origin () {
         logDo(`Initiating Pendorian Elite UI v${version}`, 0);
         const k = Object.keys(modules);
         let promiseList = [];
@@ -40,13 +40,13 @@
         });
     }
 
-    function applyStyle(module) {
+    function applyStyle (module) {
         let matches = $(`.Elite-UI-Style[Elite-UI-Module="${module.id}"]`);
         if (matches.length !== 0) matches.remove();
         $("head").append(`<style class="Pendorian-Elite-UI Elite-UI-Style" Elite-UI-Module="${module.id}">${module.Style}</style>`);
     }
 
-    function checkIsPath(x) {
+    function checkIsPath (x) {
         return (window.location.pathname === x);
     }
 

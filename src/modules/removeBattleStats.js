@@ -4,15 +4,15 @@ local.id = "removeBattleStats";
 local.description = "Removes the battle stats in the header";
 
 local.register = {
-    name: "Remove Battle Stats",
+    name: "Remove Battle Stats"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
-    },
+        value: false
+    }
 
 };
 

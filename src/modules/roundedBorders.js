@@ -8,14 +8,14 @@ local.description = [
 
 local.register = {
     name: "Rounded Borders",
-    runLogin: true,
+    runLogin: true
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
+        value: false
     },
 
     amount: {

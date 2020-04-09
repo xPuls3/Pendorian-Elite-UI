@@ -4,15 +4,15 @@ local.id = "legacySidebar";
 local.description = "Makes the sidebar look almost like the original sidebar designed by Zampa";
 
 local.register = {
-    name: "Legacy Sidebar",
+    name: "Legacy Sidebar"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 

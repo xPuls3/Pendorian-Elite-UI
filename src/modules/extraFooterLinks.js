@@ -4,14 +4,14 @@ local.id = "extraFooterLinks";
 local.description = "Adds more links to the bottom of the screen";
 
 local.register = {
-    name: "Extra Footer Links",
+    name: "Extra Footer Links"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
+        value: true
     },
 
     links: {
@@ -22,9 +22,9 @@ local.options = {
         value: [
             ["Karubo's ROI", "http://pendcalc.karubo.de/"],
             ["Puls3's Calcs", "https://xpuls3.github.io/calculators/"],
-            ["Impulsive Updates", "https://xpuls3.github.io/blog/"],
-        ],
-    },
+            ["Impulsive Updates", "https://xpuls3.github.io/blog/"]
+        ]
+    }
 
 };
 

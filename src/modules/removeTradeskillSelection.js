@@ -8,14 +8,14 @@ local.description = [
 ];
 
 local.register = {
-    name: "Remove Tradeskill Selection",
+    name: "Remove Tradeskill Selection"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: false,
+        value: false
     },
 
     addSpace: {
@@ -24,7 +24,7 @@ local.options = {
             "Without this it will look awkward"
         ],
         value: true
-    },
+    }
 
 };
 

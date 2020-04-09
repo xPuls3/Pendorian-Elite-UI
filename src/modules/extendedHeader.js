@@ -4,15 +4,15 @@ local.id = "extendedHeader";
 local.description = "Extends the header above chat in side-by-side mode";
 
 local.register = {
-    name: "Extended Header",
+    name: "Extended Header"
 };
 
 local.options = {
 
     status: {
         description: "Enable / Disable",
-        value: true,
-    },
+        value: true
+    }
 
 };
 
