@@ -152,6 +152,10 @@ local.code = function (resolve) {
             
             .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
                 color: var(--Elite-Color) !important;
+            }
+            
+            .pace .pace-progress {
+                background: var(--Elite-Color) !important;
             }`;
     resolve(t);
 };

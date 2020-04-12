@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 3.0
+// @version 3.1-beta
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -23,7 +23,7 @@
 // This script was created by Puls3!
 // - Puls3 on Pendoria
 
-const version = "3.0";
+const version = "3.1-beta";
 let modules = register();
 define();
 
@@ -218,6 +218,15 @@ const isDebug = false;
 
     };
 
+    // Pace Hider Module
+    // Removes the loading bar at the top of the screen
+    modules.paceHider.options = {
+
+        // Enable / Disable
+        status: false
+
+    };
+
     // Remove Tabs Module
     // Removes the tabs on the actions page
     // Requires Dungeon Sidebar to work correctly
@@ -387,6 +396,10 @@ function register () {
         "removeLogo": {
             "name": "Remove Logo"
         },
+        "paceHider": {
+            "name": "Pace Hider",
+            "runLogin": true
+        },
         "removeTabs": {
             "name": "Remove Tabs"
         },
@@ -518,6 +531,10 @@ function define () {
 
                 .timeshit, .timescrit, .timesdodged, .hitstaken, #gainedgold, .actiongold, #guild_gold, #double_battle span {
                     color: var(--Elite-Color) !important;
+                }
+
+                .pace .pace-progress {
+                    background: var(--Elite-Color) !important;
                 }`;
         resolve(t);
     };
@@ -842,6 +859,11 @@ function define () {
     		#header-stats {
     			pointer-events: auto;
     		}`;
+        resolve(t);
+    };
+
+    modules.paceHider.code = function (resolve) {
+        const t = `.pace{ display: none !important }`;
         resolve(t);
     };
 

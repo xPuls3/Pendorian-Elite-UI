@@ -1,5 +1,5 @@
 const fs = require("fs");
-let scriptVersion = "3.0";
+let scriptVersion = "3.1-beta";
 
 let modules = [];
 let includes = {};
@@ -121,6 +121,7 @@ function loadModules () {
     modules.push(require("./src/modules/removeBattleStats"));
     modules.push(require("./src/modules/removeGoldStat"));
     modules.push(require("./src/modules/removeLogo"));
+    modules.push(require("./src/modules/paceHider"));
     modules.push(require("./src/modules/removeTabs"));
     modules.push(require("./src/modules/removeTradeskillSelection"));
     modules.push(require("./src/modules/versionCheck"));
