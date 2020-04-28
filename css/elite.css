@@ -1,3 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #464850;
+    color: #ffffff;
+    display: grid;
+    padding: 0;
+    margin: 0;
+}
+
 #panel {
     background: url("./../images/back.jpg") center center;
+    margin-top: 58px;
+    text-shadow: 3px 3px 4px black;
+}
+
+#header {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+    position: fixed;
+    display: block;
+    z-index: 100;
+    box-shadow: 0 1px 5px 1px black;
+    background-color: #2c2f37;
+    line-height: 54px;
+    text-align: left;
+    border: none;
+}
+
+#header > .wrapper {
+    width: calc(100vw - 60px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#header .title {
+    font-size: 1.625rem;
+    font-weight: 300;
+    text-decoration: none;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    color: #0094ff;
+}
+
+#header .title:hover {
+    text-decoration: underline;
+}
+
+#panel {
+    display: grid;
+    grid-gap: 10px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+    background-color: #5b606c;
+    background-image: url("../images/back.jpg");
+    background-position: center;
+    padding: 30px;
+    box-shadow: inset 0 -1px 5px 1px black;
+}
+
+#panel .title {
+    font-size: 72px;
+}
+
+#panel .text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@media only screen and (min-width: 1921px) {
+    #panel {
+        background-size: cover;
+    }
+}
+
+.section {
+    margin-bottom: 5px;
+}
+
+.section > .header {
+    background-color: #40434b;
+    border-top: solid 1px rgba(0, 0, 0, 0.8);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.8);
+}
+
+#content .section:first-of-type > .header {
+    border-top: none;
+}
+
+.section > .header > .text {
+    font-size: 26px;
+    padding: 25px 50px 25px 50px;
+}
+
+.section > .header > .description {
+    font-size: 16px;
+    padding: 0 50px 15px;
+}
+
+.section > .under {
+    padding: 15px 50px 15px;
+    margin-bottom: 0;
+}
+
+.list {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    list-style-type: square;
+}
+
+.list > li {
+    padding-bottom: 15px;
+    margin-left: 20px;
+}
+
+button:focus {
+    outline: none;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.linkButton {
+    display: inline-block;
+    text-decoration: none;
+    margin: 30px 0 20px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.8);;
+    padding: 10px;
+    width: 250px !important;
+    box-sizing: border-box;
+    background-color: rgba(44, 47, 55, 0.4);
+    cursor: pointer;
+    color: white;
+}
+
+.linkButton:hover {
+    background-color: rgba(74, 78, 87, 0.6);
+}
+
+.linkButton:active {
+    background-color: rgba(96, 100, 109, 1);
+}
+
+#content ul {
+    list-style-type: square;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+#content ul li {
+    margin-left: 30px;
+}
+
+#downloads ul > li:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.section:last-of-type {
+    margin-bottom: 0;
+;
+}
+
+#footer {
+    box-shadow: 0 -1px 5px 1px black;
+    padding: 10px;
+}
+
+.social-links {
+    font-size: 0.9375rem;
+}
+
+.social-media-list {
+    display: table;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.social-media-list li {
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+
+.social-media-list li a {
+    display: block;
+    padding: 7.5px;
+    border: none;
+    box-shadow: 0 0 2px 1px black;
+    text-decoration: none;
+    color: #0094ff !important;
+}
+
+.social-media-list li a:hover {
+    color: #66bfff;
+    background-color: #5e606b;
+}
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: currentColor;
+    padding: 5px 3px 2px 5px;
+    vertical-align: text-bottom;
+}
+
+#theDownload {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto 0;
+    z-index: 10;
 }
