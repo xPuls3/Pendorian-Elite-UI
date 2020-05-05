@@ -1,3 +1,5 @@
-function redirect() {
-    window.location = "https://xpuls3.github.io"
-}
+window.addEventListener("load", function () {
+    if (typeof window.eliteUI !== "undefined") {
+        document.querySelector("#theDownload").innerText = "Update";
+    }
+});
