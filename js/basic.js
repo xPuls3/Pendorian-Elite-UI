@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-    if (typeof window.eliteUI !== "undefined") {
+    if (window.hasOwnProperty("eliteUI")) {
         document.querySelector("#theDownload").innerText = "Update";
     }
 });
