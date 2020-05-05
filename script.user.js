@@ -24,6 +24,7 @@
 // - Puls3 on Pendoria
 
 const version = "3.1-beta";
+window.eliteUI = version;
 let modules = register();
 define();
 
