@@ -1,6 +1,6 @@
 (function () {
 
-    origin();
+    window.addEventListener("load", origin);
 
     function origin () {
 

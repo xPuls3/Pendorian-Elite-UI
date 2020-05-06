@@ -10,7 +10,7 @@
 // @updateURL https://github.com/xPuls3/Pendorian-Elite-UI/raw/master/script.user.js
 // @icon https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/master/favicon.ico
 // @grant none
-// @run-at document-end
+// @run-at document-start
 // @description Changes a large portion of the text and UI to 'Elite' blue and makes small changes to the UI.
 // ==/UserScript==
 
@@ -272,7 +272,7 @@ const isDebug = false;
 
 (function () {
 
-    origin();
+    window.addEventListener("load", origin);
 
     function origin () {
 
