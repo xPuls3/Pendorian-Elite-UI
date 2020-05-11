@@ -44,6 +44,7 @@ Report incompatibilities in the GitHub issues.
 * Compatible with Firefox v72.
 * Compatible with Chrome v77.
 * Compatible with Opera v64.
+* Compatible with Microsoft Edge v81.
 * Not compatible with Safari v12.
 * Not compatible with Internet Explorer v11.
 
