@@ -19,10 +19,10 @@ local.options = {
         description: [
             "Standard Image: 'Stellar Collision' by KuldarLeement",
             "Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757",
-            "Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg\n",
+            "Hosted Link: https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/dev/background.jpg\n",
             "Background link"
         ],
-        value: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
+        value: "https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/dev/background.jpg"
     }
 
 };

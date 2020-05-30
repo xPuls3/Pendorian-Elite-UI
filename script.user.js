@@ -67,10 +67,10 @@ const isDebug = false;
 
         // Standard Image: 'Stellar Collision' by KuldarLeement
         // Original Link: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757
-        // Hosted Link: https://zerthox.github.io/ClearVision/images/sapphire.jpg
+        // Hosted Link: https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/dev/background.jpg
 
         // Background link
-        link: "https://zerthox.github.io/ClearVision/images/sapphire.jpg"
+        link: "https://raw.githubusercontent.com/xPuls3/Pendorian-Elite-UI/dev/background.jpg"
 
     };
 
