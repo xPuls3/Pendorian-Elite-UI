@@ -1,5 +1,5 @@
 const fs = require("fs");
-let scriptVersion = "3.0.1";
+let scriptVersion = "3.1";
 
 let modules = [];
 let includes = {};
