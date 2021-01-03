@@ -1,5 +1,5 @@
 const fs = require("fs");
-let scriptVersion = "3.1";
+let scriptVersion = "3.2-beta";
 
 let modules = [];
 let includes = {};
@@ -110,6 +110,7 @@ function loadModules () {
     modules.push(require("./src/modules/background"));
     modules.push(require("./src/modules/favicon"));
     modules.push(require("./src/modules/edits"));
+    modules.push(require("./src/modules/scrollbars"));
     modules.push(require("./src/modules/frameless"));
     modules.push(require("./src/modules/dungeonSidebar"));
     modules.push(require("./src/modules/dualView"));
