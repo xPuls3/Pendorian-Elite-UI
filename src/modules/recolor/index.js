@@ -21,8 +21,11 @@ local.options = {
     },
 
     color: {
-        description: "Colors",
-        value: "rgb(0, 153, 255)"
+        description: [
+            "Colors",
+            "If a color isn't wrapped with a type, it is RGB and must stay RGB!"
+        ],
+        value: "0, 153, 255"
     },
 
     darkColor: "rgb(0, 123, 235)",
@@ -39,7 +42,8 @@ local.options = {
 local.code = function (resolve) {
     const t = `
         html {
-            --Elite-Color: ${modules.recolor.options.color};
+            --Elite-Color: rgb(${modules.recolor.options.color});
+            --Elite-Color-Base: ${modules.recolor.options.color};
             --Elite-Dark-Color: ${modules.recolor.options.darkColor};
             --Elite-Mention-Color: ${modules.recolor.options.mentionColor};
             --Elite-Mention-Tab-Color: ${modules.recolor.options.mentionTabColor};
@@ -156,8 +160,31 @@ local.code = function (resolve) {
             
             .pace .pace-progress {
                 background: var(--Elite-Color) !important;
-            }`;
+            }
+            
+            .scraptown .buildings .building.active {
+                box-shadow: 0 0 5px 2px rgba(var(--Elite-Color-Base), 0.14);
+                border-radius: 5px;
+                background-color: rgba(var(--Elite-Color-Base), 0.14);
+            }
+            
+            .scraptown .icon img {
+                filter: hue-rotate(175deg) brightness(70%);
+            }
+            
+            .scraptown .buildings .building .icon img:hover {
+                filter: hue-rotate(175deg) brightness(70%) drop-shadow(0px 0px 7px rgba(var(--Elite-Color-Base), 0.5));
+                cursor: pointer;
+            }
+            
+            .display-item span[style='color: #1da657;'] {
+                color: var(--Elite-Color) !important;
+            }
+            
+            `;
+
     resolve(t);
+
 };
 
 module.exports = local;
