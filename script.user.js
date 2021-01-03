@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 3.1
+// @version 3.2-beta
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -23,7 +23,7 @@
 // This script was created by Puls3!
 // - Puls3 on Pendoria
 
-const version = "3.1";
+const version = "3.2";
 window.eliteUI = version;
 let modules = register();
 define();
@@ -46,7 +46,8 @@ const isDebug = false;
         titleSwap: true,
 
         // Colors
-        color: "rgb(0, 153, 255)",
+        // If a color isn't wrapped with a type, it is RGB and must stay RGB!
+        color: "0, 153, 255",
         darkColor: "rgb(0, 123, 235)",
         buttonColor: "rgba(0, 153, 255, 0.5)",
         buttonHoverColor: "rgba(0, 153, 255, 0.8)",
@@ -89,6 +90,15 @@ const isDebug = false;
     // Edits Module
     // Changes that used to be included with the recolor
     modules.edits.options = {
+
+        // Enable / Disable
+        status: true
+
+    };
+
+    // Scrollbars Module
+    // Makes scrollbars great again
+    modules.scrollbars.options = {
 
         // Enable / Disable
         status: true
@@ -362,6 +372,9 @@ function register () {
         "edits": {
             "name": "Edits"
         },
+        "scrollbars": {
+            "name": "Scrollbars"
+        },
         "frameless": {
             "name": "Frameless Mode",
             "runLogin": true
@@ -419,7 +432,8 @@ function define () {
     modules.recolor.code = function (resolve) {
         const t = `
             html {
-                --Elite-Color: ${modules.recolor.options.color};
+                --Elite-Color: rgb(${modules.recolor.options.color});
+                --Elite-Color-Base: ${modules.recolor.options.color};
                 --Elite-Dark-Color: ${modules.recolor.options.darkColor};
                 --Elite-Mention-Color: ${modules.recolor.options.mentionColor};
                 --Elite-Mention-Tab-Color: ${modules.recolor.options.mentionTabColor};
@@ -536,8 +550,31 @@ function define () {
 
                 .pace .pace-progress {
                     background: var(--Elite-Color) !important;
-                }`;
+                }
+
+                .scraptown .buildings .building.active {
+                    box-shadow: 0 0 5px 2px rgba(var(--Elite-Color-Base), 0.14);
+                    border-radius: 5px;
+                    background-color: rgba(var(--Elite-Color-Base), 0.14);
+                }
+
+                .scraptown .icon img {
+                    filter: hue-rotate(175deg) brightness(70%);
+                }
+
+                .scraptown .buildings .building .icon img:hover {
+                    filter: hue-rotate(175deg) brightness(70%) drop-shadow(0px 0px 7px rgba(var(--Elite-Color-Base), 0.5));
+                    cursor: pointer;
+                }
+
+                .display-item span[style='color: #1da657;'] {
+                    color: var(--Elite-Color) !important;
+                }
+
+                `;
+
         resolve(t);
+
     };
 
     modules.background.code = function (resolve) {
@@ -565,6 +602,34 @@ function define () {
     			display: none;
     		}`;
         resolve(t);
+    };
+
+    modules.scrollbars.code = function (resolve) {
+
+        const t = `
+
+    		/* Firefox */
+
+    		* {
+    		    scrollbar-width: thin;
+    		    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    		}
+
+    		/* Webkit (Includes Chromium) */
+
+    		::-webkit-scrollbar {
+                width: 6px;
+                background-color: transparent;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+    		`;
+
+        resolve(t);
+
     };
 
     modules.frameless.code = function (resolve) {
