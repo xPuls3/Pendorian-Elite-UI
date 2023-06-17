@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Pendorian Elite UI
 // @namespace http://pendoria.net/
-// @version 3.2
+// @version 3.2.1
 // @author Puls3
 // @include /^https?:\/\/(?:.+\.)?pendoria\.net\/?(?:.+)?$/
 // @homepage https://xpuls3.github.io/Pendorian-Elite-UI
@@ -23,7 +23,7 @@
 // This script was created by Puls3!
 // - Puls3 on Pendoria
 
-const version = "3.2";
+const version = "3.2.1";
 window.eliteUI = version;
 let modules = register();
 define();
@@ -188,15 +188,11 @@ const isDebug = false;
         links: [
             [
                 "Karubo's ROI",
-                "http://pendcalc.karubo.de/"
+                "https://pendoria.github.io/karubo-roi/"
             ],
             [
                 "Puls3's Calcs",
                 "https://xpuls3.github.io/calculators/"
-            ],
-            [
-                "Impulsive Updates",
-                "https://xpuls3.github.io/blog/"
             ]
         ]
 

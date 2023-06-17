@@ -20,9 +20,17 @@ local.options = {
             "Use the existing ones as examples"
         ],
         value: [
-            ["Karubo's ROI", "http://pendcalc.karubo.de/"],
+
+            // Karubo shut down his site, it's now maintained at:
+            // - https://github.com/Pendoria/karubo-roi
+            // ["Karubo's ROI", "http://pendcalc.karubo.de/"],
+
+            ["Karubo's ROI", "https://pendoria.github.io/karubo-roi/"],
             ["Puls3's Calcs", "https://xpuls3.github.io/calculators/"],
-            ["Impulsive Updates", "https://xpuls3.github.io/blog/"]
+
+            // I decided to remove this link, I'm not really maintaining it anymore.
+            // ["Impulsive Updates", "https://xpuls3.github.io/blog/"]
+
         ]
     }
 
